@@ -15,10 +15,10 @@
 
 **只包含当前启用版本，收发端分开，不含历史工程或声音扩展。原创部分MIT，第三方保留原条款。**
 
-## 当前能复现到哪里
-已在本仓库独立实跑：8项RTL测试、8项O0/O2宿主测试、收发端综合与布局布线、BIT、匹配XSA、新Platform/BSP/FSBL/PMUFW、A53 ELF和BOOT打包。最终ELF四频Profile与完整BOOT载荷已核验，未改原RTL/BD/XDC、测向算法或校准参数。
+## 完整本地候选的历史验证范围
+完整本地候选曾独立实跑：8项RTL测试、8项O0/O2宿主测试、收发端综合与布局布线、BIT、匹配XSA、新Platform/BSP/FSBL/PMUFW、A53 ELF和BOOT打包。最终ELF四频Profile与完整BOOT载荷已核验，未改原RTL/BD/XDC、测向算法或校准参数。
 
-**这是离线构建复现，不是新制品板测。** 未上传、未下载FPGA、未操作SD/QSPI。具体身份、指标与未核实边界见[REPRODUCTION_STATUS.json](REPRODUCTION_STATUS.json)和[evidence/current](evidence/current)。
+**以上是完整本地候选的离线构建记录，不是本公开删减版的构建或板测结论。** 当前公开源码已发布到GitHub；本次未下载FPGA、未操作SD/QSPI。具体身份、指标与未核实边界见[REPRODUCTION_STATUS.json](REPRODUCTION_STATUS.json)和[evidence/current](evidence/current)。
 
 ## 快速开始：双击一个BAT
 1. 安装 **Vivado 2023.1**，包含 Artix-7 和 Zynq UltraScale+ 对应器件支持。

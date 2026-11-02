@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
   "repository": "https://github.com/youlong-cell/youlong-cell-dual-fpga-doa-hil",
-  "publication": "PUBLICATION_PACKAGE",
+  "publication": "PUBLISHED_TO_GITHUB",
   "scope": "LATEST_RF_HIL_ONLY",
   "withheld_files": [
     "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0.v",
