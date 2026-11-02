@@ -1,0 +1,9 @@
+{
+  "command": "cmd.exe /d /s /c \"call \"C:\\Users\\admin\\Documents\\Codex\\doa_separate_ready\\create_project.bat\" --no-pause\"",
+  "exit_code": 0,
+  "seconds": 188.4528443813324,
+  "workspace": "C:\\Users\\admin\\Documents\\Codex\\doa_separate_ready",
+  "different_calling_directory": true,
+  "requires_user_python": false,
+  "synthesis_or_implementation_run": false
+}

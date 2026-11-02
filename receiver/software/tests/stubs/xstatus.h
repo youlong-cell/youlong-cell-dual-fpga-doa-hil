@@ -1,0 +1,4 @@
+#define XST_SUCCESS 0
+#define XST_FAILURE 1
+#define XST_DEVICE_NOT_FOUND 2
+#define XST_INVALID_PARAM 15

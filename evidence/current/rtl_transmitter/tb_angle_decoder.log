@@ -1,0 +1,16 @@
+
+****** xsim v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+ANGLE_DECODER_PASS accepted=7204 rejected=69 failures=0
+$finish called at time : 7273 ns : File "E:/ALL_project/fpgatext/AXU_SOC/PL_PS/opensource_prepare_20261031/repository/transmitter/sim/uart_angle/tb_angle_decoder.sv" Line 46
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 17:25:43 2026...

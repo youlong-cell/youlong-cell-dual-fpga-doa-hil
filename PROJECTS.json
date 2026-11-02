@@ -1,0 +1,530 @@
+{
+  "transmitter": {
+    "part": "xc7a100tfgg484-2",
+    "top": "ax7103_an9767_uart_j11_top",
+    "sources": [
+      {
+        "path": "transmitter/rtl/datapath/coherent_nco.v",
+        "sha256": "5a249b9cab44ecaf2218d5fb61a1452d709156360e6518201187dcd052414b6b",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/board/hil20_key_inputs.v",
+        "sha256": "527f2bc109cf90975c2f25732be7177579d5d5aa7981b6c25e7d045019db8c78",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/config/generated/led_tables.vh",
+        "sha256": "5fe70fc24c5f5dd32781443641061218c1f28a3fec5a79cbfbf14013515ec94e",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/board/hil20_led_status.v",
+        "sha256": "9d1fc69fe5675c485e683ae7ec48bd61e7fd29b0a055857880641f78580af033",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/board/hil20_reset_release.v",
+        "sha256": "7736f36a77e8db2e13d0bd428e8e22ee6c6ee5a2e6db177c08440526bb4ac175",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/common/key_debounce.v",
+        "sha256": "0b7881073745ac457994931de1d53cba33e92e2c6c3e7af85287871294116e0f",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/config/generated/mode_select_tables.vh",
+        "sha256": "bbe9c87fb9ba9119c80744456ee0068b035e0d2083c7467b9e35c08ab1653113",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/control/mode_select.v",
+        "sha256": "25aa3ad01094ef1a4c536742317c053808dd8263076a3619b548771549e35c1f",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/control/hil20_control.sv",
+        "sha256": "d84f8b4aee651c4247e956a8c1740051d93bdb0190cdc65e0cedf7629b54fc88",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/dispatch/hil20_uart_control.sv",
+        "sha256": "b3017ac01ceef8b33357a60a964e02da5df48e944dcb02fc4ffc827ec5eb9d83",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/config/generated/mapper_reset.vh",
+        "sha256": "41439257d4516afc159ff2a427fdf11a6222a9e28176cd36e66b3d44b3911122",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/config/generated/mapper_frequency.vh",
+        "sha256": "16289ed61b2382144a7e2fa97f3fc0b1f2b8ae15ab1afe889c2e52e1eca0ee4f",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/control/hil_angle_mapper.sv",
+        "sha256": "9d7f1b60be411c1a856afe71ff2826616c52eab1144a5acbf25fb6a4ea022a5b",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/protocol/hil_ascii_parser.sv",
+        "sha256": "3e0f3c8b7b3dfaf9ca61dc5460ecd7750d6a57cde22ec5249bbc2df647cbed02",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/config/generated/decoder_presets.vh",
+        "sha256": "438133d29ad502b20af997def6e15e78a2144396ee6ac0f2d13aa26f66247822",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/config/generated/decoder_aliases.vh",
+        "sha256": "f803000e3221dfeba7216bb03a5f431fe829a5f0d8c7d01fb81bdd68053c47c0",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/config/generated/decoder_prefix.vh",
+        "sha256": "b6e14bfccc338e3e86986e6ab85e3f10d77a89825c370a4019db0c9cff545efe",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/protocol/hil_command_decode.sv",
+        "sha256": "6917fd12003316518fe13209c57359b07f5bde750c0ea69ceff1ccb348ef8abb",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/dispatch/hil_reply_fifo.sv",
+        "sha256": "ad01a446901623c1e4f353a06c2b8e26703558c8b0792fb54cade436598d47c0",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/config/generated/reply_decimal.vh",
+        "sha256": "44d69f8e62f74d34b4111f966e72e6e14a2371bdb791b07cb74f56c664eeea3a",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/config/generated/reply_presets.vh",
+        "sha256": "ddf890428e05f7cab207a6e9de2816b0587c2b3cc7628b9d290b14f7282dd3a7",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/config/generated/reply_custom_band.vh",
+        "sha256": "56077b128e6e14ed8c7ef6a84f6964f40e73ed133691b990747073bcacde3d7e",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/protocol/hil_reply_format.sv",
+        "sha256": "b6806ec0f9d72277bf348f728322a53d43566ab23c3b7bcef009dbb32f7da82c",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/dispatch/hil_reply_scheduler.sv",
+        "sha256": "439c3be139ec71c69d7c339a6c33508fc32684da3eac7e03778f7ec8bee82411",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/uart/hil_uart_link.sv",
+        "sha256": "33e8170f2155e385172b66b9d8050a6fdc92c0d4ad5cb862597c4c1dee5258ad",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/protocol/hil_uart_reply.sv",
+        "sha256": "9455bfda128a5b3eed53b394b360dbc1444c694f31785093e093cd5db7727fa1",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/uart/hil_uart_rx.sv",
+        "sha256": "cc50f416a426d46ad48356f1f48db3e248ce239c29c8289f16ea382862fec0a8",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/uart/hil_uart_tx.sv",
+        "sha256": "06cdc4f9ad2a7a30f93242cdaef00245c8ecfd9d6bd1c502c920d3ac3d79a287",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/config/uart_baud_config.vh",
+        "sha256": "ab3b61faaf9f9a71bfb8ebcc27b002d04b9188b3c8e70aee2507b84d88402148",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rtl/top/ax7103_an9767_uart_j11_top.v",
+        "sha256": "91a28b3bb0976b1cb24db5dc2006a1274247f5292dbafae143543bb85c40dcb7",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/rom/sine_lut_14bit.mem",
+        "sha256": "3cc4fd7eed2090406c108fe8562826dad9aad9102041b8744718454757c0ab42",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/config/hil_angle_phase_rom.mem",
+        "sha256": "251fef5bac2a672ffa8e936766537a093e23901c3152945069e961ce66591591",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/constraints/ax7103_an9767_no_uart.xdc",
+        "sha256": "4b10230669d120e4b6c1d77beaf5bb35e82ce7f8426cdb85890d2f25c6d4a6aa",
+        "role": "constrs_1",
+        "disabled": false
+      },
+      {
+        "path": "transmitter/constraints/uart_j11.xdc",
+        "sha256": "8133ce38a3ad63fc06fa34e7021bbf5b1b0ebc7a69ddcb48e769a4b918eab4c9",
+        "role": "constrs_1",
+        "disabled": false
+      }
+    ],
+    "include_dirs": [
+      "transmitter/config"
+    ],
+    "recreate_validation": "Vivado 2023.1 / CREATED_AND_BUILT",
+    "post_synthesis_hook": {
+      "path": "transmitter/constraints/apply_uart_j11.tcl",
+      "sha256": "76c62df438c71082485dfdab0a33d497066cd4bd924f3087d48c23e67c795970"
+    },
+    "last_verified_creation_run": "repro_tx2"
+  },
+  "receiver": {
+    "part": "xczu2cg-sfvc784-1-i",
+    "top": "top",
+    "sources": [
+      {
+        "path": "receiver/rtl/spectrum_fft_capture.v",
+        "sha256": "76fc439e0368502bd7eaf913900fbfbacc79563ad5d29916bd24d93a9a5c2869",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/spectrum_fft_prepare.v",
+        "sha256": "14313f3f17366e8e086b3fcb38a4946b5ba92a5c202d9b09ba1ff3720908e7aa",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/spectrum_fft_result_writer.v",
+        "sha256": "a85f5deb071201a667e76abac3396550064ce93ae412ad0829e0eb5c65cfbd9e",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/spectrum_fft_ctrl.v",
+        "sha256": "de4ba8f9fc5bd9df0773ba047bae09d109bf53d7742cf39800661452ac6b41c4",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/pl_mode_controller.v",
+        "sha256": "d3bb51bc1a06b6bc72acde3349ff63f2c14ba08aeac768c0288579cde085987d",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fft_result_bank_bridge.v",
+        "sha256": "cb45e02d8036ec989dac017adbec91abc8cdbdfc4799eb25beea94ee65f657e1",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fft_result_bank_owner.v",
+        "sha256": "3c30de0329b270d4c8f22c041b9e6c1abc58ea166dcc236a3dc3d8cee5fcb28d",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/sample_timebase.v",
+        "sha256": "35ae1a0e7a54db782c1f30554992e48d0df0b72653a5e330b96cbd9ed7b872b1",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fft_result_bank_system.v",
+        "sha256": "2afbf2fee21796a35b388449f5653d51f87b7c51250666754289e8c5995944e6",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/candidate_gpio_bridge.v",
+        "sha256": "7118d5eda04ee702aebe936e9ed35e38747cc492e024a4a7a1c8534081f49c5e",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/candidate_window_consumer.v",
+        "sha256": "96750468980acdb30fd48d15d98d2a0e6b20dbbcc5fd43d9cca21350eb44d947",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fft_candidate_chain.v",
+        "sha256": "4156bfaad98d6b217d58482d888940f63f49aa75318a5c9554911f7a15adf68c",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fft_strongest_valid_detector.v",
+        "sha256": "03f7c94d164c6846c5d69ef91b947fc35437face87b719d0505649e701648f86",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/sample_ring_buffer.v",
+        "sha256": "d896d24d0803f925b798d861c03d6b39f08642525f110551f1c7783629576016",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/sample_window_copy.v",
+        "sha256": "3c4e5d0dfa7e073399868682f605349b33bc2d65f7c75751d325f4f9fabe14d4",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/single_candidate_manager.v",
+        "sha256": "d331f407823913969079459a7a846fd8a78e09c52e06e3b78abd4b71da4a2c11",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_command_mailbox.sv",
+        "sha256": "717435c3f3109e6708b4372570532d51ac06e1c8243d92330692092b9de5cb5d",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_complex_correlator.sv",
+        "sha256": "c1814e37f18b948b82a38a15503a2ef4589c44089e3a482d45255fa8a744991f",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_cross_phase.sv",
+        "sha256": "f6ddfc821a9388974f09ef46350dff7a1d7fba16eb329cbbee18342b88354d85",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_doa_arcsin.sv",
+        "sha256": "2ca91c5a4573d6eef804e350a1f766e72a5de74fbedf5333205ae463298336c1",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_doa_argument.sv",
+        "sha256": "97265968a5eddddbe196798a5e6da0d63c84c44787b93d3c769bdf13b278fbae",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_doa_config.sv",
+        "sha256": "e6021b89d2943cab6907399de6ae58e2348267f616b0a1a49a984ccbfe64132d",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_doa_engine.sv",
+        "sha256": "8d6483399fc15991f20aaf68bf00c51c71673467f3ac018480b6d41d7b4585bc",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_log2_score.sv",
+        "sha256": "92bf3bbde1368dbcf95f43eba50dde2a2a2045bebf2991bac50ff54858754a41",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_log_parabola.sv",
+        "sha256": "33eb76dc465094fb12ba5cca3115b2bc53dc8c339bf386fa64d28763ba9efcc3",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_log_score.sv",
+        "sha256": "aa1fea7840c7dd574dda31b4eb831d8d9254b2ebc90f87a4118525e404702d6f",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_phase_calibration.sv",
+        "sha256": "ff3fe342db6394de9ff4a2df3c7740b6a4b85afd7e1d05dad3f250760cbf0576",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_production_bridge.sv",
+        "sha256": "fd322e4cdbdc6d305507b963a53aa52e2c99ae015a50322f90837f7c05b96ef0",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_result_abi.sv",
+        "sha256": "d8067141df170451cee9a082eae401baf89eb49abdb5202e3f11ccccd1d9505d",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_result_slot.sv",
+        "sha256": "5f6f064614d9fec28137395a976b4143572dd97a5a5b3734e0393d7d92a28707",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_result_transport.sv",
+        "sha256": "cd4744995133b970e073e6c7dc2dda0893ee4da31d9982800795a7dae87585ba",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_shared_nco.sv",
+        "sha256": "ee9aad593b4e14c4c1d35cd152d1fa2c0f02ea2c5726150feb1300bf1990ad7a",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_three_bin_estimator.sv",
+        "sha256": "8d81e8656e59b07a3839d48a220e79bf2adef8c33da0096e60ab8231c911870a",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_three_bin_interpolator.sv",
+        "sha256": "58f796a289a5192b7513a4e9ad1060264aeca64684e504d4cb2abafb38d431a5",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_unsigned_divider.sv",
+        "sha256": "aaeaf59d3ace23a304f6db836a256f5b088086f8da4e41c77167a3c36a9429ef",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_production_system.v",
+        "sha256": "c3c47290cd961f2d4fb9ccdaaa4886482c25962a6206115ef0d549ee7a2bc638",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/r2_iterative_sqrt.sv",
+        "sha256": "66f9910bba8eb0daa513a88ada722ae9d5a158ac563cb856ddfa764517d8fcc5",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/fine_doa_sqrt.v",
+        "sha256": "bbeebff9645ec1d4d7ea14e20620fcee9f7ca3f5663791423eb7672b330291d6",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/bd/design_1.bd",
+        "sha256": "ff06909ec0f80b2688fa4862779243ea0004c205c23e4beaab391540862d5e6c",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rtl/top.v",
+        "sha256": "dae5f2a8348997af65ed90a7c81d1141735b5e015373c32846d09f5d45f7a1ef",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rom/fine_hann_1024.mem",
+        "sha256": "e33bf11e4eaa7aaee53deeeea18e2f6e36639b47df3ce2aa6b445780b511c8c6",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rom/fine_hann_4096.mem",
+        "sha256": "69b8c74c8d7ad05ff28fc25633f3cd2870db7cb98e149c867293b965a321b5db",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rom/fine_nco_16384.mem",
+        "sha256": "554f4ad21785f9a2119eb7102429b9a92e0016204b5cea65d858f1b0f1d4a8b5",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rom/fine_ln_8193.mem",
+        "sha256": "e5a6c94c960d62c257264ad6cc516762aefdd92946cfd62c83a5b0e8044084cf",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rom/fine_atan_48.mem",
+        "sha256": "9ff92f38fd78d0c225306584ff96b3cc1d4962f3db83e423680aee8c55993f47",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rom/hann_1024.mem",
+        "sha256": "d1a95626bcfeaa4626b328c8cdc96ed42f54b7ad16bca3ea678c3ecd573c298e",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/rom/fine_log2_8193.mem",
+        "sha256": "ead275ef38fd85f9de5a53f4f6083d45caccb4caa13900fd3ba0a08ea53c61b2",
+        "role": "sources_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/constraints/shared_pins.xdc",
+        "sha256": "671ab05b846403cacb74e63b4d7ecd5bb9f3e87abbe8c9915b8794207f72872d",
+        "role": "constrs_1",
+        "disabled": false
+      },
+      {
+        "path": "receiver/constraints/cdc_handwritten_sync.xdc",
+        "sha256": "e109295b8fa379d321a32a91a4df764abf06c914dce89dd367d7fdce130f0bbd",
+        "role": "constrs_1",
+        "disabled": true
+      },
+      {
+        "path": "receiver/constraints/cdc_handwritten_sync_guard.tcl",
+        "sha256": "323c2035ac16d676bbd8dca5abd19741b06b926f1b7bafd7b539d743872fbd22",
+        "role": "constrs_1",
+        "disabled": false
+      }
+    ],
+    "include_dirs": [],
+    "recreate_validation": "Vivado 2023.1 / CREATED_AND_BUILT",
+    "last_verified_creation_run": "rx9"
+  }
+}

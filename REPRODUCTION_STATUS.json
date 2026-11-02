@@ -1,0 +1,176 @@
+{
+  "date": "2026-11-02",
+  "status": "PUBLIC_PARTIAL_SOURCE_NOT_REPRODUCIBLE",
+  "withheld_files": [
+    "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0.v",
+    "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0_S00_AXI.v",
+    "receiver/software/src/lscript.ld"
+  ],
+  "public_subset_build": "NOT_RUN",
+  "full_private_candidate_record": {
+    "date": "2026-11-01",
+    "scope": "LATEST_RF_HIL_ONLY",
+    "status": "OFFLINE_BUILD_CHAIN_VERIFIED",
+    "transmitter": {
+      "rtl_tests": "5/5 SIM TESTED",
+      "hardware": "BUILD VERIFIED",
+      "timing": {
+        "WNS_ns": 0.263,
+        "TNS_ns": 0.0,
+        "WHS_ns": 0.105,
+        "THS_ns": 0.0,
+        "WPWS_ns": 1.1,
+        "TPWS_ns": 0.0
+      },
+      "routed_utilization": {
+        "Slice LUTs": {
+          "used": 1447.0,
+          "available": 63400.0,
+          "percent": 2.28
+        },
+        "Slice Registers": {
+          "used": 887.0,
+          "available": 126800.0,
+          "percent": 0.7
+        },
+        "Slice": {
+          "used": 494.0,
+          "available": 15850.0,
+          "percent": 3.12
+        },
+        "Block RAM Tile": {
+          "used": 4.5,
+          "available": 135.0,
+          "percent": 3.33
+        },
+        "DSPs": {
+          "used": 2.0,
+          "available": 240.0,
+          "percent": 0.83
+        },
+        "Bonded IOB": {
+          "used": 43.0,
+          "available": 285.0,
+          "percent": 15.09
+        }
+      }
+    },
+    "receiver": {
+      "rtl_tests": "3/3 SIM TESTED",
+      "hardware": "BUILD VERIFIED",
+      "timing": {
+        "WNS_ns": 1.152,
+        "TNS_ns": 0.0,
+        "WHS_ns": 0.011,
+        "THS_ns": 0.0,
+        "WPWS_ns": 1.833,
+        "TPWS_ns": 0.0
+      },
+      "routed_utilization": {
+        "CLB LUTs": {
+          "used": 33451.0,
+          "available": 47232.0,
+          "percent": 70.82
+        },
+        "CLB Registers": {
+          "used": 48809.0,
+          "available": 94464.0,
+          "percent": 51.67
+        },
+        "CLB": {
+          "used": 7740.0,
+          "available": 8820.0,
+          "percent": 87.76
+        },
+        "Block RAM Tile": {
+          "used": 119.5,
+          "available": 150.0,
+          "percent": 79.67
+        },
+        "DSPs": {
+          "used": 102.0,
+          "available": 240.0,
+          "percent": 42.5
+        },
+        "Bonded IOB": {
+          "used": 27.0,
+          "available": 252.0,
+          "percent": 10.71
+        }
+      },
+      "phase_calibration_vectors": 2272
+    },
+    "host_tests": "8/8 HOST TESTED",
+    "platform_bsp": "BUILD VERIFIED",
+    "application": "ELF_BUILD_VERIFIED",
+    "boot": "BOOT_BUILD_AND_PAYLOAD_VERIFIED",
+    "artifacts": {
+      "transmitter_bit": {
+        "path": "build/tx_build2/release/transmitter.bit",
+        "bytes": 3825911,
+        "sha256": "9a5f118ae6f995e1528917541b80e46478f1f1309a4e8e97a748b6612a186e22"
+      },
+      "transmitter_dcp": {
+        "path": "build/tx_build2/release/routed.dcp",
+        "bytes": 1258504,
+        "sha256": "d6fce9b2b254f5984c0af52d5ca19d27af22cb30d90ea830bc5d590f38d545b2"
+      },
+      "receiver_bit": {
+        "path": "build/rx_build2/release/receiver.bit",
+        "bytes": 5046369,
+        "sha256": "629854b27779deea6d9cd8cc021e582bb8f1a7207b97a06754bcbd52e198f49c"
+      },
+      "receiver_dcp": {
+        "path": "build/rx_build2/release/routed.dcp",
+        "bytes": 45483217,
+        "sha256": "6f07e017aefaa1177a66a949f40bca23cea8a50242dc302a2a60a668a38a7b20"
+      },
+      "receiver_xsa": {
+        "path": "build/rx_build2/release/receiver_no_bit.xsa",
+        "bytes": 767147,
+        "sha256": "0f64b697002646d0d81ba18616582d6204067bd863c6b20bb3c153722e4858e4"
+      },
+      "receiver_elf": {
+        "path": "build/app1/DOA_RF_ENGINEERING.elf",
+        "bytes": 2477416,
+        "sha256": "0d91ee0c9e1c27349810ea28ba792a97aa1b422e5be7e2318b857995ff3ad489"
+      },
+      "receiver_boot": {
+        "path": "build/boot1/BOOT.bin",
+        "bytes": 6538696,
+        "sha256": "9b2864d43878c8793143e33b07bbdcf0b3cd7ceb6b9145dfd896fcaa715b15e1"
+      }
+    },
+    "profiles": [
+      15,
+      16,
+      17,
+      18
+    ],
+    "warnings_note": "docs/REPRODUCTION_NOTES.md",
+    "bias_changed": false,
+    "rtl_xdc_bd_changed": false,
+    "original_inputs_checked": 267,
+    "original_input_drift": [],
+    "board_tested": false,
+    "deployment_performed": false,
+    "public_release": "BLOCKED_PENDING_TEMPLATE_AND_LINKER_LICENSE_SCOPE",
+    "entrypoint_note": "各阶段已在独立候选实际执行；一键编排入口语法/帮助已检查，没有额外重复整套构建",
+    "implementation_flow": "project default / 6 threads; distinct from historical non-project phys_opt / 2 threads",
+    "native_bat_project_creation": {
+      "status": "HOST TESTED",
+      "entry": "create_project.bat",
+      "report": "evidence/current/bat_create/CREATE_ONLY_REPORT.md",
+      "requires_python": false,
+      "projects": [
+        "transmitter/vivado/transmitter.xpr",
+        "receiver/vivado/receiver.xpr"
+      ],
+      "synthesis_implementation_bit_boot_this_task": false,
+      "path_requirement": "短英文无空格目录",
+      "board_tested": false,
+      "preserved_bd_reset_critical_warnings": 2,
+      "new_xpr_physical_cdc_sta": "NOT_RUN"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "source": "R:/build/rx9/project/receiver.runs/impl_1/top_bus_skew_routed.rpt",
+  "sha256": "71f35bf9971451d76ec340455baf2ddfd437989d1e7a6ff08e93a2a18fbe9e6a",
+  "reported_path_entries": 92,
+  "minimum_reported_slack_ns": 5.548,
+  "violated_entries": 0,
+  "warning_note": "逐路径报告摘要，不将路径条数写成约束组数"
+}

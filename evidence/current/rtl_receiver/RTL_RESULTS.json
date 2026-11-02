@@ -1,0 +1,116 @@
+[
+  {
+    "top": "tb_sample_timebase",
+    "pass": true,
+    "required_marker": "RESULT: PASS checks=timebase_semantics_and_tick_gating",
+    "commands": [
+      {
+        "command": [
+          "E:\\Xilinx\\Vivado\\2023.1\\bin\\xvlog.bat",
+          "--sv",
+          "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\rtl\\sample_timebase.v",
+          "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\sim\\tb_sample_timebase.sv"
+        ],
+        "exit_code": 0,
+        "seconds": 2.3217766284942627
+      },
+      {
+        "command": [
+          "E:\\Xilinx\\Vivado\\2023.1\\bin\\xelab.bat",
+          "tb_sample_timebase",
+          "-s",
+          "snapshot",
+          "--debug",
+          "typical"
+        ],
+        "exit_code": 0,
+        "seconds": 3.4477481842041016
+      },
+      {
+        "command": [
+          "E:\\Xilinx\\Vivado\\2023.1\\bin\\xsim.bat",
+          "snapshot",
+          "-runall"
+        ],
+        "exit_code": 0,
+        "seconds": 5.108590126037598
+      }
+    ]
+  },
+  {
+    "top": "tb_fine_result_slot",
+    "pass": true,
+    "required_marker": "RESULT: PASS fine_result_slot",
+    "commands": [
+      {
+        "command": [
+          "E:\\Xilinx\\Vivado\\2023.1\\bin\\xvlog.bat",
+          "--sv",
+          "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\rtl\\fine_result_slot.sv",
+          "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\sim\\tb_fine_result_slot.sv"
+        ],
+        "exit_code": 0,
+        "seconds": 1.4220309257507324
+      },
+      {
+        "command": [
+          "E:\\Xilinx\\Vivado\\2023.1\\bin\\xelab.bat",
+          "tb_fine_result_slot",
+          "-s",
+          "snapshot",
+          "--debug",
+          "typical"
+        ],
+        "exit_code": 0,
+        "seconds": 4.0854339599609375
+      },
+      {
+        "command": [
+          "E:\\Xilinx\\Vivado\\2023.1\\bin\\xsim.bat",
+          "snapshot",
+          "-runall"
+        ],
+        "exit_code": 0,
+        "seconds": 15.244237184524536
+      }
+    ]
+  },
+  {
+    "top": "tb_fine_phase_calibration",
+    "pass": true,
+    "required_marker": "RESULT: PASS calibration",
+    "commands": [
+      {
+        "command": [
+          "E:\\Xilinx\\Vivado\\2023.1\\bin\\xvlog.bat",
+          "--sv",
+          "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\rtl\\fine_phase_calibration.sv",
+          "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\sim\\tb_fine_phase_calibration.sv"
+        ],
+        "exit_code": 0,
+        "seconds": 2.6490302085876465
+      },
+      {
+        "command": [
+          "E:\\Xilinx\\Vivado\\2023.1\\bin\\xelab.bat",
+          "tb_fine_phase_calibration",
+          "-s",
+          "snapshot",
+          "--debug",
+          "typical"
+        ],
+        "exit_code": 0,
+        "seconds": 5.074194669723511
+      },
+      {
+        "command": [
+          "E:\\Xilinx\\Vivado\\2023.1\\bin\\xsim.bat",
+          "snapshot",
+          "-runall"
+        ],
+        "exit_code": 0,
+        "seconds": 5.6605329513549805
+      }
+    ]
+  }
+]

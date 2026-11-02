@@ -1,0 +1,18 @@
+{
+  "integrity": "PASS",
+  "history_paths": [],
+  "files_checked": 193,
+  "drift": [],
+  "missing_external": [],
+  "wrong_external": [],
+  "unexpected_artifacts": [],
+  "public_release": "BLOCKED",
+  "blockers": [
+    "模板/链接脚本许可范围待确认"
+  ],
+  "verification_limits": [
+    "实际构建状态见REPRODUCTION_STATUS.json",
+    "新制品未上板"
+  ],
+  "board_verified": false
+}

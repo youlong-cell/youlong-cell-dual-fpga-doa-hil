@@ -1,0 +1,1341 @@
+{
+  "scope": "当前启用收发端的复制源码、配置和必要测试；不包含旧版本对照/实验结果",
+  "files": [
+    {
+      "path": "transmitter/rtl/datapath/coherent_nco.v",
+      "sha256": "5a249b9cab44ecaf2218d5fb61a1452d709156360e6518201187dcd052414b6b",
+      "bytes": 8388,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/board/hil20_key_inputs.v",
+      "sha256": "527f2bc109cf90975c2f25732be7177579d5d5aa7981b6c25e7d045019db8c78",
+      "bytes": 887,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/config/generated/led_tables.vh",
+      "sha256": "5fe70fc24c5f5dd32781443641061218c1f28a3fec5a79cbfbf14013515ec94e",
+      "bytes": 729,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/board/hil20_led_status.v",
+      "sha256": "9d1fc69fe5675c485e683ae7ec48bd61e7fd29b0a055857880641f78580af033",
+      "bytes": 1322,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/board/hil20_reset_release.v",
+      "sha256": "7736f36a77e8db2e13d0bd428e8e22ee6c6ee5a2e6db177c08440526bb4ac175",
+      "bytes": 491,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/common/key_debounce.v",
+      "sha256": "0b7881073745ac457994931de1d53cba33e92e2c6c3e7af85287871294116e0f",
+      "bytes": 5914,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/config/generated/mode_select_tables.vh",
+      "sha256": "bbe9c87fb9ba9119c80744456ee0068b035e0d2083c7467b9e35c08ab1653113",
+      "bytes": 2965,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/control/mode_select.v",
+      "sha256": "25aa3ad01094ef1a4c536742317c053808dd8263076a3619b548771549e35c1f",
+      "bytes": 5207,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/control/hil20_control.sv",
+      "sha256": "d84f8b4aee651c4247e956a8c1740051d93bdb0190cdc65e0cedf7629b54fc88",
+      "bytes": 6243,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/dispatch/hil20_uart_control.sv",
+      "sha256": "b3017ac01ceef8b33357a60a964e02da5df48e944dcb02fc4ffc827ec5eb9d83",
+      "bytes": 4904,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/config/generated/mapper_reset.vh",
+      "sha256": "41439257d4516afc159ff2a427fdf11a6222a9e28176cd36e66b3d44b3911122",
+      "bytes": 234,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/config/generated/mapper_frequency.vh",
+      "sha256": "16289ed61b2382144a7e2fa97f3fc0b1f2b8ae15ab1afe889c2e52e1eca0ee4f",
+      "bytes": 362,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/control/hil_angle_mapper.sv",
+      "sha256": "9d7f1b60be411c1a856afe71ff2826616c52eab1144a5acbf25fb6a4ea022a5b",
+      "bytes": 1487,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/protocol/hil_ascii_parser.sv",
+      "sha256": "3e0f3c8b7b3dfaf9ca61dc5460ecd7750d6a57cde22ec5249bbc2df647cbed02",
+      "bytes": 2775,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/config/generated/decoder_presets.vh",
+      "sha256": "438133d29ad502b20af997def6e15e78a2144396ee6ac0f2d13aa26f66247822",
+      "bytes": 864,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/config/generated/decoder_aliases.vh",
+      "sha256": "f803000e3221dfeba7216bb03a5f431fe829a5f0d8c7d01fb81bdd68053c47c0",
+      "bytes": 1422,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/config/generated/decoder_prefix.vh",
+      "sha256": "b6e14bfccc338e3e86986e6ab85e3f10d77a89825c370a4019db0c9cff545efe",
+      "bytes": 838,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/protocol/hil_command_decode.sv",
+      "sha256": "6917fd12003316518fe13209c57359b07f5bde750c0ea69ceff1ccb348ef8abb",
+      "bytes": 4202,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/dispatch/hil_reply_fifo.sv",
+      "sha256": "ad01a446901623c1e4f353a06c2b8e26703558c8b0792fb54cade436598d47c0",
+      "bytes": 1087,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/config/generated/reply_decimal.vh",
+      "sha256": "44d69f8e62f74d34b4111f966e72e6e14a2371bdb791b07cb74f56c664eeea3a",
+      "bytes": 47386,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/config/generated/reply_presets.vh",
+      "sha256": "ddf890428e05f7cab207a6e9de2816b0587c2b3cc7628b9d290b14f7282dd3a7",
+      "bytes": 729,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/config/generated/reply_custom_band.vh",
+      "sha256": "56077b128e6e14ed8c7ef6a84f6964f40e73ed133691b990747073bcacde3d7e",
+      "bytes": 269,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/protocol/hil_reply_format.sv",
+      "sha256": "b6806ec0f9d72277bf348f728322a53d43566ab23c3b7bcef009dbb32f7da82c",
+      "bytes": 2834,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/dispatch/hil_reply_scheduler.sv",
+      "sha256": "439c3be139ec71c69d7c339a6c33508fc32684da3eac7e03778f7ec8bee82411",
+      "bytes": 4508,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/uart/hil_uart_link.sv",
+      "sha256": "33e8170f2155e385172b66b9d8050a6fdc92c0d4ad5cb862597c4c1dee5258ad",
+      "bytes": 548,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/protocol/hil_uart_reply.sv",
+      "sha256": "9455bfda128a5b3eed53b394b360dbc1444c694f31785093e093cd5db7727fa1",
+      "bytes": 1265,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/uart/hil_uart_rx.sv",
+      "sha256": "cc50f416a426d46ad48356f1f48db3e248ce239c29c8289f16ea382862fec0a8",
+      "bytes": 2075,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/uart/hil_uart_tx.sv",
+      "sha256": "06cdc4f9ad2a7a30f93242cdaef00245c8ecfd9d6bd1c502c920d3ac3d79a287",
+      "bytes": 932,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/config/uart_baud_config.vh",
+      "sha256": "ab3b61faaf9f9a71bfb8ebcc27b002d04b9188b3c8e70aee2507b84d88402148",
+      "bytes": 443,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rtl/top/ax7103_an9767_uart_j11_top.v",
+      "sha256": "91a28b3bb0976b1cb24db5dc2006a1274247f5292dbafae143543bb85c40dcb7",
+      "bytes": 7625,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/rom/sine_lut_14bit.mem",
+      "sha256": "3cc4fd7eed2090406c108fe8562826dad9aad9102041b8744718454757c0ab42",
+      "bytes": 6144,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/config/hil_angle_phase_rom.mem",
+      "sha256": "251fef5bac2a672ffa8e936766537a093e23901c3152945069e961ce66591591",
+      "bytes": 40960,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/constraints/ax7103_an9767_no_uart.xdc",
+      "sha256": "4b10230669d120e4b6c1d77beaf5bb35e82ce7f8426cdb85890d2f25c6d4a6aa",
+      "bytes": 5869,
+      "role": "constrs_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/constraints/uart_j11.xdc",
+      "sha256": "8133ce38a3ad63fc06fa34e7021bbf5b1b0ebc7a69ddcb48e769a4b918eab4c9",
+      "bytes": 423,
+      "role": "constrs_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/spectrum_fft_capture.v",
+      "sha256": "76fc439e0368502bd7eaf913900fbfbacc79563ad5d29916bd24d93a9a5c2869",
+      "bytes": 1974,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/spectrum_fft_prepare.v",
+      "sha256": "14313f3f17366e8e086b3fcb38a4946b5ba92a5c202d9b09ba1ff3720908e7aa",
+      "bytes": 772,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/spectrum_fft_result_writer.v",
+      "sha256": "a85f5deb071201a667e76abac3396550064ce93ae412ad0829e0eb5c65cfbd9e",
+      "bytes": 1121,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/spectrum_fft_ctrl.v",
+      "sha256": "de4ba8f9fc5bd9df0773ba047bae09d109bf53d7742cf39800661452ac6b41c4",
+      "bytes": 22111,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/pl_mode_controller.v",
+      "sha256": "d3bb51bc1a06b6bc72acde3349ff63f2c14ba08aeac768c0288579cde085987d",
+      "bytes": 3103,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fft_result_bank_bridge.v",
+      "sha256": "cb45e02d8036ec989dac017adbec91abc8cdbdfc4799eb25beea94ee65f657e1",
+      "bytes": 13109,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fft_result_bank_owner.v",
+      "sha256": "3c30de0329b270d4c8f22c041b9e6c1abc58ea166dcc236a3dc3d8cee5fcb28d",
+      "bytes": 10634,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/sample_timebase.v",
+      "sha256": "35ae1a0e7a54db782c1f30554992e48d0df0b72653a5e330b96cbd9ed7b872b1",
+      "bytes": 3805,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fft_result_bank_system.v",
+      "sha256": "2afbf2fee21796a35b388449f5653d51f87b7c51250666754289e8c5995944e6",
+      "bytes": 5098,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/candidate_gpio_bridge.v",
+      "sha256": "7118d5eda04ee702aebe936e9ed35e38747cc492e024a4a7a1c8534081f49c5e",
+      "bytes": 29121,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/candidate_window_consumer.v",
+      "sha256": "96750468980acdb30fd48d15d98d2a0e6b20dbbcc5fd43d9cca21350eb44d947",
+      "bytes": 6880,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fft_candidate_chain.v",
+      "sha256": "4156bfaad98d6b217d58482d888940f63f49aa75318a5c9554911f7a15adf68c",
+      "bytes": 19673,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fft_strongest_valid_detector.v",
+      "sha256": "03f7c94d164c6846c5d69ef91b947fc35437face87b719d0505649e701648f86",
+      "bytes": 10970,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/sample_ring_buffer.v",
+      "sha256": "d896d24d0803f925b798d861c03d6b39f08642525f110551f1c7783629576016",
+      "bytes": 7109,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/sample_window_copy.v",
+      "sha256": "3c4e5d0dfa7e073399868682f605349b33bc2d65f7c75751d325f4f9fabe14d4",
+      "bytes": 14485,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/single_candidate_manager.v",
+      "sha256": "d331f407823913969079459a7a846fd8a78e09c52e06e3b78abd4b71da4a2c11",
+      "bytes": 16623,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_command_mailbox.sv",
+      "sha256": "717435c3f3109e6708b4372570532d51ac06e1c8243d92330692092b9de5cb5d",
+      "bytes": 2888,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_complex_correlator.sv",
+      "sha256": "c1814e37f18b948b82a38a15503a2ef4589c44089e3a482d45255fa8a744991f",
+      "bytes": 13022,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_cross_phase.sv",
+      "sha256": "f6ddfc821a9388974f09ef46350dff7a1d7fba16eb329cbbee18342b88354d85",
+      "bytes": 13487,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_doa_arcsin.sv",
+      "sha256": "2ca91c5a4573d6eef804e350a1f766e72a5de74fbedf5333205ae463298336c1",
+      "bytes": 8885,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_doa_argument.sv",
+      "sha256": "97265968a5eddddbe196798a5e6da0d63c84c44787b93d3c769bdf13b278fbae",
+      "bytes": 9689,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_doa_config.sv",
+      "sha256": "e6021b89d2943cab6907399de6ae58e2348267f616b0a1a49a984ccbfe64132d",
+      "bytes": 3021,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_doa_engine.sv",
+      "sha256": "8d6483399fc15991f20aaf68bf00c51c71673467f3ac018480b6d41d7b4585bc",
+      "bytes": 33461,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_log2_score.sv",
+      "sha256": "92bf3bbde1368dbcf95f43eba50dde2a2a2045bebf2991bac50ff54858754a41",
+      "bytes": 3149,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_log_parabola.sv",
+      "sha256": "33eb76dc465094fb12ba5cca3115b2bc53dc8c339bf386fa64d28763ba9efcc3",
+      "bytes": 6432,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_log_score.sv",
+      "sha256": "aa1fea7840c7dd574dda31b4eb831d8d9254b2ebc90f87a4118525e404702d6f",
+      "bytes": 2633,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_phase_calibration.sv",
+      "sha256": "ff3fe342db6394de9ff4a2df3c7740b6a4b85afd7e1d05dad3f250760cbf0576",
+      "bytes": 8838,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_production_bridge.sv",
+      "sha256": "fd322e4cdbdc6d305507b963a53aa52e2c99ae015a50322f90837f7c05b96ef0",
+      "bytes": 20717,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_result_abi.sv",
+      "sha256": "d8067141df170451cee9a082eae401baf89eb49abdb5202e3f11ccccd1d9505d",
+      "bytes": 5853,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_result_slot.sv",
+      "sha256": "5f6f064614d9fec28137395a976b4143572dd97a5a5b3734e0393d7d92a28707",
+      "bytes": 3314,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_result_transport.sv",
+      "sha256": "cd4744995133b970e073e6c7dc2dda0893ee4da31d9982800795a7dae87585ba",
+      "bytes": 3695,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_shared_nco.sv",
+      "sha256": "ee9aad593b4e14c4c1d35cd152d1fa2c0f02ea2c5726150feb1300bf1990ad7a",
+      "bytes": 2375,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_three_bin_estimator.sv",
+      "sha256": "8d81e8656e59b07a3839d48a220e79bf2adef8c33da0096e60ab8231c911870a",
+      "bytes": 15290,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_three_bin_interpolator.sv",
+      "sha256": "58f796a289a5192b7513a4e9ad1060264aeca64684e504d4cb2abafb38d431a5",
+      "bytes": 8656,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_unsigned_divider.sv",
+      "sha256": "aaeaf59d3ace23a304f6db836a256f5b088086f8da4e41c77167a3c36a9429ef",
+      "bytes": 1799,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_production_system.v",
+      "sha256": "c3c47290cd961f2d4fb9ccdaaa4886482c25962a6206115ef0d549ee7a2bc638",
+      "bytes": 18041,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/r2_iterative_sqrt.sv",
+      "sha256": "66f9910bba8eb0daa513a88ada722ae9d5a158ac563cb856ddfa764517d8fcc5",
+      "bytes": 1933,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/fine_doa_sqrt.v",
+      "sha256": "bbeebff9645ec1d4d7ea14e20620fcee9f7ca3f5663791423eb7672b330291d6",
+      "bytes": 2014,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/bd/design_1.bd",
+      "sha256": "ff06909ec0f80b2688fa4862779243ea0004c205c23e4beaab391540862d5e6c",
+      "bytes": 260091,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rtl/top.v",
+      "sha256": "dae5f2a8348997af65ed90a7c81d1141735b5e015373c32846d09f5d45f7a1ef",
+      "bytes": 2948,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rom/fine_hann_1024.mem",
+      "sha256": "e33bf11e4eaa7aaee53deeeea18e2f6e36639b47df3ce2aa6b445780b511c8c6",
+      "bytes": 8192,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rom/fine_hann_4096.mem",
+      "sha256": "69b8c74c8d7ad05ff28fc25633f3cd2870db7cb98e149c867293b965a321b5db",
+      "bytes": 32768,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rom/fine_nco_16384.mem",
+      "sha256": "554f4ad21785f9a2119eb7102429b9a92e0016204b5cea65d858f1b0f1d4a8b5",
+      "bytes": 212992,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rom/fine_ln_8193.mem",
+      "sha256": "e5a6c94c960d62c257264ad6cc516762aefdd92946cfd62c83a5b0e8044084cf",
+      "bytes": 81930,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rom/fine_atan_48.mem",
+      "sha256": "9ff92f38fd78d0c225306584ff96b3cc1d4962f3db83e423680aee8c55993f47",
+      "bytes": 816,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rom/hann_1024.mem",
+      "sha256": "d1a95626bcfeaa4626b328c8cdc96ed42f54b7ad16bca3ea678c3ecd573c298e",
+      "bytes": 6144,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/rom/fine_log2_8193.mem",
+      "sha256": "ead275ef38fd85f9de5a53f4f6083d45caccb4caa13900fd3ba0a08ea53c61b2",
+      "bytes": 81930,
+      "role": "sources_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/constraints/shared_pins.xdc",
+      "sha256": "671ab05b846403cacb74e63b4d7ecd5bb9f3e87abbe8c9915b8794207f72872d",
+      "bytes": 7881,
+      "role": "constrs_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/constraints/cdc_handwritten_sync.xdc",
+      "sha256": "e109295b8fa379d321a32a91a4df764abf06c914dce89dd367d7fdce130f0bbd",
+      "bytes": 1585,
+      "role": "constrs_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/constraints/cdc_handwritten_sync_guard.tcl",
+      "sha256": "323c2035ac16d676bbd8dca5abd19741b06b926f1b7bafd7b539d743872fbd22",
+      "bytes": 6027,
+      "role": "constrs_1",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/ip/dac_pll/dac_pll.xci",
+      "sha256": "a2759a5469f53c3431a8ebab24d5897658d07c19cc9f914c7601676ff560f90d",
+      "bytes": 68019,
+      "role": "IP_CONFIGURATION",
+      "license_classification": "IP_CONFIGURATION"
+    },
+    {
+      "path": "transmitter/config/hil_mode_catalog.json",
+      "sha256": "59f0c3eec4785564978f070366839a669919ff61a2d6be23a48692e38fccd455",
+      "bytes": 2763,
+      "role": "MODE_DEFINITION",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/scripts/generate_mode_catalog.py",
+      "sha256": "2e97373997e8ac0acfdd53b29515b4f59fb4971a2f5483ae7ce8e5ac536663f4",
+      "bytes": 10153,
+      "role": "GENERATOR",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/scripts/generate_angle_rom.py",
+      "sha256": "17458c3ce92bf1148dae6a8f889474951db94cd0a655054d9421fe86bfd9b3b0",
+      "bytes": 2499,
+      "role": "GENERATOR",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/sim/uart_angle/angle_golden_vectors.txt",
+      "sha256": "61d52ab6d5e4df9789cb58874c7604677e3207484f68132efa3a6872ef401e4d",
+      "bytes": 115264,
+      "role": "TEST_SOURCE_EXISTING_NOT_RERUN",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/sim/uart_angle/tb_angle_decoder.sv",
+      "sha256": "9ef5b8877d864252e6b47ad363cee0415f2624993172054e8c7536dc52b675fa",
+      "bytes": 2901,
+      "role": "TEST_SOURCE_EXISTING_NOT_RERUN",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/sim/uart_angle/tb_angle_mapper.sv",
+      "sha256": "1697a21c9862371407b1786aa22de1e32995eebbc7438ee8b013945f3ef4fcff",
+      "bytes": 2017,
+      "role": "TEST_SOURCE_EXISTING_NOT_RERUN",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/sim/uart_angle/tb_hil20_any_angle.sv",
+      "sha256": "006166fa46b3b611e0465f06ff1e1425097dd7677998ad5e7d8589f4b19eceef",
+      "bytes": 12895,
+      "role": "TEST_SOURCE_EXISTING_NOT_RERUN",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/sim/current/tb_hil20_baud.sv",
+      "sha256": "e784dd50b8513f90e32b557060213d6d20f3a526b5dc78e82b2ac01092272e28",
+      "bytes": 2043,
+      "role": "TEST_SOURCE_EXISTING_NOT_RERUN",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "transmitter/sim/current/tb_reply_fifo.sv",
+      "sha256": "a055fcb0c5c707ec3af53fe29352cb07ccbde842b5ac73230ca3e0570656e0c0",
+      "bytes": 2396,
+      "role": "TEST_SOURCE_EXISTING_NOT_RERUN",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/ip_repo/ad9238_sample_1.1/component.xml",
+      "sha256": "1042c65544acdbc14aeb76e84ac98bba0619d247a4df7ac074b1e1c1ffda41d9",
+      "bytes": 50529,
+      "role": "CUSTOM_IP_DEPENDENCY",
+      "license_classification": "IP_CONFIGURATION"
+    },
+    {
+      "path": "receiver/ip_repo/ad9238_sample_1.1/bd/bd.tcl",
+      "sha256": "1c84726f85b384b436e268025ceca83ffa845ba278ff1acf1650a58ebd373fc6",
+      "bytes": 7835,
+      "role": "CUSTOM_IP_DEPENDENCY",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/ip_repo/ad9238_sample_1.1/src/ad.xdc",
+      "sha256": "08c746c5fc930d5d3a8eddabc76f4b8c37b3c337673cb3f1c7d391148d3dade4",
+      "bytes": 513,
+      "role": "CUSTOM_IP_DEPENDENCY",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/ip_repo/ad9238_sample_1.1/src/ad9238_sample.v",
+      "sha256": "0e7f32ffd45084f51fe54511250ff732f970ca9979cbf17c77854bf2f9c119b2",
+      "bytes": 9437,
+      "role": "CUSTOM_IP_DEPENDENCY",
+      "license_classification": "ALINX_NOTICE_PRESENT"
+    },
+    {
+      "path": "receiver/ip_repo/ad9238_sample_1.1/xgui/ad9238_sample_v1_0.tcl",
+      "sha256": "d3bdad2581bf5be90effcaa8ec53fc77d58c47531b269aa830f46158abdc4866",
+      "bytes": 2657,
+      "role": "CUSTOM_IP_DEPENDENCY",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/config/calibration_profiles.json",
+      "sha256": "d7bef884c59ed4443dc7179fe31d83f15a55891418da472bb1d344fb3d414ea2",
+      "bytes": 1757,
+      "role": "CURRENT_PROFILE_UNCHANGED",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/config/geometry_profile.json",
+      "sha256": "24919919d55511979a796eea8797d958e7a93bd84a6aec94a8ad98217cd1dbb4",
+      "bytes": 156,
+      "role": "CURRENT_PROFILE_UNCHANGED",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/debug_main.c",
+      "sha256": "efb0286653bf08b9a91ea20cebe87e5a446e52c29635a75a9cf8a5f173628bbd",
+      "bytes": 43427,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/debug_ui.c",
+      "sha256": "29a41b57f2e7fe6d71261cef4bc5bbfa3d0bc2706e636450dbc71a9862c9c085",
+      "bytes": 15942,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/debug_pages.c",
+      "sha256": "c2614e25e41d2376502440cf53f70edb6fe5927db4fed23f52668afd22657db0",
+      "bytes": 530,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/debug_input.c",
+      "sha256": "fb4f10d14da61760a155888722c02a56ce4355f6e5efc9efe095ef918b498031",
+      "bytes": 4339,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/auto_profile.c",
+      "sha256": "b4f2cb98f508e7e78e111abd9fa9e92959f6c11667e35b2db8b3983a6be499bf",
+      "bytes": 6255,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/spectrum_display_filter.c",
+      "sha256": "f2e3d3a1992e1bd9ec4271aa39372036af1b38995e4729078640e8ade5ca322d",
+      "bytes": 6390,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/service_profile.c",
+      "sha256": "19dc4d864950408c4714e7b696f29ac89c3db216b5e60bd16059a8a3ed751236",
+      "bytes": 6215,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/debug_mmio.c",
+      "sha256": "ef6dd56accf6045735023f390861be1de0350a0486e847f0701dda7adb6bc1ae",
+      "bytes": 4234,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/display_ctrl.c",
+      "sha256": "814f6d3ef6e93d3f920deb228e6c9daeac59adf29bd416cc12d470ecfd0fd158",
+      "bytes": 21251,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/lcd_doa.c",
+      "sha256": "5198d06c113090fb83720763d7c65b4d6479b728286f6c4c8c47df1888fbeca9",
+      "bytes": 12560,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/spectrum_pl.c",
+      "sha256": "2ad2c967391c24eeb6872f1ed66d20e30d818b9002a6107a488c65541e8ccb83",
+      "bytes": 24550,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/fine_production_ps.c",
+      "sha256": "99f4c7edf3ff431af277f064d3d7c6310946e67bb61524f5728a32b7722acef1",
+      "bytes": 14815,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/fine_production_decode.c",
+      "sha256": "93682b99d040c81e16a25e29c0ea79f8118eaef90d5715a1d2e4885bb3dbc053",
+      "bytes": 1028,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/doa_result_publish.c",
+      "sha256": "b89891b5bcfa581e3e3c038a53dd853a8d446bc16c9916ec13f24da98d08dc22",
+      "bytes": 10900,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/epoch_journal.c",
+      "sha256": "ef7187eea19429cac5970af41556da8eb7a9a2731fbc4414c960333718f2aa95",
+      "bytes": 9197,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/engineering_session.c",
+      "sha256": "252294cf21fd082a87ce49889b5e94cbaeee7d188177be0508173776867a7ce4",
+      "bytes": 2155,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/hil_profiles.c",
+      "sha256": "82aa0dfb22536ea3c556ff3ab8b868a66e21f89207cc1f4bde24d924fd3f07a0",
+      "bytes": 2586,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/drivers/axidma_v9_16/xaxidma.c",
+      "sha256": "db1a355cd38e5f2fe56a8fe499454e07964dd2b969c1f79edd3ffbb60cee947b",
+      "bytes": 26310,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dppsu_v1_6/xdppsu.c",
+      "sha256": "2b37ea31cf1d8c7118004df2fbfcb1ffc7e471307dead31d0bb7c1565bb0d75e",
+      "bytes": 73663,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dpdma_v1_4/xdpdma.c",
+      "sha256": "000f60c4c6e4ff9b5797f3934794875b7e17f7e767606e3b819754858bcaf6cf",
+      "bytes": 30818,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dpdma_v1_4/xdpdma_intr.c",
+      "sha256": "9d4b8bd492c41ebdaf9ebf2e974187bde3d3e464fff979f3c918bdfaf4dc9020",
+      "bytes": 4614,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/src/doa_ui_ema.c",
+      "sha256": "548e4296cadd6ef1683d3f328cffb2da7a7245e86ee399e332dc810da28c03d2",
+      "bytes": 4503,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/dp_training_step.c",
+      "sha256": "f903b84a71498300dfc2983a08df9be01dbb780bda5c4fe4206bd2b4319ffcdc",
+      "bytes": 2868,
+      "role": "ACTIVE_PS_COMPILATION_UNIT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/adc_g2_metrics.h",
+      "sha256": "15fdd6c212d09a23ae1e48b14aaed1d0c7de3e1aa4f19c0a14d56ab3ceb08dbd",
+      "bytes": 1446,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/auto_profile.h",
+      "sha256": "751257da8f51db5b8ee8ceb48e946e488c7ed357c2a46be9248a1f762a7ca5a1",
+      "bytes": 1463,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/debug_input.h",
+      "sha256": "d6493b4cdfb89c807f61ba25373ac316840cda9ebb7600193774f8a5a7bb82b0",
+      "bytes": 1504,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/debug_mmio.h",
+      "sha256": "8a75f9868dc38da59e8359c3623d59b173cbb9a1f3f700c525225b18470de8ad",
+      "bytes": 282,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/debug_ui.h",
+      "sha256": "31a3d883aba4310e176f9a83a6d8fdc84edbefa9cf6d8a034d1423095cb444a3",
+      "bytes": 2365,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/display_ctrl.h",
+      "sha256": "a772617faad439b12472b898374e152796f4f4f860eb868025660bb879012dad",
+      "bytes": 3265,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/display_draw_safe.h",
+      "sha256": "66ec8a62346f359f99049e23a3f44475fad964e08fdad9a0130815ccf18ebc2b",
+      "bytes": 8032,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/doa_result_publish.h",
+      "sha256": "9e7c46a893f1d97606e2b5f395b2c80168c07e6c55996cc8ef856fa16aa86d76",
+      "bytes": 3395,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/doa_ui_ema.h",
+      "sha256": "e8650093df69d3bf06425db5d68e78098814e636e1db059089304313e86c1eea",
+      "bytes": 1591,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/dp_training_step.h",
+      "sha256": "24efbfacddc7c9b8cc243391733ead90f3964e079ddd55046745aaeb03c744c6",
+      "bytes": 1440,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/engineering_session.h",
+      "sha256": "e5ec6411465d79a59ff16fe0e71689b4c6b99466a6ef23e588ab61644d63784d",
+      "bytes": 549,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/epoch_journal.h",
+      "sha256": "f167d9d303881a6a09f07d6086ea8707393eb3dfb1f9bf483d46826a26a36ca7",
+      "bytes": 2461,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/fine_production_ps.h",
+      "sha256": "9803057d73a35a39890f4e6efddf43f926cd540cf1346bb51efa827c295cfd1e",
+      "bytes": 5494,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/font12x12.h",
+      "sha256": "373d7fb12cc08885d2da2341bcbbf925cc33518c9d51d802924634ed2b980673",
+      "bytes": 749,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/guard_io.h",
+      "sha256": "4e6c8b4f389da614af3d4ba028e0c0648cc0d9421d0ff68dc1692376dd7311b9",
+      "bytes": 485,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/hil_profiles.h",
+      "sha256": "c529e47650a7e8aee117539aec6250879d2c672d9925e51870dea999506757db",
+      "bytes": 971,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/lcd_doa.h",
+      "sha256": "8d49484b6690135cdeda1804029ade12258bf07f6717485595bb40194cd226ad",
+      "bytes": 1583,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/lpd_slcr.h",
+      "sha256": "9b8c8a226aba5a4addd7e3d4f999116f7e15f88a114603c05bfe45bbdcb7fa96",
+      "bytes": 268504,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/src/service_profile.h",
+      "sha256": "b95cc18b957edfd378f982521382266878fd0dc6dc1f865d3ee45b4d0195fc25",
+      "bytes": 3013,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/spectrum.h",
+      "sha256": "2ce087afb8bed158c47d8a22dac6ea1f857f8d9fb2ee8f49a8329bc9073b1148",
+      "bytes": 2516,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/spectrum_display_filter.h",
+      "sha256": "7e4b814c0c66939fffeba3e929a10de8b1bce6f950d304aa3f9a5bae1bafcd4e",
+      "bytes": 2468,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/spectrum_pl.h",
+      "sha256": "8b086040f4e2073ae01bc8aec2a474d35a94bfa1945ac7a96dc993dfe972214f",
+      "bytes": 4416,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/ui1920.h",
+      "sha256": "82081091ee41f719c2b95241b75ac5b00d97f76464b7bea22860381b5377a4e9",
+      "bytes": 785,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/ui_alpha_font.h",
+      "sha256": "204c3e7931d0e974252d18f3dc596cb7e6e28823508a2c7663214085b0e1aeb3",
+      "bytes": 3829,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/ui_zh.h",
+      "sha256": "64d5ce9eae1725deebc58831e6a93ae5911fe9f491e759cc0705797b5109542b",
+      "bytes": 5134,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/hardware/board_config.h",
+      "sha256": "824ab4167a6e13bee0c1b69b8b57a2d7515fd41473858234af540313babf6fe1",
+      "bytes": 2268,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/hardware/epoch_partition.h",
+      "sha256": "37c87186aaddfceded32c407688cab6f3adc5ac036b845c3b573df70f80a1ee2",
+      "bytes": 1863,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/hardware/epoch_qspi_backend.h",
+      "sha256": "05c6ba3cceb21c8eb4a78e58e2f3e0c9c31087b01fc1a67359906aa04b77c8da",
+      "bytes": 2653,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/hardware/epoch_qspi_probe.h",
+      "sha256": "c7bbeb83f838330ec355690407ecf253f1f28891d7ae5b42be4c8c366880e35b",
+      "bytes": 457,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/hardware/epoch_qspi_xilinx.h",
+      "sha256": "cbb15640b2818c42347da9a8d8c6235af5b0d4f029d226f2b5190a91c35e251e",
+      "bytes": 1254,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/hardware/hw_bridge.h",
+      "sha256": "254a8b6eff91ed1de3d2ae915b5be58f00885e72afcd73ecd17a0020f3bdf77a",
+      "bytes": 5517,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/hardware/result_identity.h",
+      "sha256": "757e4058ad18bed829b34ab2daad60be19dcabf74f5aca2fb1737b3245e16d43",
+      "bytes": 2201,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/hardware/sample_clock.h",
+      "sha256": "0500bc36c6f6d6af261054bb1b790fdfe906e1be1f721413dfcc7162d424722a",
+      "bytes": 767,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/hil_profile_generated.h",
+      "sha256": "7434608d16d3a2e891e1c7a7833e13c095eefed2e09b4bdc4d5df689a5ea1fa8",
+      "bytes": 4078,
+      "role": "CURRENT_GENERATED_PROFILE_HEADER",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/src/receiver_build_identity.c",
+      "sha256": "efac29c6bdb2c61f8fb1e6a17f55325680f107cb40402ff316b8e44d827ea26a",
+      "bytes": 189,
+      "role": "BUILD_IDENTITY_UNCHANGED",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    },
+    {
+      "path": "receiver/software/drivers/axidma_v9_16/xaxidma.h",
+      "sha256": "bec38f328d90c98d9e6a2116acaf504e5e4560c17aa0e9f645de4a28d428a139",
+      "bytes": 29477,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/axidma_v9_16/xaxidma_bd.c",
+      "sha256": "03a0148e986f7eebdf060849a2f8442466a5e3db919965a3b02220a14e8faa97",
+      "bytes": 10409,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/axidma_v9_16/xaxidma_bd.h",
+      "sha256": "63dab96e7e87f26b65cc501c59d30f32ba818fcaeaf749587ca6b62f90095a09",
+      "bytes": 21532,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/axidma_v9_16/xaxidma_bdring.c",
+      "sha256": "8a8f6fceb06a9c4670acfb075f5e19d88e8e6ac63a10b6b3dae4c17bf85aa21b",
+      "bytes": 52047,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/axidma_v9_16/xaxidma_bdring.h",
+      "sha256": "ada872b3793cd5d83798aa603b31a6df654328e818141831b0235df072af6313",
+      "bytes": 21011,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/axidma_v9_16/xaxidma_g.c",
+      "sha256": "596db9e1dbd9220cd3d4af26b8e97341bb4de2651fea47b5fb4d758a1ba852fa",
+      "bytes": 1747,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/axidma_v9_16/xaxidma_hw.h",
+      "sha256": "fb8995ffa8eb7584180629b95f8b613fff3be1d5b4ffd0c1e06898ee575ffd0d",
+      "bytes": 11735,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/axidma_v9_16/xaxidma_porting_guide.h",
+      "sha256": "fa4495ffd0c77a25db80ab17f062accb7b9ee7371fa7f5f6366761c2c1a70e3d",
+      "bytes": 9855,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/axidma_v9_16/xaxidma_selftest.c",
+      "sha256": "95540b2d16e4e58061d567ad6c2daa54e72d2ec4b4c90ad5a0bb3d049f5c2f42",
+      "bytes": 2302,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/axidma_v9_16/xaxidma_sinit.c",
+      "sha256": "807ad81c3e9e7453ce679ec5218e8bb66a5b954a6718aabc7351583f876688fc",
+      "bytes": 3112,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dppsu_v1_6/xdppsu.h",
+      "sha256": "8b86e3334156450214645ede9439b2837d71400532e761f01058da892f2add38",
+      "bytes": 12563,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dppsu_v1_6/xdppsu_edid.c",
+      "sha256": "2293957fe85f8c6d351848fbb142fcd5469ac552a1a43de7321d081bd61244aa",
+      "bytes": 5236,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dppsu_v1_6/xdppsu_g.c",
+      "sha256": "04dc1b1c059611e3b84691924f27ef045b78e7fcb7fb5d98536cb502b27380db",
+      "bytes": 612,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dppsu_v1_6/xdppsu_hw.h",
+      "sha256": "82ac366562c5031517897f76713d7f3203df286995e5f6b6273a6b4c3b120104",
+      "bytes": 48252,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dppsu_v1_6/xdppsu_intr.c",
+      "sha256": "e9fdb7686cf2d64f2bf0bb7f0f3cf9208f59e1a3b7ef9632bbd50c68a5017ee7",
+      "bytes": 4357,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dppsu_v1_6/xdppsu_selftest.c",
+      "sha256": "f76ef7705f97749b8ce23cae1cab6f683e77d5b1dc3a478d7a13890684563d22",
+      "bytes": 4734,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dppsu_v1_6/xdppsu_serdes.c",
+      "sha256": "c4b8d7772febbc32ef5a1b333d10491b471735d6bcdc52ccfdef5d3256d24e07",
+      "bytes": 5543,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dppsu_v1_6/xdppsu_serdes.h",
+      "sha256": "4e58eb90203f16a2473ede6431deacad73a5591ca8ce79cbe5e5a0f44e1ae679",
+      "bytes": 1552,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dppsu_v1_6/xdppsu_sinit.c",
+      "sha256": "d9bfc604ab275af1e2af887af16517f6c6c0d5934da25a3250c238536ef34e1f",
+      "bytes": 2185,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dppsu_v1_6/xdppsu_spm.c",
+      "sha256": "e71a57171e9b85eb15067c46d8beb39180b8e708a0f90c8904925a3b174306c7",
+      "bytes": 25674,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dpdma_v1_4/xdpdma.h",
+      "sha256": "55e24e3b9b52d2de65f185278ab7a7af9b5f0efad4f44b5c31cd6ec3542b5f80",
+      "bytes": 7825,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dpdma_v1_4/xdpdma_g.c",
+      "sha256": "92c4fb3102f7fa8c7a338b922e68e6bf3fc68e2b9a55fd044b53e4ab425ede06",
+      "bytes": 618,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dpdma_v1_4/xdpdma_hw.h",
+      "sha256": "b0416f3732a04b39f8356f930ba383f08b4394658aa62e6ce7199b1714d4ef46",
+      "bytes": 53654,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/dpdma_v1_4/xdpdma_sinit.c",
+      "sha256": "0551dbd232c77c7152e7a6c861a658600f046910fb2d5f90493185fa3b44b65d",
+      "bytes": 1873,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/avbuf_v2_5/xavbuf.c",
+      "sha256": "fe864e0796cbb405c4c89e004d4a744d63f6b886f800aa65a27dc018066f683b",
+      "bytes": 34640,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/avbuf_v2_5/xavbuf.h",
+      "sha256": "f5e053f6a5db72aaa84aea204367ddf8d05b6d259ef0f5a10a87a09826a9a4c7",
+      "bytes": 7347,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/avbuf_v2_5/xavbuf_clk.c",
+      "sha256": "61a3721019fb7426538e797463ae8fb4f9a4c9ea2b0aa78b43f667ce1776fdf4",
+      "bytes": 16241,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/avbuf_v2_5/xavbuf_clk.h",
+      "sha256": "f6fa34444ba69825b3530e44d42522c77399254e7260778bcfeb2af416e01297",
+      "bytes": 1864,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/avbuf_v2_5/xavbuf_hw.h",
+      "sha256": "a8ebb763c41409766bff6b71cb938f1781e7639dbfb1343ff607c2e825f0a74d",
+      "bytes": 54661,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/drivers/avbuf_v2_5/xavbuf_videoformats.c",
+      "sha256": "9785df65c6f8f8cbd7bad3ddf158d753c5a59448efa78d530a84cbb6be14d212",
+      "bytes": 7547,
+      "role": "MODIFIED_VENDOR_DRIVER_KEEP_NOTICE",
+      "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "transmitter/constraints/apply_uart_j11.tcl",
+      "sha256": "76c62df438c71082485dfdab0a33d497066cd4bd924f3087d48c23e67c795970",
+      "bytes": 1904,
+      "role": "synth_1_post_hook",
+      "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
+    }
+  ],
+  "withheld_files": [
+    "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0.v",
+    "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0_S00_AXI.v",
+    "receiver/software/src/lscript.ld"
+  ],
+  "public_reproduction": "BLOCKED"
+}

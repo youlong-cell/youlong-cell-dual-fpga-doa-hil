@@ -1,0 +1,71 @@
+{
+  "status": "ELF_BUILD_VERIFIED",
+  "architecture": "AArch64",
+  "processor": "psu_cortexa53_0",
+  "os": "standalone",
+  "entry_expected": "0x01000000",
+  "sources": [
+    "receiver/software/src/debug_main.c",
+    "receiver/software/src/debug_ui.c",
+    "receiver/software/src/debug_pages.c",
+    "receiver/software/src/debug_input.c",
+    "receiver/software/src/auto_profile.c",
+    "receiver/software/src/spectrum_display_filter.c",
+    "receiver/software/src/service_profile.c",
+    "receiver/software/src/debug_mmio.c",
+    "receiver/software/src/display_ctrl.c",
+    "receiver/software/src/lcd_doa.c",
+    "receiver/software/src/font12x12.c",
+    "receiver/software/src/spectrum_pl.c",
+    "receiver/software/src/fine_production_ps.c",
+    "receiver/software/src/fine_production_decode.c",
+    "receiver/software/src/doa_result_publish.c",
+    "receiver/software/src/epoch_journal.c",
+    "receiver/software/src/engineering_session.c",
+    "receiver/software/src/hil_profiles.c",
+    "receiver/software/drivers/axidma_v9_16/xaxidma.c",
+    "receiver/software/drivers/dppsu_v1_6/xdppsu.c",
+    "receiver/software/drivers/dpdma_v1_4/xdpdma.c",
+    "receiver/software/drivers/dpdma_v1_4/xdpdma_intr.c",
+    "receiver/software/src/doa_ui_ema.c",
+    "receiver/software/src/dp_training_step.c",
+    "receiver/software/src/receiver_build_identity.c"
+  ],
+  "flags": [
+    "-std=gnu11",
+    "-O2",
+    "-g3",
+    "-Wall",
+    "-Wextra",
+    "-DENGINEERING_SESSION=1",
+    "-DHIL_PROFILE_HZ=5000000",
+    "-ffunction-sections",
+    "-fdata-sections"
+  ],
+  "forced_include": "receiver/software/src/guard_io.h",
+  "forced_include_exceptions": [
+    "debug_mmio.c",
+    "service_profile.c"
+  ],
+  "linker_script": "receiver/software/src/lscript.ld",
+  "symbols_required": [
+    "receiver_build_identity",
+    "doa_result_service",
+    "pl_fine_poll",
+    "pl_fine_result_ack",
+    "auto_profile_service",
+    "doa_ui_ema_update",
+    "dp_training_step"
+  ],
+  "fine_addresses_expected": {
+    "XPAR_AXI_GPIO_FINE_CMD_BASEADDR": "0x800d0000",
+    "XPAR_AXI_GPIO_FINE_STATUS_BASEADDR": "0x800e0000"
+  },
+  "bsp_status": "须由匹配XSA生成，不复制预编译BSP",
+  "font_dependencies": [
+    "receiver/software/src/font12x12.c",
+    "receiver/software/src/font5x7.h",
+    "receiver/software/src/ui_alpha_atlas.h"
+  ],
+  "last_verification": "evidence/current/software/ELF_RESULT.json"
+}

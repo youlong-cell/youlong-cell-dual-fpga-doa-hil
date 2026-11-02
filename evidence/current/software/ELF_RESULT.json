@@ -1,0 +1,192 @@
+{
+  "status": "ELF_BUILD_VERIFIED",
+  "elf": "R:\\build\\app1\\DOA_RF_ENGINEERING.elf",
+  "sha256": "0d91ee0c9e1c27349810ea28ba792a97aa1b422e5be7e2318b857995ff3ad489",
+  "bytes": 2477416,
+  "profiles": [
+    {
+      "geometry_id": 1,
+      "profile_id": 15,
+      "d_mm": 5000,
+      "c_mps": 300000000,
+      "geometry_valid": 1,
+      "calibration_valid": 1,
+      "measured": 0,
+      "bias_pi_F35": -3998054,
+      "bias_deg": -0.020944563439115882,
+      "geometry_a_F24": 503316480000000,
+      "calibration_words": [
+        1,
+        1,
+        4290969242,
+        4294967295,
+        2684354560,
+        3515,
+        3758096384,
+        4296,
+        15,
+        0
+      ],
+      "geometry_words": [
+        1,
+        2147483648,
+        117187,
+        0,
+        1
+      ],
+      "reference_hz": 1000000,
+      "min_hz": 900000,
+      "max_hz": 1100000
+    },
+    {
+      "geometry_id": 1,
+      "profile_id": 16,
+      "d_mm": 5000,
+      "c_mps": 300000000,
+      "geometry_valid": 1,
+      "calibration_valid": 1,
+      "measured": 0,
+      "bias_pi_F35": -9989205,
+      "bias_deg": -0.05233034316916019,
+      "geometry_a_F24": 503316480000000,
+      "calibration_words": [
+        1,
+        1,
+        4284978091,
+        4294967295,
+        3758096384,
+        7421,
+        536870912,
+        8203,
+        16,
+        0
+      ],
+      "geometry_words": [
+        1,
+        2147483648,
+        117187,
+        0,
+        1
+      ],
+      "reference_hz": 2000000,
+      "min_hz": 1900000,
+      "max_hz": 2100000
+    },
+    {
+      "geometry_id": 1,
+      "profile_id": 17,
+      "d_mm": 5000,
+      "c_mps": 300000000,
+      "geometry_valid": 1,
+      "calibration_valid": 1,
+      "measured": 0,
+      "bias_pi_F35": -29928453,
+      "bias_deg": -0.15678587194997817,
+      "geometry_a_F24": 503316480000000,
+      "calibration_words": [
+        1,
+        1,
+        4265038843,
+        4294967295,
+        2684354560,
+        19140,
+        3758096384,
+        19921,
+        17,
+        0
+      ],
+      "geometry_words": [
+        1,
+        2147483648,
+        117187,
+        0,
+        1
+      ],
+      "reference_hz": 5000000,
+      "min_hz": 4900000,
+      "max_hz": 5100000
+    },
+    {
+      "geometry_id": 1,
+      "profile_id": 18,
+      "d_mm": 5000,
+      "c_mps": 300000000,
+      "geometry_valid": 1,
+      "calibration_valid": 1,
+      "measured": 0,
+      "bias_pi_F35": -107611127,
+      "bias_deg": -0.563741279183887,
+      "geometry_a_F24": 503316480000000,
+      "calibration_words": [
+        1,
+        1,
+        4187356169,
+        4294967295,
+        3758096384,
+        38671,
+        536870912,
+        39453,
+        18,
+        0
+      ],
+      "geometry_words": [
+        1,
+        2147483648,
+        117187,
+        0,
+        1
+      ],
+      "reference_hz": 10000000,
+      "min_hz": 9900000,
+      "max_hz": 10100000
+    }
+  ],
+  "ELF": {
+    "path": "R:\\build\\app1\\DOA_RF_ENGINEERING.elf",
+    "machine": 183,
+    "entry": 16777216,
+    "LOAD": [
+      {
+        "offset": 65536,
+        "paddr": 16777216,
+        "file_bytes": 1245256,
+        "memory_bytes": 29289344,
+        "end": 46066560,
+        "flags": 7
+      }
+    ]
+  },
+  "BSP_header_sha256": "05209c56cc91e1436af60732e535f9af8853f80d9a9148aaf11a44cc763f405a",
+  "BSP_lib_sha256": "772a2ceba0d5a9de77ac8c8dcef229b37e3c3c20ffce6dbbda8e5115c8b68255",
+  "sources": {
+    "receiver/software/src/debug_main.c": "efb0286653bf08b9a91ea20cebe87e5a446e52c29635a75a9cf8a5f173628bbd",
+    "receiver/software/src/debug_ui.c": "29a41b57f2e7fe6d71261cef4bc5bbfa3d0bc2706e636450dbc71a9862c9c085",
+    "receiver/software/src/debug_pages.c": "c2614e25e41d2376502440cf53f70edb6fe5927db4fed23f52668afd22657db0",
+    "receiver/software/src/debug_input.c": "fb4f10d14da61760a155888722c02a56ce4355f6e5efc9efe095ef918b498031",
+    "receiver/software/src/auto_profile.c": "b4f2cb98f508e7e78e111abd9fa9e92959f6c11667e35b2db8b3983a6be499bf",
+    "receiver/software/src/spectrum_display_filter.c": "f2e3d3a1992e1bd9ec4271aa39372036af1b38995e4729078640e8ade5ca322d",
+    "receiver/software/src/service_profile.c": "19dc4d864950408c4714e7b696f29ac89c3db216b5e60bd16059a8a3ed751236",
+    "receiver/software/src/debug_mmio.c": "ef6dd56accf6045735023f390861be1de0350a0486e847f0701dda7adb6bc1ae",
+    "receiver/software/src/display_ctrl.c": "814f6d3ef6e93d3f920deb228e6c9daeac59adf29bd416cc12d470ecfd0fd158",
+    "receiver/software/src/lcd_doa.c": "5198d06c113090fb83720763d7c65b4d6479b728286f6c4c8c47df1888fbeca9",
+    "receiver/software/src/font12x12.c": "25e38e657eafb9ff0636130c920b48a379510699b751d74c410df6d9391e548a",
+    "receiver/software/src/spectrum_pl.c": "2ad2c967391c24eeb6872f1ed66d20e30d818b9002a6107a488c65541e8ccb83",
+    "receiver/software/src/fine_production_ps.c": "99f4c7edf3ff431af277f064d3d7c6310946e67bb61524f5728a32b7722acef1",
+    "receiver/software/src/fine_production_decode.c": "93682b99d040c81e16a25e29c0ea79f8118eaef90d5715a1d2e4885bb3dbc053",
+    "receiver/software/src/doa_result_publish.c": "b89891b5bcfa581e3e3c038a53dd853a8d446bc16c9916ec13f24da98d08dc22",
+    "receiver/software/src/epoch_journal.c": "ef7187eea19429cac5970af41556da8eb7a9a2731fbc4414c960333718f2aa95",
+    "receiver/software/src/engineering_session.c": "252294cf21fd082a87ce49889b5e94cbaeee7d188177be0508173776867a7ce4",
+    "receiver/software/src/hil_profiles.c": "82aa0dfb22536ea3c556ff3ab8b868a66e21f89207cc1f4bde24d924fd3f07a0",
+    "receiver/software/drivers/axidma_v9_16/xaxidma.c": "db1a355cd38e5f2fe56a8fe499454e07964dd2b969c1f79edd3ffbb60cee947b",
+    "receiver/software/drivers/dppsu_v1_6/xdppsu.c": "2b37ea31cf1d8c7118004df2fbfcb1ffc7e471307dead31d0bb7c1565bb0d75e",
+    "receiver/software/drivers/dpdma_v1_4/xdpdma.c": "000f60c4c6e4ff9b5797f3934794875b7e17f7e767606e3b819754858bcaf6cf",
+    "receiver/software/drivers/dpdma_v1_4/xdpdma_intr.c": "9d4b8bd492c41ebdaf9ebf2e974187bde3d3e464fff979f3c918bdfaf4dc9020",
+    "receiver/software/src/doa_ui_ema.c": "548e4296cadd6ef1683d3f328cffb2da7a7245e86ee399e332dc810da28c03d2",
+    "receiver/software/src/dp_training_step.c": "f903b84a71498300dfc2983a08df9be01dbb780bda5c4fe4206bd2b4319ffcdc",
+    "receiver/software/src/receiver_build_identity.c": "efac29c6bdb2c61f8fb1e6a17f55325680f107cb40402ff316b8e44d827ea26a",
+    "receiver/software/src/font5x7.h": "109498390ab7016a359bab041c31776aca3173003244e4583ea5736912acff4b",
+    "receiver/software/src/ui_alpha_atlas.h": "87315c5ce242639f37dec2a380bc35bddc3cb094df876582b3925a35ab2c31f3"
+  },
+  "board_tested": false,
+  "algorithm_changed": false
+}

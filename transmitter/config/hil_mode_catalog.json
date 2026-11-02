@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "classification": "ENGINEERING_ONLY / NOT_SIGNED_OFF",
+  "note_zh": "发送端模式知识唯一来源；控制字从2026-10-20时序修复源码逐项保留，不从接收角度或模拟测量反推。",
+  "dac_clock_hz": 125000000,
+  "phase_word_bits": 32,
+  "default_amplitude": 1024,
+  "custom_mode_id": 31,
+  "frequencies": [
+    {"index": 0, "token": "1M", "hz": 1000000, "word_hex": "020C49BA"},
+    {"index": 1, "token": "2M", "hz": 2000000, "word_hex": "04189375"},
+    {"index": 2, "token": "5M", "hz": 5000000, "word_hex": "0A3D70A4"},
+    {"index": 3, "token": "10M", "hz": 10000000, "word_hex": "147AE148"}
+  ],
+  "modes": [
+    {"id": 0, "frequency_index": 0, "angle_tenths": 0, "phase_word_hex": "00000000"},
+    {"id": 1, "frequency_index": 0, "angle_tenths": 300, "phase_word_hex": "02222222"},
+    {"id": 2, "frequency_index": 0, "angle_tenths": -300, "phase_word_hex": "FDDDDDDE"},
+    {"id": 3, "frequency_index": 0, "angle_tenths": 600, "phase_word_hex": "03B1EE41"},
+    {"id": 4, "frequency_index": 0, "angle_tenths": -600, "phase_word_hex": "FC4E11BF"},
+    {"id": 5, "frequency_index": 1, "angle_tenths": 0, "phase_word_hex": "00000000"},
+    {"id": 6, "frequency_index": 1, "angle_tenths": 300, "phase_word_hex": "04444444"},
+    {"id": 7, "frequency_index": 1, "angle_tenths": -300, "phase_word_hex": "FBBBBBBC"},
+    {"id": 8, "frequency_index": 2, "angle_tenths": 0, "phase_word_hex": "00000000"},
+    {"id": 9, "frequency_index": 2, "angle_tenths": 300, "phase_word_hex": "0AAAAAAB"},
+    {"id": 10, "frequency_index": 2, "angle_tenths": -300, "phase_word_hex": "F5555555"},
+    {"id": 11, "frequency_index": 2, "angle_tenths": 600, "phase_word_hex": "1279A746"},
+    {"id": 12, "frequency_index": 2, "angle_tenths": -600, "phase_word_hex": "ED8658BA"},
+    {"id": 13, "frequency_index": 1, "angle_tenths": 600, "phase_word_hex": "0763DC82"},
+    {"id": 14, "frequency_index": 1, "angle_tenths": -600, "phase_word_hex": "F89C237E"},
+    {"id": 15, "frequency_index": 3, "angle_tenths": 0, "phase_word_hex": "00000000"},
+    {"id": 16, "frequency_index": 3, "angle_tenths": 300, "phase_word_hex": "15555555"},
+    {"id": 17, "frequency_index": 3, "angle_tenths": -300, "phase_word_hex": "EAAAAAAB"},
+    {"id": 18, "frequency_index": 3, "angle_tenths": 600, "phase_word_hex": "24F34E8B"},
+    {"id": 19, "frequency_index": 3, "angle_tenths": -600, "phase_word_hex": "DB0CB175"}
+  ],
+  "key_cycle": [0, 1, 2, 3, 4, 5, 6, 7, 13, 14, 8, 9, 10, 11, 12, 15, 16, 17, 18, 19],
+  "legacy_invalid_defaults": {
+    "frequency_word_band": 0,
+    "active_frequency_index": 3,
+    "reply_frequency_band": 3,
+    "led_frequency_index": 0,
+    "angle_tenths": 0,
+    "phase_word_hex": "00000000",
+    "next_mode": 0
+  }
+}

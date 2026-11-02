@@ -1,0 +1,82 @@
+{
+  "source_font": "third_party/fonts/NotoSansSC-wght.ttf",
+  "source_font_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+  "source_commit": "6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec",
+  "license": "OFL-1.1",
+  "pillow_version": "12.3.0",
+  "freetype_version": "2.14.3",
+  "weight": 400,
+  "baseline_policy": "round(line_height*0.85)",
+  "cjk_count": 198,
+  "bitmap_cjk_count": 49,
+  "ascii_bitmap_count": 96,
+  "independently_decoded_alpha_glyphs": 1502,
+  "faces": [
+    {
+      "size": 16,
+      "alpha_bytes": 81035,
+      "ascent": 19,
+      "descent": 5,
+      "glyphs": 294
+    },
+    {
+      "size": 18,
+      "alpha_bytes": 92878,
+      "ascent": 21,
+      "descent": 6,
+      "glyphs": 294
+    },
+    {
+      "size": 24,
+      "alpha_bytes": 154462,
+      "ascent": 28,
+      "descent": 7,
+      "glyphs": 294
+    },
+    {
+      "size": 30,
+      "alpha_bytes": 211698,
+      "ascent": 35,
+      "descent": 9,
+      "glyphs": 294
+    },
+    {
+      "size": 52,
+      "alpha_bytes": 378473,
+      "ascent": 61,
+      "descent": 15,
+      "glyphs": 294
+    },
+    {
+      "size": 96,
+      "alpha_bytes": 16396,
+      "ascent": 112,
+      "descent": 28,
+      "glyphs": 294
+    },
+    {
+      "size": 144,
+      "alpha_bytes": 24338,
+      "ascent": 168,
+      "descent": 42,
+      "glyphs": 294
+    }
+  ],
+  "assets": [
+    {
+      "path": "receiver/software/src/ui_alpha_atlas.h",
+      "bytes": 2680338,
+      "sha256": "87315c5ce242639f37dec2a380bc35bddc3cb094df876582b3925a35ab2c31f3"
+    },
+    {
+      "path": "receiver/software/src/font12x12.c",
+      "bytes": 6953,
+      "sha256": "25e38e657eafb9ff0636130c920b48a379510699b751d74c410df6d9391e548a"
+    },
+    {
+      "path": "receiver/software/src/font5x7.h",
+      "bytes": 3100,
+      "sha256": "109498390ab7016a359bab041c31776aca3173003244e4583ea5736912acff4b"
+    }
+  ]
+}

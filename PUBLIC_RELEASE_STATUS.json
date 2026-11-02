@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-02",
+  "repository": "https://github.com/youlong-cell/youlong-cell-dual-fpga-doa-hil",
+  "publication": "PUBLICATION_PACKAGE",
+  "scope": "LATEST_RF_HIL_ONLY",
+  "withheld_files": [
+    "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0.v",
+    "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0_S00_AXI.v",
+    "receiver/software/src/lscript.ld"
+  ],
+  "withheld_reason": "用户明确要求来源未确认前不公开",
+  "full_reproduction": "BLOCKED_MISSING_WITHHELD_FILES",
+  "source_zip_sha256": "05081d8d2c3500c132d5afc305ea126291500ba25822e47c0596ad1e34f5aef5",
+  "firmware_and_board_operations": "NOT_PERFORMED"
+}

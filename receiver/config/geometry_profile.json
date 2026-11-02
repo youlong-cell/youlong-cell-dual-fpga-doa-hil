@@ -1,0 +1,8 @@
+{
+  "geometry_id": 1,
+  "name": "HIL_FIXED_ARRAY_5M",
+  "model": "FIXED_BASELINE",
+  "d_meter": 5.0,
+  "propagation_velocity": 300000000,
+  "valid": true
+}

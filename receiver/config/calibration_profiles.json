@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "classification": "ENGINEERING_ONLY / HIL_COMMAND_REFERENCE / NOT_SIGNED_OFF",
+  "default_reference_hz": 5000000,
+  "profiles": [
+    {
+      "name": "CAL_1M",
+      "reference_hz": 1000000,
+      "minimum_hz": 900000,
+      "maximum_hz": 1100000,
+      "evidence_state": "HIL_COMMAND_ZERO_TRAINED_PENDING_INDEPENDENT_RETEST",
+      "calibration": {
+        "profile_id": 15,
+        "phase_bias_deg": -0.020944561762249885,
+        "phase_sign": 1,
+        "measured": false,
+        "valid": true
+      }
+    },
+    {
+      "name": "CAL_2M",
+      "reference_hz": 2000000,
+      "minimum_hz": 1900000,
+      "maximum_hz": 2100000,
+      "evidence_state": "HIL_COMMAND_ZERO_PROVISIONAL_LT30_PENDING_RETEST",
+      "calibration": {
+        "profile_id": 16,
+        "phase_bias_deg": -0.05233034252593276,
+        "phase_sign": 1,
+        "measured": false,
+        "valid": true
+      }
+    },
+    {
+      "name": "CAL_5M",
+      "reference_hz": 5000000,
+      "minimum_hz": 4900000,
+      "maximum_hz": 5100000,
+      "evidence_state": "HIL_COMMAND_ZERO_TRAINED_PENDING_INDEPENDENT_RETEST",
+      "calibration": {
+        "profile_id": 17,
+        "phase_bias_deg": -0.15678586993785656,
+        "phase_sign": 1,
+        "measured": false,
+        "valid": true
+      }
+    },
+    {
+      "name": "CAL_10M",
+      "reference_hz": 10000000,
+      "minimum_hz": 9900000,
+      "maximum_hz": 10100000,
+      "evidence_state": "HIL_COMMAND_ZERO_PROVISIONAL_LT30_PENDING_RETEST",
+      "calibration": {
+        "profile_id": 18,
+        "phase_bias_deg": -0.5637412782888781,
+        "phase_sign": 1,
+        "measured": false,
+        "valid": true
+      }
+    }
+  ]
+}

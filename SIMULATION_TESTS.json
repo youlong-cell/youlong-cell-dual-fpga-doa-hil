@@ -1,0 +1,210 @@
+{
+  "scope": "当前收发端的独立测试；按RTL_RESULTS和证据日志判断实际执行状态",
+  "tests": [
+    {
+      "top": "tb_angle_decoder",
+      "testbench": "transmitter/sim/uart_angle/tb_angle_decoder.sv",
+      "sources": [
+        "transmitter/rtl/datapath/coherent_nco.v",
+        "transmitter/rtl/board/hil20_key_inputs.v",
+        "transmitter/rtl/board/hil20_led_status.v",
+        "transmitter/rtl/board/hil20_reset_release.v",
+        "transmitter/rtl/common/key_debounce.v",
+        "transmitter/rtl/control/mode_select.v",
+        "transmitter/rtl/control/hil20_control.sv",
+        "transmitter/rtl/dispatch/hil20_uart_control.sv",
+        "transmitter/rtl/control/hil_angle_mapper.sv",
+        "transmitter/rtl/protocol/hil_ascii_parser.sv",
+        "transmitter/rtl/protocol/hil_command_decode.sv",
+        "transmitter/rtl/dispatch/hil_reply_fifo.sv",
+        "transmitter/rtl/protocol/hil_reply_format.sv",
+        "transmitter/rtl/dispatch/hil_reply_scheduler.sv",
+        "transmitter/rtl/uart/hil_uart_link.sv",
+        "transmitter/rtl/protocol/hil_uart_reply.sv",
+        "transmitter/rtl/uart/hil_uart_rx.sv",
+        "transmitter/rtl/uart/hil_uart_tx.sv"
+      ],
+      "include_dirs": [
+        "transmitter/config"
+      ],
+      "data_files": [
+        "transmitter/config/hil_angle_phase_rom.mem",
+        "transmitter/rom/sine_lut_14bit.mem",
+        "transmitter/sim/uart_angle/angle_golden_vectors.txt"
+      ],
+      "status": "SIM TESTED",
+      "evidence": "evidence/current/rtl_transmitter/tb_angle_decoder.log"
+    },
+    {
+      "top": "tb_angle_mapper",
+      "testbench": "transmitter/sim/uart_angle/tb_angle_mapper.sv",
+      "sources": [
+        "transmitter/rtl/datapath/coherent_nco.v",
+        "transmitter/rtl/board/hil20_key_inputs.v",
+        "transmitter/rtl/board/hil20_led_status.v",
+        "transmitter/rtl/board/hil20_reset_release.v",
+        "transmitter/rtl/common/key_debounce.v",
+        "transmitter/rtl/control/mode_select.v",
+        "transmitter/rtl/control/hil20_control.sv",
+        "transmitter/rtl/dispatch/hil20_uart_control.sv",
+        "transmitter/rtl/control/hil_angle_mapper.sv",
+        "transmitter/rtl/protocol/hil_ascii_parser.sv",
+        "transmitter/rtl/protocol/hil_command_decode.sv",
+        "transmitter/rtl/dispatch/hil_reply_fifo.sv",
+        "transmitter/rtl/protocol/hil_reply_format.sv",
+        "transmitter/rtl/dispatch/hil_reply_scheduler.sv",
+        "transmitter/rtl/uart/hil_uart_link.sv",
+        "transmitter/rtl/protocol/hil_uart_reply.sv",
+        "transmitter/rtl/uart/hil_uart_rx.sv",
+        "transmitter/rtl/uart/hil_uart_tx.sv"
+      ],
+      "include_dirs": [
+        "transmitter/config"
+      ],
+      "data_files": [
+        "transmitter/config/hil_angle_phase_rom.mem",
+        "transmitter/rom/sine_lut_14bit.mem",
+        "transmitter/sim/uart_angle/angle_golden_vectors.txt"
+      ],
+      "status": "SIM TESTED",
+      "evidence": "evidence/current/rtl_transmitter/tb_angle_mapper.log"
+    },
+    {
+      "top": "tb_hil20_any_angle",
+      "testbench": "transmitter/sim/uart_angle/tb_hil20_any_angle.sv",
+      "sources": [
+        "transmitter/rtl/datapath/coherent_nco.v",
+        "transmitter/rtl/board/hil20_key_inputs.v",
+        "transmitter/rtl/board/hil20_led_status.v",
+        "transmitter/rtl/board/hil20_reset_release.v",
+        "transmitter/rtl/common/key_debounce.v",
+        "transmitter/rtl/control/mode_select.v",
+        "transmitter/rtl/control/hil20_control.sv",
+        "transmitter/rtl/dispatch/hil20_uart_control.sv",
+        "transmitter/rtl/control/hil_angle_mapper.sv",
+        "transmitter/rtl/protocol/hil_ascii_parser.sv",
+        "transmitter/rtl/protocol/hil_command_decode.sv",
+        "transmitter/rtl/dispatch/hil_reply_fifo.sv",
+        "transmitter/rtl/protocol/hil_reply_format.sv",
+        "transmitter/rtl/dispatch/hil_reply_scheduler.sv",
+        "transmitter/rtl/uart/hil_uart_link.sv",
+        "transmitter/rtl/protocol/hil_uart_reply.sv",
+        "transmitter/rtl/uart/hil_uart_rx.sv",
+        "transmitter/rtl/uart/hil_uart_tx.sv"
+      ],
+      "include_dirs": [
+        "transmitter/config"
+      ],
+      "data_files": [
+        "transmitter/config/hil_angle_phase_rom.mem",
+        "transmitter/rom/sine_lut_14bit.mem",
+        "transmitter/sim/uart_angle/angle_golden_vectors.txt"
+      ],
+      "status": "SIM TESTED",
+      "evidence": "evidence/current/rtl_transmitter/tb_hil20_any_angle.log"
+    },
+    {
+      "top": "tb_hil20_baud",
+      "testbench": "transmitter/sim/current/tb_hil20_baud.sv",
+      "sources": [
+        "transmitter/rtl/datapath/coherent_nco.v",
+        "transmitter/rtl/board/hil20_key_inputs.v",
+        "transmitter/rtl/board/hil20_led_status.v",
+        "transmitter/rtl/board/hil20_reset_release.v",
+        "transmitter/rtl/common/key_debounce.v",
+        "transmitter/rtl/control/mode_select.v",
+        "transmitter/rtl/control/hil20_control.sv",
+        "transmitter/rtl/dispatch/hil20_uart_control.sv",
+        "transmitter/rtl/control/hil_angle_mapper.sv",
+        "transmitter/rtl/protocol/hil_ascii_parser.sv",
+        "transmitter/rtl/protocol/hil_command_decode.sv",
+        "transmitter/rtl/dispatch/hil_reply_fifo.sv",
+        "transmitter/rtl/protocol/hil_reply_format.sv",
+        "transmitter/rtl/dispatch/hil_reply_scheduler.sv",
+        "transmitter/rtl/uart/hil_uart_link.sv",
+        "transmitter/rtl/protocol/hil_uart_reply.sv",
+        "transmitter/rtl/uart/hil_uart_rx.sv",
+        "transmitter/rtl/uart/hil_uart_tx.sv"
+      ],
+      "include_dirs": [
+        "transmitter/config"
+      ],
+      "data_files": [
+        "transmitter/config/hil_angle_phase_rom.mem",
+        "transmitter/rom/sine_lut_14bit.mem",
+        "transmitter/sim/uart_angle/angle_golden_vectors.txt"
+      ],
+      "status": "SIM TESTED",
+      "evidence": "evidence/current/rtl_transmitter/tb_hil20_baud.log"
+    },
+    {
+      "top": "tb_reply_fifo",
+      "testbench": "transmitter/sim/current/tb_reply_fifo.sv",
+      "sources": [
+        "transmitter/rtl/datapath/coherent_nco.v",
+        "transmitter/rtl/board/hil20_key_inputs.v",
+        "transmitter/rtl/board/hil20_led_status.v",
+        "transmitter/rtl/board/hil20_reset_release.v",
+        "transmitter/rtl/common/key_debounce.v",
+        "transmitter/rtl/control/mode_select.v",
+        "transmitter/rtl/control/hil20_control.sv",
+        "transmitter/rtl/dispatch/hil20_uart_control.sv",
+        "transmitter/rtl/control/hil_angle_mapper.sv",
+        "transmitter/rtl/protocol/hil_ascii_parser.sv",
+        "transmitter/rtl/protocol/hil_command_decode.sv",
+        "transmitter/rtl/dispatch/hil_reply_fifo.sv",
+        "transmitter/rtl/protocol/hil_reply_format.sv",
+        "transmitter/rtl/dispatch/hil_reply_scheduler.sv",
+        "transmitter/rtl/uart/hil_uart_link.sv",
+        "transmitter/rtl/protocol/hil_uart_reply.sv",
+        "transmitter/rtl/uart/hil_uart_rx.sv",
+        "transmitter/rtl/uart/hil_uart_tx.sv"
+      ],
+      "include_dirs": [
+        "transmitter/config"
+      ],
+      "data_files": [
+        "transmitter/config/hil_angle_phase_rom.mem",
+        "transmitter/rom/sine_lut_14bit.mem",
+        "transmitter/sim/uart_angle/angle_golden_vectors.txt"
+      ],
+      "status": "SIM TESTED",
+      "evidence": "evidence/current/rtl_transmitter/tb_reply_fifo.log"
+    },
+    {
+      "top": "tb_sample_timebase",
+      "testbench": "receiver/sim/tb_sample_timebase.sv",
+      "sources": [
+        "receiver/rtl/sample_timebase.v"
+      ],
+      "include_dirs": [],
+      "data_files": [],
+      "status": "SIM TESTED",
+      "evidence": "evidence/current/rtl_receiver/tb_sample_timebase.log"
+    },
+    {
+      "top": "tb_fine_result_slot",
+      "testbench": "receiver/sim/tb_fine_result_slot.sv",
+      "sources": [
+        "receiver/rtl/fine_result_slot.sv"
+      ],
+      "include_dirs": [],
+      "data_files": [],
+      "status": "SIM TESTED",
+      "evidence": "evidence/current/rtl_receiver/tb_fine_result_slot.log"
+    },
+    {
+      "top": "tb_fine_phase_calibration",
+      "testbench": "receiver/sim/tb_fine_phase_calibration.sv",
+      "sources": [
+        "receiver/rtl/fine_phase_calibration.sv"
+      ],
+      "include_dirs": [],
+      "data_files": [],
+      "status": "SIM TESTED",
+      "generator": "scripts/generate_calibration_vectors.py",
+      "evidence": "evidence/current/rtl_receiver/tb_fine_phase_calibration.log"
+    }
+  ],
+  "receiver_rtl_regression": "限定三个独立模块，不宣称覆盖完整RF数据链"
+}

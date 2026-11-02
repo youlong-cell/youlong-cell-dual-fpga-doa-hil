@@ -1,0 +1,41 @@
+{
+  "status": "FONT_OFL_REPLACEMENTS_PROVIDED",
+  "files": [
+    {
+      "path": "receiver/software/src/ui_alpha_atlas.h",
+      "bytes": 2680338,
+      "sha256": "87315c5ce242639f37dec2a380bc35bddc3cb094df876582b3925a35ab2c31f3",
+      "provided": true,
+      "reason": "已随包，Noto/OFL替代字模",
+      "required_for": "当前PS构建"
+    },
+    {
+      "path": "receiver/software/src/font12x12.c",
+      "bytes": 6953,
+      "sha256": "25e38e657eafb9ff0636130c920b48a379510699b751d74c410df6d9391e548a",
+      "provided": true,
+      "reason": "已随包，Noto/OFL替代字模",
+      "required_for": "当前PS构建"
+    },
+    {
+      "path": "receiver/software/src/font5x7.h",
+      "bytes": 3100,
+      "sha256": "109498390ab7016a359bab041c31776aca3173003244e4583ea5736912acff4b",
+      "provided": true,
+      "reason": "已随包，Noto/OFL替代字模",
+      "required_for": "当前PS构建"
+    }
+  ],
+  "tool_dependencies": [
+    "Vivado/Vitis 2023.1及xc7a100t/xczu2cg器件支持和适用IP许可",
+    "Python 3.12；重新生成字模固定Pillow 12.3.0",
+    "O0/O2宿主C测试需可用GCC；RTL测试使用随Vivado提供的xsim"
+  ],
+  "not_bundled": [
+    "系统字体",
+    "AMD工具/XPM/IP生成源码",
+    "预编译BSP/libxil",
+    "BOOT/ELF/BIT/DCP"
+  ],
+  "historical_font_hashes_note": "旧未知来源字模未纳入；本包改用Noto/OFL生成资产，不要求匹配旧字模SHA。"
+}

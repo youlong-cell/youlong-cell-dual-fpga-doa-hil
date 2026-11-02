@@ -1,0 +1,6 @@
+{
+  "tool": "Vitis2023.1",
+  "sha256_original": "11eda02e14da5e311493b524e6ed1734fad0dac8a091754c3a8cdf4fbf974389",
+  "source": "https://github.com/Xilinx/embeddedsw/tree/xilinx_v2023.1",
+  "scope": "本地工具附带的原始许可汇编。逐文件SPDX/原声明优先；汇编内并非每个条款都适用于本项目。"
+}

@@ -1,0 +1,3 @@
+NOISE_SWEEP_HOST: frames=400 raw_max=23.227356dB filtered_max=15.724586dB; NOT HARDWARE
+BELOW_GATE_NOISE_HOST: frames=100 raw_max=9.542427dB filtered_max=0.000000dB; NOT HARDWARE
+SPECTRUM_DISPLAY_FILTER PASS checks=3182 average-power/gate/EMA/fast-rise/commit/reset/immutable/signed32

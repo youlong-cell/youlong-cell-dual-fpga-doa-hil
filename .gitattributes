@@ -1,0 +1,5 @@
+# 保护RTL/约束/ROM逐字节身份，不在Git检出时自动换行。
+* -text
+*.png binary
+*.jpg binary
+*.pdf binary

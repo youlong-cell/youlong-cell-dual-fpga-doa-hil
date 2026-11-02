@@ -1,0 +1,2 @@
+找不到有效的Vivado入口：Z:\DOA_MISSING_TOOL\vivado.bat
+请安装Vivado 2023.1，或将其vivado.bat路径填入环境变量DOA_VIVADO_BAT。

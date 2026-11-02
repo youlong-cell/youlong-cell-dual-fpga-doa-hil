@@ -1,0 +1,258 @@
+[
+  {
+    "test": "alpha",
+    "optimization": "-O0",
+    "pass": true,
+    "compile_command": [
+      "D:\\rtools44\\x86_64-w64-mingw32.static.posix\\bin\\gcc.exe",
+      "-std=gnu11",
+      "-O0",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Wno-unused-function",
+      "-DENGINEERING_SESSION=1",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\stubs",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\drivers\\dpdma_v1_4",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\test_alpha_font.c",
+      "-lm",
+      "-o",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\alphaO0\\test.exe"
+    ],
+    "compile_exit": 0,
+    "run_command": [
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\alphaO0\\test.exe",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\alphaO0\\ui"
+    ],
+    "run_exit": 0
+  },
+  {
+    "test": "ema",
+    "optimization": "-O0",
+    "pass": true,
+    "compile_command": [
+      "D:\\rtools44\\x86_64-w64-mingw32.static.posix\\bin\\gcc.exe",
+      "-std=gnu11",
+      "-O0",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Wno-unused-function",
+      "-DENGINEERING_SESSION=1",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\stubs",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\drivers\\dpdma_v1_4",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\test_doa_ui_ema.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\doa_ui_ema.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\fine_production_decode.c",
+      "-lm",
+      "-o",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\emaO0\\test.exe"
+    ],
+    "compile_exit": 0,
+    "run_command": [
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\emaO0\\test.exe",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\emaO0\\ui"
+    ],
+    "run_exit": 0
+  },
+  {
+    "test": "spectrum",
+    "optimization": "-O0",
+    "pass": true,
+    "compile_command": [
+      "D:\\rtools44\\x86_64-w64-mingw32.static.posix\\bin\\gcc.exe",
+      "-std=gnu11",
+      "-O0",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Wno-unused-function",
+      "-DENGINEERING_SESSION=1",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\stubs",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\drivers\\dpdma_v1_4",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\test_spectrum_filter.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\spectrum_display_filter.c",
+      "-lm",
+      "-o",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\spectrumO0\\test.exe"
+    ],
+    "compile_exit": 0,
+    "run_command": [
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\spectrumO0\\test.exe",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\spectrumO0\\ui"
+    ],
+    "run_exit": 0
+  },
+  {
+    "test": "ui",
+    "optimization": "-O0",
+    "pass": true,
+    "compile_command": [
+      "D:\\rtools44\\x86_64-w64-mingw32.static.posix\\bin\\gcc.exe",
+      "-std=gnu11",
+      "-O0",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Wno-unused-function",
+      "-DENGINEERING_SESSION=1",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\stubs",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\drivers\\dpdma_v1_4",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\test_debug_ui.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\profile_clock_stub.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\debug_ui.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\debug_pages.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\debug_input.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\lcd_doa.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\font12x12.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\fine_production_decode.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\hil_profiles.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\doa_ui_ema.c",
+      "-lm",
+      "-o",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\uiO0\\test.exe"
+    ],
+    "compile_exit": 0,
+    "run_command": [
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\uiO0\\test.exe",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\uiO0\\ui"
+    ],
+    "run_exit": 0
+  },
+  {
+    "test": "alpha",
+    "optimization": "-O2",
+    "pass": true,
+    "compile_command": [
+      "D:\\rtools44\\x86_64-w64-mingw32.static.posix\\bin\\gcc.exe",
+      "-std=gnu11",
+      "-O2",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Wno-unused-function",
+      "-DENGINEERING_SESSION=1",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\stubs",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\drivers\\dpdma_v1_4",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\test_alpha_font.c",
+      "-lm",
+      "-o",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\alphaO2\\test.exe"
+    ],
+    "compile_exit": 0,
+    "run_command": [
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\alphaO2\\test.exe",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\alphaO2\\ui"
+    ],
+    "run_exit": 0
+  },
+  {
+    "test": "ema",
+    "optimization": "-O2",
+    "pass": true,
+    "compile_command": [
+      "D:\\rtools44\\x86_64-w64-mingw32.static.posix\\bin\\gcc.exe",
+      "-std=gnu11",
+      "-O2",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Wno-unused-function",
+      "-DENGINEERING_SESSION=1",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\stubs",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\drivers\\dpdma_v1_4",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\test_doa_ui_ema.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\doa_ui_ema.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\fine_production_decode.c",
+      "-lm",
+      "-o",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\emaO2\\test.exe"
+    ],
+    "compile_exit": 0,
+    "run_command": [
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\emaO2\\test.exe",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\emaO2\\ui"
+    ],
+    "run_exit": 0
+  },
+  {
+    "test": "spectrum",
+    "optimization": "-O2",
+    "pass": true,
+    "compile_command": [
+      "D:\\rtools44\\x86_64-w64-mingw32.static.posix\\bin\\gcc.exe",
+      "-std=gnu11",
+      "-O2",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Wno-unused-function",
+      "-DENGINEERING_SESSION=1",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\stubs",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\drivers\\dpdma_v1_4",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\test_spectrum_filter.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\spectrum_display_filter.c",
+      "-lm",
+      "-o",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\spectrumO2\\test.exe"
+    ],
+    "compile_exit": 0,
+    "run_command": [
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\spectrumO2\\test.exe",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\spectrumO2\\ui"
+    ],
+    "run_exit": 0
+  },
+  {
+    "test": "ui",
+    "optimization": "-O2",
+    "pass": true,
+    "compile_command": [
+      "D:\\rtools44\\x86_64-w64-mingw32.static.posix\\bin\\gcc.exe",
+      "-std=gnu11",
+      "-O2",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Wno-unused-function",
+      "-DENGINEERING_SESSION=1",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\stubs",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src",
+      "-IE:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\drivers\\dpdma_v1_4",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\test_debug_ui.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\tests\\profile_clock_stub.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\debug_ui.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\debug_pages.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\debug_input.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\lcd_doa.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\font12x12.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\fine_production_decode.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\hil_profiles.c",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\receiver\\software\\src\\doa_ui_ema.c",
+      "-lm",
+      "-o",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\uiO2\\test.exe"
+    ],
+    "compile_exit": 0,
+    "run_command": [
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\uiO2\\test.exe",
+      "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\host_current4\\uiO2\\ui"
+    ],
+    "run_exit": 0
+  }
+]

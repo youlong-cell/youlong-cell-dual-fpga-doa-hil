@@ -1,0 +1,175 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sun Nov  1 20:52:45 2026
+| Host         : LAPTOP-2SG9AAOA running 64-bit major release  (build 9200)
+| Command      : report_ip_status
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+IP Status Summary
+
+1. Project IP Status
+--------------------
+Your project uses 32 IP. Some of these IP may have undergone changes in this release of the software. Please review the recommended actions.
+
+More information on the Xilinx versioning policy is available at www.xilinx.com.
+
+Project IP Instances
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| Instance Name                        | Status     | Recommendation      | Change    | IP Name            | IP      | New Version   | New        | Original Part        |
+|                                      |            |                     | Log       |                    | Version |               | License    |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_VCC_0                       | Up-to-date | No changes required |  *(1)     | Constant           | 1.1     | 1.1 (Rev. 7)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 7)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_ad9238_sample_0_0           | Up-to-date | No changes required | Change    | ad9238_sample_v1.0 | 1.1     | 1.1 (Rev. 4)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     | Log not   |                    | (Rev.   |               |            |                      |
+|                                      |            |                     | available |                    | 4)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_ad9238_sample_1_0           | Up-to-date | No changes required | Change    | ad9238_sample_v1.0 | 1.1     | 1.1 (Rev. 4)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     | Log not   |                    | (Rev.   |               |            |                      |
+|                                      |            |                     | available |                    | 4)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_axi_dma_0_0                 | Up-to-date | No changes required |  *(2)     | AXI Direct Memory  | 7.1     | 7.1 (Rev. 29) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           | Access             | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 29)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_axi_dma_1_0                 | Up-to-date | No changes required |  *(3)     | AXI Direct Memory  | 7.1     | 7.1 (Rev. 29) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           | Access             | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 29)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_axi_gpio_candidate_cmd_0    | Up-to-date | No changes required |  *(4)     | AXI GPIO           | 2.0     | 2.0 (Rev. 30) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 30)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_axi_gpio_candidate_status_0 | Up-to-date | No changes required |  *(5)     | AXI GPIO           | 2.0     | 2.0 (Rev. 30) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 30)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_axi_gpio_fft_0              | Up-to-date | No changes required |  *(6)     | AXI GPIO           | 2.0     | 2.0 (Rev. 30) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 30)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_axi_gpio_fine_cmd_0         | Up-to-date | No changes required |  *(7)     | AXI GPIO           | 2.0     | 2.0 (Rev. 30) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 30)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_axi_gpio_fine_status_0      | Up-to-date | No changes required |  *(8)     | AXI GPIO           | 2.0     | 2.0 (Rev. 30) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 30)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_axi_gpio_mode_0             | Up-to-date | No changes required |  *(9)     | AXI GPIO           | 2.0     | 2.0 (Rev. 30) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 30)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_axi_interconnect_0_0        | Up-to-date | No changes required |  *(10)    | AXI Interconnect   | 2.1     | 2.1 (Rev. 29) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 29)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_axis_register_slice_0_0     | Up-to-date | No changes required |  *(11)    | AXI4-Stream        | 1.1     | 1.1 (Rev. 28) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           | Register Slice     | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 28)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_axis_register_slice_1_0     | Up-to-date | No changes required |  *(12)    | AXI4-Stream        | 1.1     | 1.1 (Rev. 28) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           | Register Slice     | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 28)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_base_fine_disabled_12b_0    | Up-to-date | No changes required |  *(13)    | Constant           | 1.1     | 1.1 (Rev. 7)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 7)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_base_fine_disabled_1b_0     | Up-to-date | No changes required |  *(14)    | Constant           | 1.1     | 1.1 (Rev. 7)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 7)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_base_fine_disabled_32b_0    | Up-to-date | No changes required |  *(15)    | Constant           | 1.1     | 1.1 (Rev. 7)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 7)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_fft_0_0                     | Up-to-date | No changes required |  *(16)    | Fast Fourier       | 9.1     | 9.1 (Rev. 9)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           | Transform          | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 9)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_fft_ctrl_0_0                | Up-to-date | No changes required | Change    | spectrum_fft_ctrl_ | 1.0     | 1.0 (Rev. 1)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     | Log not   |                    | (Rev.   |               |            |                      |
+|                                      |            |                     | available |                    | 1)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_fft_result_bank_system_0_0  | Up-to-date | No changes required | Change    | fft_result_bank_sy | 1.0     | 1.0 (Rev. 1)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     | Log not   |                    | (Rev.   |               |            |                      |
+|                                      |            |                     | available |                    | 1)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_fft_result_bram_0           | Up-to-date | No changes required |  *(17)    | Block Memory       | 8.4     | 8.4 (Rev. 6)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           | Generator          | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 6)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_fft_result_bram_ctrl_0      | Up-to-date | No changes required |  *(18)    | AXI BRAM           | 4.1     | 4.1 (Rev. 8)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           | Controller         | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 8)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_fine_doa_sqrt_0             | Up-to-date | No changes required | Change    | fine_doa_sqrt_v1_0 | 1.0     | 1.0 (Rev. 1)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     | Log not   |                    | (Rev.   |               |            |                      |
+|                                      |            |                     | available |                    | 1)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_fine_doa_translate_0        | Up-to-date | No changes required |  *(19)    | CORDIC             | 6.0     | 6.0 (Rev. 19) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 19)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_fine_production_system_0_0  | Up-to-date | No changes required | Change    | fine_production_sy | 1.0     | 1.0 (Rev. 1)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     | Log not   |                    | (Rev.   |               |            |                      |
+|                                      |            |                     | available |                    | 1)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_mode_ctrl_0                 | Up-to-date | No changes required | Change    | pl_mode_controller | 1.0     | 1.0 (Rev. 1)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     | Log not   |                    | (Rev.   |               |            |                      |
+|                                      |            |                     | available |                    | 1)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_ps7_0_axi_periph_0          | Up-to-date | No changes required |  *(20)    | AXI Interconnect   | 2.1     | 2.1 (Rev. 29) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 29)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_rst_clk_adc_0               | Up-to-date | No changes required |  *(21)    | Processor System   | 5.0     | 5.0 (Rev. 13) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           | Reset              | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 13)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_rst_lcd_100M_0              | Up-to-date | No changes required |  *(22)    | Processor System   | 5.0     | 5.0 (Rev. 13) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           | Reset              | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 13)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_rst_ps7_0_142M_0            | Up-to-date | No changes required |  *(23)    | Processor System   | 5.0     | 5.0 (Rev. 13) | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           | Reset              | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 13)     |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_xlconcat_0_0                | Up-to-date | No changes required |  *(24)    | Concat             | 2.1     | 2.1 (Rev. 4)  | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                      |            |                     |           |                    | 4)      |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| design_1_zynq_ultra_ps_e_0_0         | Up-to-date | No changes required |  *(25)    | Zynq UltraScale+   | 3.5     | 3.5           | Included   | xczu2cg-sfvc784-1-i  |
+|                                      |            |                     |           | MPSoC              |         |               |            |                      |
++--------------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+*(1) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/xlconstant_v1_1/doc/xlconstant_v1_1_changelog.txt
+*(2) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/axi_dma_v7_1/doc/axi_dma_v7_1_changelog.txt
+*(3) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/axi_dma_v7_1/doc/axi_dma_v7_1_changelog.txt
+*(4) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/axi_gpio_v2_0/doc/axi_gpio_v2_0_changelog.txt
+*(5) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/axi_gpio_v2_0/doc/axi_gpio_v2_0_changelog.txt
+*(6) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/axi_gpio_v2_0/doc/axi_gpio_v2_0_changelog.txt
+*(7) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/axi_gpio_v2_0/doc/axi_gpio_v2_0_changelog.txt
+*(8) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/axi_gpio_v2_0/doc/axi_gpio_v2_0_changelog.txt
+*(9) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/axi_gpio_v2_0/doc/axi_gpio_v2_0_changelog.txt
+*(10) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/axi_interconnect_v2_1/doc/axi_interconnect_v2_1_changelog.txt
+*(11) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/axis_register_slice_v1_1/doc/axis_register_slice_v1_1_changelog.txt
+*(12) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/axis_register_slice_v1_1/doc/axis_register_slice_v1_1_changelog.txt
+*(13) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/xlconstant_v1_1/doc/xlconstant_v1_1_changelog.txt
+*(14) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/xlconstant_v1_1/doc/xlconstant_v1_1_changelog.txt
+*(15) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/xlconstant_v1_1/doc/xlconstant_v1_1_changelog.txt
+*(16) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/xfft_v9_1/doc/xfft_v9_1_changelog.txt
+*(17) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/blk_mem_gen_v8_4/doc/blk_mem_gen_v8_4_changelog.txt
+*(18) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/axi_bram_ctrl_v4_1/doc/axi_bram_ctrl_v4_1_changelog.txt
+*(19) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/cordic_v6_0/doc/cordic_v6_0_changelog.txt
+*(20) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/axi_interconnect_v2_1/doc/axi_interconnect_v2_1_changelog.txt
+*(21) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/proc_sys_reset_v5_0/doc/proc_sys_reset_v5_0_changelog.txt
+*(22) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/proc_sys_reset_v5_0/doc/proc_sys_reset_v5_0_changelog.txt
+*(23) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/proc_sys_reset_v5_0/doc/proc_sys_reset_v5_0_changelog.txt
+*(24) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/xlconcat_v2_1/doc/xlconcat_v2_1_changelog.txt
+*(25) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/zynq_ultra_ps_e_v3_5/doc/zynq_ultra_ps_e_v3_5_changelog.txt
+
+

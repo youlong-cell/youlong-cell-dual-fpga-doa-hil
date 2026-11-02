@@ -1,0 +1,55 @@
+{
+  "readback_transmitter": {
+    "exit_code": 0,
+    "seconds": 12.062675952911377,
+    "log": "readback_transmitter_console.log"
+  },
+  "readback_receiver": {
+    "exit_code": 0,
+    "seconds": 20.216662645339966,
+    "log": "readback_receiver_console.log"
+  },
+  "repeat": {
+    "exit_code": 0,
+    "seconds": 16.593195915222168,
+    "log": "repeat_console.log"
+  },
+  "missing_tool": {
+    "exit_code": 2,
+    "seconds": 0.17029905319213867,
+    "log": "missing_tool_console.log"
+  },
+  "unsupported_path": {
+    "exit_code": 2,
+    "seconds": 0.16786694526672363,
+    "log": "unsupported_path_console.log"
+  },
+  "source_hash_guard": {
+    "exit_code": 1,
+    "seconds": 0.6102015972137451,
+    "log": "source_hash_guard_console.log"
+  },
+  "status": "PASS",
+  "vivado_version": "2023.1",
+  "test_repository": "C:\\Users\\admin\\Documents\\Codex\\doa_separate_ready",
+  "requires_user_python": false,
+  "rtl_or_constraints_changed": false,
+  "projects_created": 2,
+  "run_status": "Not started",
+  "source_count_checked": 84,
+  "xpr_sha256": {
+    "C:\\Users\\admin\\Documents\\Codex\\doa_separate_ready\\transmitter\\vivado\\transmitter.xpr": "9d49d08be13b0b7e54faade422de3ead4a74e45e35adbe09871b87d1f869870d",
+    "C:\\Users\\admin\\Documents\\Codex\\doa_separate_ready\\receiver\\vivado\\receiver.xpr": "a130f9958124ec4d6e9720e4414c0ae2396df3afdd4c46e0576f7a0e3713d6e5"
+  },
+  "pll_configuration_unchanged_except_output_directory": true,
+  "bd_source_unchanged": true,
+  "bd_generated_hardware_configuration_identical": true,
+  "bd_generated_location_fields_excluded": [
+    "xci_path",
+    "inst_hier_path",
+    "xci_name"
+  ],
+  "repeat_did_not_overwrite": true,
+  "missing_tool_failed_safely": true,
+  "board_tested": false
+}

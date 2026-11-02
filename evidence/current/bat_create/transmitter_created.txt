@@ -1,0 +1,7 @@
+CATALOG=6a04ff50a07f682e5dad26b92e2fe075aca27afb4b30af42067c609c10e92e2c
+SIDE=transmitter
+PART=xc7a100tfgg484-2
+TOP=ax7103_an9767_uart_j11_top
+SYNTHESIS=Not started
+IMPLEMENTATION=Not started
+PROJECT=C:/Users/admin/Documents/Codex/doa_separate_ready/transmitter/vivado/transmitter.xpr

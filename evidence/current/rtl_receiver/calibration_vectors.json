@@ -1,0 +1,8 @@
+{
+  "kind": "SYNTHETIC_INTEGER_GOLDEN",
+  "seed": 20261101,
+  "count": 2272,
+  "phase_unit": "pi/2^35",
+  "frequency_unit": "Hz/2^24",
+  "sha256": "ad0b1a249fcf8e71bd1001da1ceec2ff98f508598b4e2b6987a7ac7252bb133f"
+}

@@ -1,0 +1,28 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sun Nov  1 20:50:00 2026
+| Host         : LAPTOP-2SG9AAOA running 64-bit major release  (build 9200)
+| Command      : report_ip_status
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+IP Status Summary
+
+1. Project IP Status
+--------------------
+Your project uses 1 IP. Some of these IP may have undergone changes in this release of the software. Please review the recommended actions.
+
+More information on the Xilinx versioning policy is available at www.xilinx.com.
+
+Project IP Instances
++---------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| Instance Name | Status     | Recommendation      | Change    | IP Name            | IP      | New Version   | New        | Original Part        |
+|               |            |                     | Log       |                    | Version |               | License    |                      |
++---------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| dac_pll       | Up-to-date | No changes required |  *(1)     | Clocking Wizard    | 6.0     | 6.0 (Rev. 12) | Included   | xc7a100tfgg484-2     |
+|               |            |                     |           |                    | (Rev.   |               |            |                      |
+|               |            |                     |           |                    | 12)     |               |            |                      |
++---------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+*(1) e:/Xilinx/Vivado/2023.1/data/ip/xilinx/clk_wiz_v6_0/doc/clk_wiz_v6_0_changelog.txt
+
+

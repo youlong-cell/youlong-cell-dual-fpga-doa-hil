@@ -1,0 +1,47 @@
+# 可再生成的工程/构建输出
+/build/
+**/.Xil/
+**/__pycache__/
+*.pyc
+*.jou
+*.log
+*.wdb
+*.wcfg
+*.dcp
+*.bit
+*.elf
+*.xsa
+BOOT.bin
+BOOT.BIN
+*.zip
+*.xpr
+*.xpr.backup
+**/*.runs/
+**/*.cache/
+**/*.gen/
+**/ip_user_files/
+**/.metadata/
+# 系统字体和个人账户配置不进入仓库
+*.ttf
+*.ttc
+*.otf
+.env
+.env.*
+*.pem
+*.pfx
+# 仅此已核验OFL字体允许随包，其余系统字体仍排除。
+!third_party/fonts/NotoSansSC-wght.ttf
+
+# 历史对照与归档保存在仓库外
+**/archive/
+**/backup/
+**/reference/
+**/legacy/
+**/xsim/
+
+# 当前真实验证日志随源码可审查，原始大构建输出仍在build外排除。
+!evidence/current/**/*.log
+
+# 双击BAT生成的独立工程，不混入源码交付
+/transmitter/vivado/
+/receiver/vivado/

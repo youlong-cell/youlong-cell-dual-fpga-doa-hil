@@ -1,0 +1,122 @@
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           AArch64
+  Version:                           0x1
+  Entry point address:               0x1000000
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          2474856 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         2
+  Size of section headers:           64 (bytes)
+  Number of section headers:         40
+  Section header string table index: 39
+
+Section Headers:
+  [Nr] Name              Type             Address           Offset
+       Size              EntSize          Flags  Link  Info  Align
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .text             PROGBITS         0000000001000000  00010000
+       000000000002ac6c  0000000000000000  AX       0     0     256
+  [ 2] .init             PROGBITS         000000000102ac80  0003ac80
+       0000000000000034  0000000000000000  AX       0     0     4
+  [ 3] .fini             PROGBITS         000000000102acc0  0003acc0
+       0000000000000034  0000000000000000  AX       0     0     4
+  [ 4] .rodata           PROGBITS         000000000102ad00  0003ad00
+       00000000000fc090  0000000000000000   A       0     0     16
+  [ 5] .rodata1          NOBITS           0000000001126d90  00136d90
+       0000000000000030  0000000000000000  WA       0     0     1
+  [ 6] .sdata2           PROGBITS         0000000001126dc0  00140048
+       0000000000000000  0000000000000000   W       0     0     1
+  [ 7] .sbss2            PROGBITS         0000000001126dc0  00140048
+       0000000000000000  0000000000000000   W       0     0     1
+  [ 8] .data             PROGBITS         0000000001126dc0  00136dc0
+       0000000000001f00  0000000000000008  WA       0     0     16
+  [ 9] .data1            PROGBITS         0000000001128cc0  00140048
+       0000000000000000  0000000000000000  WA       0     0     1
+  [10] .note.gnu.build-i NOTE             0000000001128cc0  00138cc0
+       0000000000000024  0000000000000000   A       0     0     4
+  [11] .ctors            NOBITS           0000000001128ce4  00138ce4
+       000000000000001c  0000000000000000  WA       0     0     1
+  [12] .dtors            PROGBITS         0000000001128d00  00140048
+       0000000000000000  0000000000000000   W       0     0     1
+  [13] .mmu_tbl0         PROGBITS         0000000001129000  00139000
+       0000000000000010  0000000000000000   A       0     0     1
+  [14] .mmu_tbl1         PROGBITS         000000000112a000  0013a000
+       0000000000002000  0000000000000000   A       0     0     1
+  [15] .mmu_tbl2         PROGBITS         000000000112c000  0013c000
+       0000000000004000  0000000000000000   A       0     0     1
+  [16] .preinit_array    PREINIT_ARRAY    0000000001130000  00140048
+       0000000000000000  0000000000000008  WA       0     0     1
+  [17] .init_array       INIT_ARRAY       0000000001130000  00140000
+       0000000000000008  0000000000000008  WA       0     0     8
+  [18] .fini_array       FINI_ARRAY       0000000001130008  00140008
+       0000000000000040  0000000000000008  WA       0     0     8
+  [19] .sdata            NOBITS           0000000001130048  00140048
+       0000000000000038  0000000000000000  WA       0     0     1
+  [20] .sbss             PROGBITS         0000000001130080  00140048
+       0000000000000000  0000000000000000   W       0     0     1
+  [21] .tdata            PROGBITS         0000000001130080  00140048
+       0000000000000000  0000000000000000 WAT       0     0     1
+  [22] .tbss             NOBITS           0000000001130080  00000000
+       0000000000000000  0000000000000000 WAT       0     0     1
+  [23] .bss              NOBITS           0000000001130100  00140048
+       0000000001aa5a80  0000000000000000  WA       0     0     256
+  [24] .heap             NOBITS           0000000002bd5b80  00140048
+       0000000000008000  0000000000000000  WA       0     0     1
+  [25] .stack            NOBITS           0000000002bddb80  00140048
+       0000000000011000  0000000000000000  WA       0     0     1
+  [26] .comment          PROGBITS         0000000000000000  00140048
+       0000000000000012  0000000000000001  MS       0     0     1
+  [27] .debug_info       PROGBITS         0000000000000000  0014005a
+       000000000003a425  0000000000000000           0     0     1
+  [28] .debug_abbrev     PROGBITS         0000000000000000  0017a47f
+       0000000000007e94  0000000000000000           0     0     1
+  [29] .debug_loclists   PROGBITS         0000000000000000  00182313
+       0000000000019eb5  0000000000000000           0     0     1
+  [30] .debug_aranges    PROGBITS         0000000000000000  0019c1d0
+       00000000000016f0  0000000000000000           0     0     16
+  [31] .debug_rnglists   PROGBITS         0000000000000000  0019d8c0
+       0000000000003685  0000000000000000           0     0     1
+  [32] .debug_macro      PROGBITS         0000000000000000  001a0f45
+       0000000000018c7f  0000000000000000           0     0     1
+  [33] .debug_line       PROGBITS         0000000000000000  001b9bc4
+       000000000001ba62  0000000000000000           0     0     1
+  [34] .debug_str        PROGBITS         0000000000000000  001d5626
+       0000000000073149  0000000000000001  MS       0     0     1
+  [35] .debug_line_str   PROGBITS         0000000000000000  0024876f
+       00000000000011b1  0000000000000001  MS       0     0     1
+  [36] .debug_frame      PROGBITS         0000000000000000  00249920
+       0000000000005030  0000000000000000           0     0     8
+  [37] .symtab           SYMTAB           0000000000000000  0024e950
+       0000000000009c30  0000000000000018          38   1095     8
+  [38] .strtab           STRTAB           0000000000000000  00258580
+       0000000000003c64  0000000000000000           0     0     1
+  [39] .shstrtab         STRTAB           0000000000000000  0025c1e4
+       000000000000017f  0000000000000000           0     0     1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  p (processor specific)
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  LOAD           0x0000000000010000 0x0000000001000000 0x0000000001000000
+                 0x0000000000130048 0x0000000001beeb80  RWE    0x10000
+  NOTE           0x0000000000138cc0 0x0000000001128cc0 0x0000000001128cc0
+                 0x0000000000000024 0x0000000000000024  R      0x4
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text .init .fini .rodata .rodata1 .data .note.gnu.build-id .ctors .mmu_tbl0 .mmu_tbl1 .mmu_tbl2 .init_array .fini_array .sdata .bss .heap .stack 
+   01     .note.gnu.build-id 

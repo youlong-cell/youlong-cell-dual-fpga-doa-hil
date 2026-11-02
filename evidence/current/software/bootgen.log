@@ -1,0 +1,70 @@
+
+
+****** Bootgen v2023.1
+  **** Build date : Apr 26 2023-21:40:02
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+[INFO]   : Command line parsing completed successfully
+[INFO]   : BIF file parsed successfully - boot.bif 
+[INFO]   : Parsing Partition Data to Image
+[INFO]   : Building image - DOA_REPRODUCED_ENGINEERING
+[INFO]   : Building the Partition Header Table
+[INFO]   : After build 
+           -- Dump of Binary Image ----
+   Offset      Length     Reserve     Name
+   00000000   000008b8   00000000   BootHeader
+   00000000   00000040   00000000   ImageHeaderTable
+   00000000   00000020   00000000   ImageHeader fsbl.elf
+   00000000   00000024   00000000   ImageHeader receiver.bit
+   00000000   0000002c   00000780   ImageHeader DOA_RF_ENGINEERING.elf
+   00000000   00000040   00000000   PartitionHeader fsbl.elf.0
+   00000000   00000040   00000000   PartitionHeader receiver.bit.0
+   00000000   00000040   00000000   PartitionHeader DOA_RF_ENGINEERING.elf.0
+   00000000   00000040   00001640   PartitionHeader Null
+   00000000   00039d58   00000000   fsbl.elf.0
+   00000000   004cffe8   00000000   receiver.bit.0
+   00000000   00130048   00000000   DOA_RF_ENGINEERING.elf.0
+           -- End of Dump
+[INFO]   : After align 
+           -- Dump of Binary Image ----
+   Offset      Length     Reserve     Name
+   00000000   000008b8   00000000   BootHeader
+   000008c0   00000040   00000000   ImageHeaderTable
+   00000900   00000020   00000000   ImageHeader fsbl.elf
+   00000940   00000024   00000000   ImageHeader receiver.bit
+   00000980   0000002c   00000780   ImageHeader DOA_RF_ENGINEERING.elf
+   00001100   00000040   00000000   PartitionHeader fsbl.elf.0
+   00001140   00000040   00000000   PartitionHeader receiver.bit.0
+   00001180   00000040   00000000   PartitionHeader DOA_RF_ENGINEERING.elf.0
+   000011c0   00000040   00001640   PartitionHeader Null
+   00002800   00039d58   00000000   fsbl.elf.0
+   0003c580   004cffe8   00000000   receiver.bit.0
+   0050c580   00130048   00000000   DOA_RF_ENGINEERING.elf.0
+           -- End of Dump
+[INFO]   : Partition Information: 
+[INFO]   : Image: fsbl.elf
+[INFO]   :        Partition 0: fsbl.elf.0,  Size: 236888
+[INFO]   : Image: receiver.bit
+[INFO]   :        Partition 1: receiver.bit.0,  Size: 5046248
+[INFO]   : Image: DOA_RF_ENGINEERING.elf
+[INFO]   :        Partition 2: DOA_RF_ENGINEERING.elf.0,  Size: 1245256
+[INFO]   : After Link 
+           -- Dump of Binary Image ----
+   Offset      Length     Reserve     Name
+   00000000   000008b8   00000000   BootHeader
+   000008c0   00000040   00000000   ImageHeaderTable
+   00000900   00000020   00000000   ImageHeader fsbl.elf
+   00000940   00000024   00000000   ImageHeader receiver.bit
+   00000980   0000002c   00000780   ImageHeader DOA_RF_ENGINEERING.elf
+   00001100   00000040   00000000   PartitionHeader fsbl.elf.0
+   00001140   00000040   00000000   PartitionHeader receiver.bit.0
+   00001180   00000040   00000000   PartitionHeader DOA_RF_ENGINEERING.elf.0
+   000011c0   00000040   00001640   PartitionHeader Null
+   00002800   00039d58   00000000   fsbl.elf.0
+   0003c580   004cffe8   00000000   receiver.bit.0
+   0050c580   00130048   00000000   DOA_RF_ENGINEERING.elf.0
+           -- End of Dump
+
+[INFO]   : Bootimage generated successfully
+

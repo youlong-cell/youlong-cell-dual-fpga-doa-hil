@@ -1,0 +1,800 @@
+正在从源码创建发送端和接收端工程，请等待。
+工具：E:\Xilinx\Vivado\2023.1\bin\vivado.bat
+详细日志：C:\Users\admin\Documents\Codex\doa_separate_ready\build\create_project\run_18881_25203
+INPUT_HASHES_VERIFIED count=202
+
+****** Vivado v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Sourcing tcl script 'C:/Users/admin/AppData/Roaming/Xilinx/Vivado/2023.1/Vivado_init.tcl'
+[vmcp] server listening on 127.0.0.1:7654
+vivado-mcp-server: plugin loaded. Commands: ::vmcp::server::start / ::vmcp::server::stop / ::vmcp::server::reload
+INFO: [Common 17-1460] Use of init.tcl in C:/Users/admin/AppData/Roaming/Xilinx/Vivado/init.tcl is deprecated. Please use Vivado_init.tcl 
+Sourcing tcl script 'C:/Users/admin/AppData/Roaming/Xilinx/Vivado/init.tcl'
+Verible��Vivado �˵��Ѽ��أ���� Tools > Custom Commands��
+source auto_create_project/run.tcl
+# if {[catch {
+# # \u4ece\u663e\u5f0f\u6e90\u96c6\u521b\u5efa\u5f53\u524d\u6536\u53d1\u7aef\u5de5\u7a0b\uff1b\u4e0d\u7efc\u5408\u3001\u4e0d\u5b9e\u73b0\u3001\u4e0d\u751f\u6210\u955c\u50cf\u6216\u64cd\u4f5c\u677f\u5361\u3002
+# proc doa_read_utf8 {path} {
+#     set f [open $path r]
+#     fconfigure $f -encoding utf-8 -translation auto
+#     set text [read $f]
+#     close $f
+#     return $text
+# }
+# proc doa_write_utf8 {path text} {
+#     set f [open $path w]
+#     fconfigure $f -encoding utf-8 -translation lf
+#     puts $f $text
+#     close $f
+# }
+# proc doa_input_check {root logdir} {
+#     # \u54c8\u5e0c\u5728\u72ec\u7acbPowerShell\u8fdb\u7a0b\u5b8c\u6210\uff0cVivado\u5185\u90e8\u4e0d\u53cd\u590d\u542f\u52a8\u5916\u90e8\u6821\u9a8c\u7a0b\u5e8f\u3002
+#     set stamp [file join $logdir INPUTS_VERIFIED.txt]
+#     if {![file isfile $stamp]} {error "PREFLIGHT_NOT_COMPLETED"}
+#     set proof [doa_read_utf8 $stamp]
+#     if {[string first "CATALOG=$::doa_catalog_id\n" $proof]!=0} {error "PREFLIGHT_CATALOG_MISMATCH"}
+#     set count [expr {[llength $::doa_input_hashes]/2}]
+#     if {[string first "COUNT=$count\n" $proof]<0} {error "PREFLIGHT_COUNT_MISMATCH"}
+#     foreach {relative expected} $::doa_input_hashes {
+#         if {![file isfile [file join $root $relative]]} {error "SOURCE_MISSING: $relative"}
+#     }
+#     puts "INPUT_PREFLIGHT_ACCEPTED count=$count"
+# }
+# proc doa_assert_unstarted {} {
+#     foreach run [get_runs] {
+#         set status [get_property STATUS $run]
+#         if {$status ne "Not started"} {error "CREATE_ONLY_RUN_STATE: $run = $status"}
+#     }
+# }
+# proc doa_create_side {root side logdir} {
+#     set spec [dict get $::doa_specs $side]
+#     set out [file join $root $side vivado]
+#     set project [file join $out [format %s.xpr $side]]
+#     set marker [file join $out CREATE_ONLY_VERIFIED.txt]
+#     if {[file exists $project]} {
+#         # \u5df2\u6709\u5de5\u7a0b\u4fdd\u7559\uff0c\u4e0d\u5173\u95ed\u7528\u6237GUI\u3001\u4e0d\u8986\u76d6\u6216\u81ea\u52a8\u5220\u9664\u3002
+#         if {![file isfile $marker] || [string first "CATALOG=$::doa_catalog_id\n" [doa_read_utf8 $marker]]!=0} {
+#             error "EXISTING_PROJECT_IDENTITY_UNPROVEN: $project"
+#         }
+#         puts "PROJECT_PRESERVED side=$side path=$project"
+#         return [list $side PRESERVED $project]
+#     }
+#     if {[file exists $out]} {error "PARTIAL_OUTPUT_EXISTS: $out"}
+#     file mkdir $out
+#     create_project $side $out -part [dict get $spec part]
+#     set_property target_language Verilog [current_project]
+#     config_ip_cache -disable_cache
+#     set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY XPM_FIFO} [current_project]
+#     set_property top [dict get $spec top] [get_filesets sources_1]
+#     foreach row [dict get $spec sources] {
+#         lassign $row relative role disabled
+#         if {[file extension $relative] eq ".bd"} {continue}
+#         set path [file normalize [file join $root $relative]]
+#         if {$role eq "constrs_1"} {
+#             add_files -fileset constrs_1 -norecurse [list $path]
+#             if {$disabled} {set_property IS_ENABLED false [get_files [list $path]]}
+#             if {[file tail $path] eq "cdc_handwritten_sync_guard.tcl"} {
+#                 set_property FILE_TYPE TCL [get_files [list $path]]
+#                 set_property USED_IN_SYNTHESIS false [get_files [list $path]]
+#                 set_property USED_IN_IMPLEMENTATION true [get_files [list $path]]
+#                 set_property PROCESSING_ORDER LATE [get_files [list $path]]
+#                 set_property STEPS.OPT_DESIGN.TCL.PRE $path [get_runs impl_1]
+#             }
+#         } else {add_files -norecurse [list $path]}
+#     }
+#     set includes {}
+#     foreach relative [dict get $spec include_dirs] {
+#         lappend includes [file normalize [file join $root $relative]]
+#     }
+#     if {[llength $includes]} {
+#         set_property include_dirs $includes [get_filesets sources_1]
+#         set_property include_dirs $includes [get_filesets sim_1]
+#     }
+#     foreach relative [dict get $spec sim_sources] {
+#         add_files -fileset sim_1 -norecurse [list [file join $root $relative]]
+#     }
+#     set_property top [dict get $spec sim_top] [get_filesets sim_1]
+#     if {$side eq "transmitter"} {
+#         set original [file join $root transmitter ip dac_pll dac_pll.xci]
+#         set text [doa_read_utf8 $original]
+#         # \u53ea\u6539\u8f93\u51fa\u526f\u672c\u7684\u751f\u6210\u76ee\u5f55\uff0c\u5176\u4f59PLL\u53c2\u6570\u9010\u5b57\u4fdd\u6301\u3002
+#         set pattern {"gen_directory"\s*:\s*"[^"]*"}
+#         if {[regexp -all $pattern $text]!=1} {error "PLL_GENERATION_DIRECTORY_AMBIGUOUS"}
+#         regsub $pattern $text {"gen_directory": "../../ip_generated"} staged_text
+#         set stage [file join $out ip dac_pll dac_pll.xci]
+#         file mkdir [file dirname $stage]
+#         doa_write_utf8 $stage $staged_text
+#         import_ip [list $stage]
+#         generate_target all [get_ips dac_pll]
+#         set_property STEPS.SYNTH_DESIGN.TCL.POST \
+#             [file normalize [file join $root transmitter constraints apply_uart_j11.tcl]] [get_runs synth_1]
+#     } else {
+#         set bd [file join $out receiver.srcs sources_1 bd design_1 design_1.bd]
+#         file mkdir [file dirname $bd]
+#         file copy [file join $root receiver bd design_1.bd] $bd
+#         set_property ip_repo_paths [list [file normalize [file join $root receiver ip_repo]]] [current_project]
+#         update_ip_catalog
+#         update_compile_order -fileset sources_1
+#         add_files -norecurse [list $bd]
+#         open_bd_design $bd
+#         validate_bd_design
+#         generate_target all [get_files [list $bd]]
+#         foreach required {psu_init.c psu_init.h} {
+#             set matches [glob -nocomplain [file join [file dirname $bd] ip design_1_zynq_ultra_ps_e_0_0 $required]]
+#             if {[llength $matches]!=1 || [file size [lindex $matches 0]]==0} {error "PS_INIT_OUTPUT_MISSING: $required"}
+#         }
+#         set wrappers [make_wrapper -files [get_files [list $bd]] -top]
+#         add_files -norecurse [list $wrappers]
+#         set_property top [dict get $spec top] [get_filesets sources_1]
+#     }
+#     update_compile_order -fileset sources_1
+#     update_compile_order -fileset sim_1
+#     report_ip_status -file [file join $logdir [format %s_ip_status.rpt $side]]
+#     if {[get_property PART [current_project]] ne [dict get $spec part]} {error "CREATED_PART_MISMATCH"}
+#     if {[get_property TOP [get_filesets sources_1]] ne [dict get $spec top]} {error "CREATED_TOP_MISMATCH"}
+#     doa_assert_unstarted
+#     set status "CATALOG=$::doa_catalog_id\nSIDE=$side\nPART=[dict get $spec part]\nTOP=[dict get $spec top]\nSYNTHESIS=Not started\nIMPLEMENTATION=Not started\nPROJECT=$project"
+#     doa_write_utf8 $marker $status
+#     doa_write_utf8 [file join $logdir [format %s_created.txt $side]] $status
+#     close_project
+#     if {![file isfile $project]} {error "XPR_NOT_WRITTEN: $project"}
+#     return [list $side CREATED $project]
+# }
+# proc doa_main {} {
+#     if {[llength $::argv]!=2} {error "USAGE: run.tcl side log_directory"}
+#     if {![string match "2023.1*" [version -short]]} {error "VIVADO_2023_1_REQUIRED"}
+#     set root [file normalize [file join [file dirname [info script]] ..]]
+#     set side [lindex $::argv 0]
+#     if {$side ni {transmitter receiver}} {error "SIDE_INVALID"}
+#     set logdir [file normalize [lindex $::argv 1]]
+#     if {![file isdirectory $logdir]} {error "LOG_DIRECTORY_NOT_PREPARED"}
+#     uplevel #0 [list source [file join [file dirname [info script]] sources.tcl]]
+#     doa_input_check $root $logdir
+#     set result [doa_create_side $root $side $logdir]
+#     doa_write_utf8 [file join $logdir [format %s_result.txt $side]] "CREATE_PROJECT_SIDE_OK\n$result"
+# 
+# }
+# doa_main
+# 
+# 
+# } error_message error_options]} {
+#  puts stderr $error_message
+#  puts stderr [dict get $error_options -errorinfo]
+#  exit 1
+# }
+## dict create
+## ::tcl::dict::set doa_specs transmitter part xc7a100tfgg484-2
+## ::tcl::dict::set doa_specs transmitter top ax7103_an9767_uart_j11_top
+## list [list {transmitter/rtl/datapath/coherent_nco.v} {sources_1} 0] [list {transmitter/rtl/board/hil20_key_inputs.v} {sources_1} 0] [list {transmitter/config/generated/led_tables.vh} {sources_1} 0] [list {transmitter/rtl/board/hil20_led_status.v} {sources_1} 0] [list {transmitter/rtl/board/hil20_reset_release.v} {sources_1} 0] [list {transmitter/rtl/common/key_debounce.v} {sources_1} 0] [list {transmitter/config/generated/mode_select_tables.vh} {sources_1} 0] [list {transmitter/rtl/control/mode_select.v} {sources_1} 0] [list {transmitter/rtl/control/hil20_control.sv} {sources_1} 0] [list {transmitter/rtl/dispatch/hil20_uart_control.sv} {sources_1} 0] [list {transmitter/config/generated/mapper_reset.vh} {sources_1} 0] [list {transmitter/config/generated/mapper_frequency.vh} {sources_1} 0] [list {transmitter/rtl/control/hil_angle_mapper.sv} {sources_1} 0] [list {transmitter/rtl/protocol/hil_ascii_parser.sv} {sources_1} 0] [list {transmitter/config/generated/decoder_presets.vh} {sources_1} 0] [list {transmitter/config/generated/decoder_aliases.vh} {sources_1} 0] [list {transmitter/config/generated/decoder_prefix.vh} {sources_1} 0] [list {transmitter/rtl/protocol/hil_command_decode.sv} {sources_1} 0] [list {transmitter/rtl/dispatch/hil_reply_fifo.sv} {sources_1} 0] [list {transmitter/config/generated/reply_decimal.vh} {sources_1} 0] [list {transmitter/config/generated/reply_presets.vh} {sources_1} 0] [list {transmitter/config/generated/reply_custom_band.vh} {sources_1} 0] [list {transmitter/rtl/protocol/hil_reply_format.sv} {sources_1} 0] [list {transmitter/rtl/dispatch/hil_reply_scheduler.sv} {sources_1} 0] [list {transmitter/rtl/uart/hil_uart_link.sv} {sources_1} 0] [list {transmitter/rtl/protocol/hil_uart_reply.sv} {sources_1} 0] [list {transmitter/rtl/uart/hil_uart_rx.sv} {sources_1} 0] [list {transmitter/rtl/uart/hil_uart_tx.sv} {sources_1} 0] [list {transmitter/config/uart_baud_config.vh} {sources_1} 0] [list {transmitter/rtl/top/ax7103_an9767_uart_j11_top.v} {sources_1} 0] [list {transmitter/rom/sine_lut_14bit.mem} {sources_1} 0] [list {transmitter/config/hil_angle_phase_rom.mem} {sources_1} 0] [list {transmitter/constraints/ax7103_an9767_no_uart.xdc} {constrs_1} 0] [list {transmitter/constraints/uart_j11.xdc} {constrs_1} 0]
+## ::tcl::dict::set doa_specs transmitter sources {{transmitter/rtl/datapath/coherent_nco.v sources_1 0} {transmitter/rtl/board/hil20_key_inputs.v sources_1 0} {transmitter/config/generated/led_tables.vh sources_1 0} {transmitter/rtl/board/hil20_led_status.v sources_1 0} {transmitter/rtl/board/hil20_reset_release.v sources_1 0} {transmitter/rtl/common/key_debounce.v sources_1 0} {transmitter/config/generated/mode_select_tables.vh sources_1 0} {transmitter/rtl/control/mode_select.v sources_1 0} {transmitter/rtl/control/hil20_control.sv sources_1 0} {transmitter/rtl/dispatch/hil20_uart_control.sv sources_1 0} {transmitter/config/generated/mapper_reset.vh sources_1 0} {transmitter/config/generated/mapper_frequency.vh sources_1 0} {transmitter/rtl/control/hil_angle_mapper.sv sources_1 0} {transmitter/rtl/protocol/hil_ascii_parser.sv sources_1 0} {transmitter/config/generated/decoder_presets.vh sources_1 0} {transmitter/config/generated/decoder_aliases.vh sources_1 0} {transmitter/config/generated/decoder_prefix.vh sources_1 0} {transmitter/rtl/protocol/hil_command_decode.sv sources_1 0} {transmitter/rtl/dispatch/hil_reply_fifo.sv sources_1 0} {transmitter/config/generated/reply_decimal.vh sources_1 0} {transmitter/config/generated/reply_presets.vh sources_1 0} {transmitter/config/generated/reply_custom_band.vh sources_1 0} {transmitter/rtl/protocol/hil_reply_format.sv sources_1 0} {transmitter/rtl/dispatch/hil_reply_scheduler.sv sources_1 0} {transmitter/rtl/uart/hil_uart_link.sv sources_1 0} {transmitter/rtl/protocol/hil_uart_reply.sv sources_1 0} {transmitter/rtl/uart/hil_uart_rx.sv sources_1 0} {transmitter/rtl/uart/hil_uart_tx.sv sources_1 0} {transmitter/config/uart_baud_config.vh sources_1 0} {transmitter/rtl/top/ax7103_an9767_uart_j11_top.v sources_1 0} {transmitter/rom/sine_lut_14bit.mem sources_1 0} {transmitter/config/hil_angle_phase_rom.mem sources_1 0} {transmitter/constraints/ax7103_an9767_no_uart.xdc constrs_1 0} {transmitter/constraints/uart_j11.xdc constrs_1 0}}
+## list {transmitter/config}
+## ::tcl::dict::set doa_specs transmitter include_dirs transmitter/config
+## list {transmitter/sim/uart_angle/tb_angle_decoder.sv} {transmitter/sim/uart_angle/tb_angle_mapper.sv} {transmitter/sim/uart_angle/tb_hil20_any_angle.sv} {transmitter/sim/current/tb_hil20_baud.sv} {transmitter/sim/current/tb_reply_fifo.sv}
+## ::tcl::dict::set doa_specs transmitter sim_sources {transmitter/sim/uart_angle/tb_angle_decoder.sv transmitter/sim/uart_angle/tb_angle_mapper.sv transmitter/sim/uart_angle/tb_hil20_any_angle.sv transmitter/sim/current/tb_hil20_baud.sv transmitter/sim/current/tb_reply_fifo.sv}
+## ::tcl::dict::set doa_specs transmitter sim_top tb_hil20_baud
+## ::tcl::dict::set doa_specs receiver part xczu2cg-sfvc784-1-i
+## ::tcl::dict::set doa_specs receiver top top
+## list [list {receiver/rtl/spectrum_fft_capture.v} {sources_1} 0] [list {receiver/rtl/spectrum_fft_prepare.v} {sources_1} 0] [list {receiver/rtl/spectrum_fft_result_writer.v} {sources_1} 0] [list {receiver/rtl/spectrum_fft_ctrl.v} {sources_1} 0] [list {receiver/rtl/pl_mode_controller.v} {sources_1} 0] [list {receiver/rtl/fft_result_bank_bridge.v} {sources_1} 0] [list {receiver/rtl/fft_result_bank_owner.v} {sources_1} 0] [list {receiver/rtl/sample_timebase.v} {sources_1} 0] [list {receiver/rtl/fft_result_bank_system.v} {sources_1} 0] [list {receiver/rtl/candidate_gpio_bridge.v} {sources_1} 0] [list {receiver/rtl/candidate_window_consumer.v} {sources_1} 0] [list {receiver/rtl/fft_candidate_chain.v} {sources_1} 0] [list {receiver/rtl/fft_strongest_valid_detector.v} {sources_1} 0] [list {receiver/rtl/sample_ring_buffer.v} {sources_1} 0] [list {receiver/rtl/sample_window_copy.v} {sources_1} 0] [list {receiver/rtl/single_candidate_manager.v} {sources_1} 0] [list {receiver/rtl/fine_command_mailbox.sv} {sources_1} 0] [list {receiver/rtl/fine_complex_correlator.sv} {sources_1} 0] [list {receiver/rtl/fine_cross_phase.sv} {sources_1} 0] [list {receiver/rtl/fine_doa_arcsin.sv} {sources_1} 0] [list {receiver/rtl/fine_doa_argument.sv} {sources_1} 0] [list {receiver/rtl/fine_doa_config.sv} {sources_1} 0] [list {receiver/rtl/fine_doa_engine.sv} {sources_1} 0] [list {receiver/rtl/fine_log2_score.sv} {sources_1} 0] [list {receiver/rtl/fine_log_parabola.sv} {sources_1} 0] [list {receiver/rtl/fine_log_score.sv} {sources_1} 0] [list {receiver/rtl/fine_phase_calibration.sv} {sources_1} 0] [list {receiver/rtl/fine_production_bridge.sv} {sources_1} 0] [list {receiver/rtl/fine_result_abi.sv} {sources_1} 0] [list {receiver/rtl/fine_result_slot.sv} {sources_1} 0] [list {receiver/rtl/fine_result_transport.sv} {sources_1} 0] [list {receiver/rtl/fine_shared_nco.sv} {sources_1} 0] [list {receiver/rtl/fine_three_bin_estimator.sv} {sources_1} 0] [list {receiver/rtl/fine_three_bin_interpolator.sv} {sources_1} 0] [list {receiver/rtl/fine_unsigned_divider.sv} {sources_1} 0] [list {receiver/rtl/fine_production_system.v} {sources_1} 0] [list {receiver/rtl/r2_iterative_sqrt.sv} {sources_1} 0] [list {receiver/rtl/fine_doa_sqrt.v} {sources_1} 0] [list {receiver/bd/design_1.bd} {sources_1} 0] [list {receiver/rtl/top.v} {sources_1} 0] [list {receiver/rom/fine_hann_1024.mem} {sources_1} 0] [list {receiver/rom/fine_hann_4096.mem} {sources_1} 0] [list {receiver/rom/fine_nco_16384.mem} {sources_1} 0] [list {receiver/rom/fine_ln_8193.mem} {sources_1} 0] [list {receiver/rom/fine_atan_48.mem} {sources_1} 0] [list {receiver/rom/hann_1024.mem} {sources_1} 0] [list {receiver/rom/fine_log2_8193.mem} {sources_1} 0] [list {receiver/constraints/shared_pins.xdc} {constrs_1} 0] [list {receiver/constraints/cdc_handwritten_sync.xdc} {constrs_1} 1] [list {receiver/constraints/cdc_handwritten_sync_guard.tcl} {constrs_1} 0]
+## ::tcl::dict::set doa_specs receiver sources {{receiver/rtl/spectrum_fft_capture.v sources_1 0} {receiver/rtl/spectrum_fft_prepare.v sources_1 0} {receiver/rtl/spectrum_fft_result_writer.v sources_1 0} {receiver/rtl/spectrum_fft_ctrl.v sources_1 0} {receiver/rtl/pl_mode_controller.v sources_1 0} {receiver/rtl/fft_result_bank_bridge.v sources_1 0} {receiver/rtl/fft_result_bank_owner.v sources_1 0} {receiver/rtl/sample_timebase.v sources_1 0} {receiver/rtl/fft_result_bank_system.v sources_1 0} {receiver/rtl/candidate_gpio_bridge.v sources_1 0} {receiver/rtl/candidate_window_consumer.v sources_1 0} {receiver/rtl/fft_candidate_chain.v sources_1 0} {receiver/rtl/fft_strongest_valid_detector.v sources_1 0} {receiver/rtl/sample_ring_buffer.v sources_1 0} {receiver/rtl/sample_window_copy.v sources_1 0} {receiver/rtl/single_candidate_manager.v sources_1 0} {receiver/rtl/fine_command_mailbox.sv sources_1 0} {receiver/rtl/fine_complex_correlator.sv sources_1 0} {receiver/rtl/fine_cross_phase.sv sources_1 0} {receiver/rtl/fine_doa_arcsin.sv sources_1 0} {receiver/rtl/fine_doa_argument.sv sources_1 0} {receiver/rtl/fine_doa_config.sv sources_1 0} {receiver/rtl/fine_doa_engine.sv sources_1 0} {receiver/rtl/fine_log2_score.sv sources_1 0} {receiver/rtl/fine_log_parabola.sv sources_1 0} {receiver/rtl/fine_log_score.sv sources_1 0} {receiver/rtl/fine_phase_calibration.sv sources_1 0} {receiver/rtl/fine_production_bridge.sv sources_1 0} {receiver/rtl/fine_result_abi.sv sources_1 0} {receiver/rtl/fine_result_slot.sv sources_1 0} {receiver/rtl/fine_result_transport.sv sources_1 0} {receiver/rtl/fine_shared_nco.sv sources_1 0} {receiver/rtl/fine_three_bin_estimator.sv sources_1 0} {receiver/rtl/fine_three_bin_interpolator.sv sources_1 0} {receiver/rtl/fine_unsigned_divider.sv sources_1 0} {receiver/rtl/fine_production_system.v sources_1 0} {receiver/rtl/r2_iterative_sqrt.sv sources_1 0} {receiver/rtl/fine_doa_sqrt.v sources_1 0} {receiver/bd/design_1.bd sources_1 0} {receiver/rtl/top.v sources_1 0} {receiver/rom/fine_hann_1024.mem sources_1 0} {receiver/rom/fine_hann_4096.mem sources_1 0} {receiver/rom/fine_nco_16384.mem sources_1 0} {receiver/rom/fine_ln_8193.mem sources_1 0} {receiver/rom/fine_atan_48.mem sources_1 0} {receiver/rom/hann_1024.mem sources_1 0} {receiver/rom/fine_log2_8193.mem sources_1 0} {receiver/constraints/shared_pins.xdc constrs_1 0} {receiver/constraints/cdc_handwritten_sync.xdc constrs_1 1} {receiver/constraints/cdc_handwritten_sync_guard.tcl constrs_1 0}}
+## list 
+## ::tcl::dict::set doa_specs receiver include_dirs {}
+## list {receiver/sim/tb_sample_timebase.sv} {receiver/sim/tb_fine_result_slot.sv} {receiver/sim/tb_fine_phase_calibration.sv}
+## ::tcl::dict::set doa_specs receiver sim_sources {receiver/sim/tb_sample_timebase.sv receiver/sim/tb_fine_result_slot.sv receiver/sim/tb_fine_phase_calibration.sv}
+## ::tcl::dict::set doa_specs receiver sim_top tb_sample_timebase
+## list {PROJECTS.json} {6a04ff50a07f682e5dad26b92e2fe075aca27afb4b30af42067c609c10e92e2c} {SIMULATION_TESTS.json} {50327876348b35e6a3bcbd5a68f2ed16bf1b525dfd5a58b138cfff6e4534c6c4} {SOURCE_MANIFEST.json} {4956f60b0548a6187d8c60dbb73cfc37cda13a1704b2b9c9d14c7da02d11e49d} {receiver/bd/design_1.bd} {ff06909ec0f80b2688fa4862779243ea0004c205c23e4beaab391540862d5e6c} {receiver/config/calibration_profiles.json} {d7bef884c59ed4443dc7179fe31d83f15a55891418da472bb1d344fb3d414ea2} {receiver/config/geometry_profile.json} {24919919d55511979a796eea8797d958e7a93bd84a6aec94a8ad98217cd1dbb4} {receiver/constraints/cdc_handwritten_sync.xdc} {e109295b8fa379d321a32a91a4df764abf06c914dce89dd367d7fdce130f0bbd} {receiver/constraints/cdc_handwritten_sync_guard.tcl} {323c2035ac16d676bbd8dca5abd19741b06b926f1b7bafd7b539d743872fbd22} {receiver/constraints/shared_pins.xdc} {671ab05b846403cacb74e63b4d7ecd5bb9f3e87abbe8c9915b8794207f72872d} {receiver/ip_repo/ad9238_sample_1.1/bd/bd.tcl} {1c84726f85b384b436e268025ceca83ffa845ba278ff1acf1650a58ebd373fc6} {receiver/ip_repo/ad9238_sample_1.1/component.xml} {1042c65544acdbc14aeb76e84ac98bba0619d247a4df7ac074b1e1c1ffda41d9} {receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0.v} {42f6a4e3bef386d9313945d5a5736f444e5bd25d9101f348e2b5cd8e273cf265} {receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0_S00_AXI.v} {310edcf66cc40328a70572892d7bd1d7c0cfb23dc84fd57290c41d44555bd83a} {receiver/ip_repo/ad9238_sample_1.1/src/ad.xdc} {08c746c5fc930d5d3a8eddabc76f4b8c37b3c337673cb3f1c7d391148d3dade4} {receiver/ip_repo/ad9238_sample_1.1/src/ad9238_sample.v} {0e7f32ffd45084f51fe54511250ff732f970ca9979cbf17c77854bf2f9c119b2} {receiver/ip_repo/ad9238_sample_1.1/xgui/ad9238_sample_v1_0.tcl} {d3bdad2581bf5be90effcaa8ec53fc77d58c47531b269aa830f46158abdc4866} {receiver/rom/fine_atan_48.mem} {9ff92f38fd78d0c225306584ff96b3cc1d4962f3db83e423680aee8c55993f47} {receiver/rom/fine_hann_1024.mem} {e33bf11e4eaa7aaee53deeeea18e2f6e36639b47df3ce2aa6b445780b511c8c6} {receiver/rom/fine_hann_4096.mem} {69b8c74c8d7ad05ff28fc25633f3cd2870db7cb98e149c867293b965a321b5db} {receiver/rom/fine_ln_8193.mem} {e5a6c94c960d62c257264ad6cc516762aefdd92946cfd62c83a5b0e8044084cf} {receiver/rom/fine_log2_8193.mem} {ead275ef38fd85f9de5a53f4f6083d45caccb4caa13900fd3ba0a08ea53c61b2} {receiver/rom/fine_nco_16384.mem} {554f4ad21785f9a2119eb7102429b9a92e0016204b5cea65d858f1b0f1d4a8b5} {receiver/rom/hann_1024.mem} {d1a95626bcfeaa4626b328c8cdc96ed42f54b7ad16bca3ea678c3ecd573c298e} {receiver/rtl/candidate_gpio_bridge.v} {7118d5eda04ee702aebe936e9ed35e38747cc492e024a4a7a1c8534081f49c5e} {receiver/rtl/candidate_window_consumer.v} {96750468980acdb30fd48d15d98d2a0e6b20dbbcc5fd43d9cca21350eb44d947} {receiver/rtl/fft_candidate_chain.v} {4156bfaad98d6b217d58482d888940f63f49aa75318a5c9554911f7a15adf68c} {receiver/rtl/fft_result_bank_bridge.v} {cb45e02d8036ec989dac017adbec91abc8cdbdfc4799eb25beea94ee65f657e1} {receiver/rtl/fft_result_bank_owner.v} {3c30de0329b270d4c8f22c041b9e6c1abc58ea166dcc236a3dc3d8cee5fcb28d} {receiver/rtl/fft_result_bank_system.v} {2afbf2fee21796a35b388449f5653d51f87b7c51250666754289e8c5995944e6} {receiver/rtl/fft_strongest_valid_detector.v} {03f7c94d164c6846c5d69ef91b947fc35437face87b719d0505649e701648f86} {receiver/rtl/fine_command_mailbox.sv} {717435c3f3109e6708b4372570532d51ac06e1c8243d92330692092b9de5cb5d} {receiver/rtl/fine_complex_correlator.sv} {c1814e37f18b948b82a38a15503a2ef4589c44089e3a482d45255fa8a744991f} {receiver/rtl/fine_cross_phase.sv} {f6ddfc821a9388974f09ef46350dff7a1d7fba16eb329cbbee18342b88354d85} {receiver/rtl/fine_doa_arcsin.sv} {2ca91c5a4573d6eef804e350a1f766e72a5de74fbedf5333205ae463298336c1} {receiver/rtl/fine_doa_argument.sv} {97265968a5eddddbe196798a5e6da0d63c84c44787b93d3c769bdf13b278fbae} {receiver/rtl/fine_doa_config.sv} {e6021b89d2943cab6907399de6ae58e2348267f616b0a1a49a984ccbfe64132d} {receiver/rtl/fine_doa_engine.sv} {8d6483399fc15991f20aaf68bf00c51c71673467f3ac018480b6d41d7b4585bc} {receiver/rtl/fine_doa_sqrt.v} {bbeebff9645ec1d4d7ea14e20620fcee9f7ca3f5663791423eb7672b330291d6} {receiver/rtl/fine_log2_score.sv} {92bf3bbde1368dbcf95f43eba50dde2a2a2045bebf2991bac50ff54858754a41} {receiver/rtl/fine_log_parabola.sv} {33eb76dc465094fb12ba5cca3115b2bc53dc8c339bf386fa64d28763ba9efcc3} {receiver/rtl/fine_log_score.sv} {aa1fea7840c7dd574dda31b4eb831d8d9254b2ebc90f87a4118525e404702d6f} {receiver/rtl/fine_phase_calibration.sv} {ff3fe342db6394de9ff4a2df3c7740b6a4b85afd7e1d05dad3f250760cbf0576} {receiver/rtl/fine_production_bridge.sv} {fd322e4cdbdc6d305507b963a53aa52e2c99ae015a50322f90837f7c05b96ef0} {receiver/rtl/fine_production_system.v} {c3c47290cd961f2d4fb9ccdaaa4886482c25962a6206115ef0d549ee7a2bc638} {receiver/rtl/fine_result_abi.sv} {d8067141df170451cee9a082eae401baf89eb49abdb5202e3f11ccccd1d9505d} {receiver/rtl/fine_result_slot.sv} {5f6f064614d9fec28137395a976b4143572dd97a5a5b3734e0393d7d92a28707} {receiver/rtl/fine_result_transport.sv} {cd4744995133b970e073e6c7dc2dda0893ee4da31d9982800795a7dae87585ba} {receiver/rtl/fine_shared_nco.sv} {ee9aad593b4e14c4c1d35cd152d1fa2c0f02ea2c5726150feb1300bf1990ad7a} {receiver/rtl/fine_three_bin_estimator.sv} {8d81e8656e59b07a3839d48a220e79bf2adef8c33da0096e60ab8231c911870a} {receiver/rtl/fine_three_bin_interpolator.sv} {58f796a289a5192b7513a4e9ad1060264aeca64684e504d4cb2abafb38d431a5} {receiver/rtl/fine_unsigned_divider.sv} {aaeaf59d3ace23a304f6db836a256f5b088086f8da4e41c77167a3c36a9429ef} {receiver/rtl/pl_mode_controller.v} {d3bb51bc1a06b6bc72acde3349ff63f2c14ba08aeac768c0288579cde085987d} {receiver/rtl/r2_iterative_sqrt.sv} {66f9910bba8eb0daa513a88ada722ae9d5a158ac563cb856ddfa764517d8fcc5} {receiver/rtl/sample_ring_buffer.v} {d896d24d0803f925b798d861c03d6b39f08642525f110551f1c7783629576016} {receiver/rtl/sample_timebase.v} {35ae1a0e7a54db782c1f30554992e48d0df0b72653a5e330b96cbd9ed7b872b1} {receiver/rtl/sample_window_copy.v} {3c4e5d0dfa7e073399868682f605349b33bc2d65f7c75751d325f4f9fabe14d4} {receiver/rtl/single_candidate_manager.v} {d331f407823913969079459a7a846fd8a78e09c52e06e3b78abd4b71da4a2c11} {receiver/rtl/spectrum_fft_capture.v} {76fc439e0368502bd7eaf913900fbfbacc79563ad5d29916bd24d93a9a5c2869} {receiver/rtl/spectrum_fft_ctrl.v} {de4ba8f9fc5bd9df0773ba047bae09d109bf53d7742cf39800661452ac6b41c4} {receiver/rtl/spectrum_fft_prepare.v} {14313f3f17366e8e086b3fcb38a4946b5ba92a5c202d9b09ba1ff3720908e7aa} {receiver/rtl/spectrum_fft_result_writer.v} {a85f5deb071201a667e76abac3396550064ce93ae412ad0829e0eb5c65cfbd9e} {receiver/rtl/top.v} {dae5f2a8348997af65ed90a7c81d1141735b5e015373c32846d09f5d45f7a1ef} {receiver/sim/tb_fine_phase_calibration.sv} {f9f30af9cbc4a41abc731a8bb01f6fe3d6b436e41232d2f70a5ad5b756bb0b6d} {receiver/sim/tb_fine_result_slot.sv} {1337e5cde26e5d6a52529cc515d1f7f5b398c644e6a09eb7c34767f866930d91} {receiver/sim/tb_sample_timebase.sv} {b1f8c5c8da074c293de73598e864d1216ddc1b307eb203eb976dae3cac064ba4} {receiver/software/drivers/avbuf_v2_5/xavbuf.c} {fe864e0796cbb405c4c89e004d4a744d63f6b886f800aa65a27dc018066f683b} {receiver/software/drivers/avbuf_v2_5/xavbuf.h} {f5e053f6a5db72aaa84aea204367ddf8d05b6d259ef0f5a10a87a09826a9a4c7} {receiver/software/drivers/avbuf_v2_5/xavbuf_clk.c} {61a3721019fb7426538e797463ae8fb4f9a4c9ea2b0aa78b43f667ce1776fdf4} {receiver/software/drivers/avbuf_v2_5/xavbuf_clk.h} {f6fa34444ba69825b3530e44d42522c77399254e7260778bcfeb2af416e01297} {receiver/software/drivers/avbuf_v2_5/xavbuf_hw.h} {a8ebb763c41409766bff6b71cb938f1781e7639dbfb1343ff607c2e825f0a74d} {receiver/software/drivers/avbuf_v2_5/xavbuf_videoformats.c} {9785df65c6f8f8cbd7bad3ddf158d753c5a59448efa78d530a84cbb6be14d212} {receiver/software/drivers/axidma_v9_16/xaxidma.c} {db1a355cd38e5f2fe56a8fe499454e07964dd2b969c1f79edd3ffbb60cee947b} {receiver/software/drivers/axidma_v9_16/xaxidma.h} {bec38f328d90c98d9e6a2116acaf504e5e4560c17aa0e9f645de4a28d428a139} {receiver/software/drivers/axidma_v9_16/xaxidma_bd.c} {03a0148e986f7eebdf060849a2f8442466a5e3db919965a3b02220a14e8faa97} {receiver/software/drivers/axidma_v9_16/xaxidma_bd.h} {63dab96e7e87f26b65cc501c59d30f32ba818fcaeaf749587ca6b62f90095a09} {receiver/software/drivers/axidma_v9_16/xaxidma_bdring.c} {8a8f6fceb06a9c4670acfb075f5e19d88e8e6ac63a10b6b3dae4c17bf85aa21b} {receiver/software/drivers/axidma_v9_16/xaxidma_bdring.h} {ada872b3793cd5d83798aa603b31a6df654328e818141831b0235df072af6313} {receiver/software/drivers/axidma_v9_16/xaxidma_g.c} {596db9e1dbd9220cd3d4af26b8e97341bb4de2651fea47b5fb4d758a1ba852fa} {receiver/software/drivers/axidma_v9_16/xaxidma_hw.h} {fb8995ffa8eb7584180629b95f8b613fff3be1d5b4ffd0c1e06898ee575ffd0d} {receiver/software/drivers/axidma_v9_16/xaxidma_porting_guide.h} {fa4495ffd0c77a25db80ab17f062accb7b9ee7371fa7f5f6366761c2c1a70e3d} {receiver/software/drivers/axidma_v9_16/xaxidma_selftest.c} {95540b2d16e4e58061d567ad6c2daa54e72d2ec4b4c90ad5a0bb3d049f5c2f42} {receiver/software/drivers/axidma_v9_16/xaxidma_sinit.c} {807ad81c3e9e7453ce679ec5218e8bb66a5b954a6718aabc7351583f876688fc} {receiver/software/drivers/dpdma_v1_4/xdpdma.c} {000f60c4c6e4ff9b5797f3934794875b7e17f7e767606e3b819754858bcaf6cf} {receiver/software/drivers/dpdma_v1_4/xdpdma.h} {55e24e3b9b52d2de65f185278ab7a7af9b5f0efad4f44b5c31cd6ec3542b5f80} {receiver/software/drivers/dpdma_v1_4/xdpdma_g.c} {92c4fb3102f7fa8c7a338b922e68e6bf3fc68e2b9a55fd044b53e4ab425ede06} {receiver/software/drivers/dpdma_v1_4/xdpdma_hw.h} {b0416f3732a04b39f8356f930ba383f08b4394658aa62e6ce7199b1714d4ef46} {receiver/software/drivers/dpdma_v1_4/xdpdma_intr.c} {9d4b8bd492c41ebdaf9ebf2e974187bde3d3e464fff979f3c918bdfaf4dc9020} {receiver/software/drivers/dpdma_v1_4/xdpdma_sinit.c} {0551dbd232c77c7152e7a6c861a658600f046910fb2d5f90493185fa3b44b65d} {receiver/software/drivers/dppsu_v1_6/xdppsu.c} {2b37ea31cf1d8c7118004df2fbfcb1ffc7e471307dead31d0bb7c1565bb0d75e} {receiver/software/drivers/dppsu_v1_6/xdppsu.h} {8b86e3334156450214645ede9439b2837d71400532e761f01058da892f2add38} {receiver/software/drivers/dppsu_v1_6/xdppsu_edid.c} {2293957fe85f8c6d351848fbb142fcd5469ac552a1a43de7321d081bd61244aa} {receiver/software/drivers/dppsu_v1_6/xdppsu_g.c} {04dc1b1c059611e3b84691924f27ef045b78e7fcb7fb5d98536cb502b27380db} {receiver/software/drivers/dppsu_v1_6/xdppsu_hw.h} {82ac366562c5031517897f76713d7f3203df286995e5f6b6273a6b4c3b120104} {receiver/software/drivers/dppsu_v1_6/xdppsu_intr.c} {e9fdb7686cf2d64f2bf0bb7f0f3cf9208f59e1a3b7ef9632bbd50c68a5017ee7} {receiver/software/drivers/dppsu_v1_6/xdppsu_selftest.c} {f76ef7705f97749b8ce23cae1cab6f683e77d5b1dc3a478d7a13890684563d22} {receiver/software/drivers/dppsu_v1_6/xdppsu_serdes.c} {c4b8d7772febbc32ef5a1b333d10491b471735d6bcdc52ccfdef5d3256d24e07} {receiver/software/drivers/dppsu_v1_6/xdppsu_serdes.h} {4e58eb90203f16a2473ede6431deacad73a5591ca8ce79cbe5e5a0f44e1ae679} {receiver/software/drivers/dppsu_v1_6/xdppsu_sinit.c} {d9bfc604ab275af1e2af887af16517f6c6c0d5934da25a3250c238536ef34e1f} {receiver/software/drivers/dppsu_v1_6/xdppsu_spm.c} {e71a57171e9b85eb15067c46d8beb39180b8e708a0f90c8904925a3b174306c7} {receiver/software/src/adc_g2_metrics.h} {15fdd6c212d09a23ae1e48b14aaed1d0c7de3e1aa4f19c0a14d56ab3ceb08dbd} {receiver/software/src/auto_profile.c} {b4f2cb98f508e7e78e111abd9fa9e92959f6c11667e35b2db8b3983a6be499bf} {receiver/software/src/auto_profile.h} {751257da8f51db5b8ee8ceb48e946e488c7ed357c2a46be9248a1f762a7ca5a1} {receiver/software/src/debug_input.c} {fb4f10d14da61760a155888722c02a56ce4355f6e5efc9efe095ef918b498031} {receiver/software/src/debug_input.h} {d6493b4cdfb89c807f61ba25373ac316840cda9ebb7600193774f8a5a7bb82b0} {receiver/software/src/debug_main.c} {efb0286653bf08b9a91ea20cebe87e5a446e52c29635a75a9cf8a5f173628bbd} {receiver/software/src/debug_mmio.c} {ef6dd56accf6045735023f390861be1de0350a0486e847f0701dda7adb6bc1ae} {receiver/software/src/debug_mmio.h} {8a75f9868dc38da59e8359c3623d59b173cbb9a1f3f700c525225b18470de8ad} {receiver/software/src/debug_pages.c} {c2614e25e41d2376502440cf53f70edb6fe5927db4fed23f52668afd22657db0} {receiver/software/src/debug_ui.c} {29a41b57f2e7fe6d71261cef4bc5bbfa3d0bc2706e636450dbc71a9862c9c085} {receiver/software/src/debug_ui.h} {31a3d883aba4310e176f9a83a6d8fdc84edbefa9cf6d8a034d1423095cb444a3} {receiver/software/src/display_ctrl.c} {814f6d3ef6e93d3f920deb228e6c9daeac59adf29bd416cc12d470ecfd0fd158} {receiver/software/src/display_ctrl.h} {a772617faad439b12472b898374e152796f4f4f860eb868025660bb879012dad} {receiver/software/src/display_draw_safe.h} {66ec8a62346f359f99049e23a3f44475fad964e08fdad9a0130815ccf18ebc2b} {receiver/software/src/doa_result_publish.c} {b89891b5bcfa581e3e3c038a53dd853a8d446bc16c9916ec13f24da98d08dc22} {receiver/software/src/doa_result_publish.h} {9e7c46a893f1d97606e2b5f395b2c80168c07e6c55996cc8ef856fa16aa86d76} {receiver/software/src/doa_ui_ema.c} {548e4296cadd6ef1683d3f328cffb2da7a7245e86ee399e332dc810da28c03d2} {receiver/software/src/doa_ui_ema.h} {e8650093df69d3bf06425db5d68e78098814e636e1db059089304313e86c1eea} {receiver/software/src/dp_training_step.c} {f903b84a71498300dfc2983a08df9be01dbb780bda5c4fe4206bd2b4319ffcdc} {receiver/software/src/dp_training_step.h} {24efbfacddc7c9b8cc243391733ead90f3964e079ddd55046745aaeb03c744c6} {receiver/software/src/engineering_session.c} {252294cf21fd082a87ce49889b5e94cbaeee7d188177be0508173776867a7ce4} {receiver/software/src/engineering_session.h} {e5ec6411465d79a59ff16fe0e71689b4c6b99466a6ef23e588ab61644d63784d} {receiver/software/src/epoch_journal.c} {ef7187eea19429cac5970af41556da8eb7a9a2731fbc4414c960333718f2aa95} {receiver/software/src/epoch_journal.h} {f167d9d303881a6a09f07d6086ea8707393eb3dfb1f9bf483d46826a26a36ca7} {receiver/software/src/fine_production_decode.c} {93682b99d040c81e16a25e29c0ea79f8118eaef90d5715a1d2e4885bb3dbc053} {receiver/software/src/fine_production_ps.c} {99f4c7edf3ff431af277f064d3d7c6310946e67bb61524f5728a32b7722acef1} {receiver/software/src/fine_production_ps.h} {9803057d73a35a39890f4e6efddf43f926cd540cf1346bb51efa827c295cfd1e} {receiver/software/src/font12x12.c} {25e38e657eafb9ff0636130c920b48a379510699b751d74c410df6d9391e548a} {receiver/software/src/font12x12.h} {373d7fb12cc08885d2da2341bcbbf925cc33518c9d51d802924634ed2b980673} {receiver/software/src/font5x7.h} {109498390ab7016a359bab041c31776aca3173003244e4583ea5736912acff4b} {receiver/software/src/guard_io.h} {4e6c8b4f389da614af3d4ba028e0c0648cc0d9421d0ff68dc1692376dd7311b9} {receiver/software/src/hardware/board_config.h} {824ab4167a6e13bee0c1b69b8b57a2d7515fd41473858234af540313babf6fe1} {receiver/software/src/hardware/epoch_partition.h} {37c87186aaddfceded32c407688cab6f3adc5ac036b845c3b573df70f80a1ee2} {receiver/software/src/hardware/epoch_qspi_backend.h} {05c6ba3cceb21c8eb4a78e58e2f3e0c9c31087b01fc1a67359906aa04b77c8da} {receiver/software/src/hardware/epoch_qspi_probe.h} {c7bbeb83f838330ec355690407ecf253f1f28891d7ae5b42be4c8c366880e35b} {receiver/software/src/hardware/epoch_qspi_xilinx.h} {cbb15640b2818c42347da9a8d8c6235af5b0d4f029d226f2b5190a91c35e251e} {receiver/software/src/hardware/hw_bridge.h} {254a8b6eff91ed1de3d2ae915b5be58f00885e72afcd73ecd17a0020f3bdf77a} {receiver/software/src/hardware/result_identity.h} {757e4058ad18bed829b34ab2daad60be19dcabf74f5aca2fb1737b3245e16d43} {receiver/software/src/hardware/sample_clock.h} {0500bc36c6f6d6af261054bb1b790fdfe906e1be1f721413dfcc7162d424722a} {receiver/software/src/hil_profile_generated.h} {7434608d16d3a2e891e1c7a7833e13c095eefed2e09b4bdc4d5df689a5ea1fa8} {receiver/software/src/hil_profiles.c} {82aa0dfb22536ea3c556ff3ab8b868a66e21f89207cc1f4bde24d924fd3f07a0} {receiver/software/src/hil_profiles.h} {c529e47650a7e8aee117539aec6250879d2c672d9925e51870dea999506757db} {receiver/software/src/lcd_doa.c} {5198d06c113090fb83720763d7c65b4d6479b728286f6c4c8c47df1888fbeca9} {receiver/software/src/lcd_doa.h} {8d49484b6690135cdeda1804029ade12258bf07f6717485595bb40194cd226ad} {receiver/software/src/lpd_slcr.h} {9b8c8a226aba5a4addd7e3d4f999116f7e15f88a114603c05bfe45bbdcb7fa96} {receiver/software/src/lscript.ld} {64891264d4680055f7179a72563027a36cbbdd3ef0e76b0668dfd5f0ad8c2269} {receiver/software/src/receiver_build_identity.c} {efac29c6bdb2c61f8fb1e6a17f55325680f107cb40402ff316b8e44d827ea26a} {receiver/software/src/service_profile.c} {19dc4d864950408c4714e7b696f29ac89c3db216b5e60bd16059a8a3ed751236} {receiver/software/src/service_profile.h} {b95cc18b957edfd378f982521382266878fd0dc6dc1f865d3ee45b4d0195fc25} {receiver/software/src/spectrum.h} {2ce087afb8bed158c47d8a22dac6ea1f857f8d9fb2ee8f49a8329bc9073b1148} {receiver/software/src/spectrum_display_filter.c} {f2e3d3a1992e1bd9ec4271aa39372036af1b38995e4729078640e8ade5ca322d} {receiver/software/src/spectrum_display_filter.h} {7e4b814c0c66939fffeba3e929a10de8b1bce6f950d304aa3f9a5bae1bafcd4e} {receiver/software/src/spectrum_pl.c} {2ad2c967391c24eeb6872f1ed66d20e30d818b9002a6107a488c65541e8ccb83} {receiver/software/src/spectrum_pl.h} {8b086040f4e2073ae01bc8aec2a474d35a94bfa1945ac7a96dc993dfe972214f} {receiver/software/src/ui1920.h} {82081091ee41f719c2b95241b75ac5b00d97f76464b7bea22860381b5377a4e9} {receiver/software/src/ui_alpha_atlas.h} {87315c5ce242639f37dec2a380bc35bddc3cb094df876582b3925a35ab2c31f3} {receiver/software/src/ui_alpha_font.h} {204c3e7931d0e974252d18f3dc596cb7e6e28823508a2c7663214085b0e1aeb3} {receiver/software/src/ui_zh.h} {64d5ce9eae1725deebc58831e6a93ae5911fe9f491e759cc0705797b5109542b} {transmitter/config/generated/decoder_aliases.vh} {f803000e3221dfeba7216bb03a5f431fe829a5f0d8c7d01fb81bdd68053c47c0} {transmitter/config/generated/decoder_prefix.vh} {b6e14bfccc338e3e86986e6ab85e3f10d77a89825c370a4019db0c9cff545efe} {transmitter/config/generated/decoder_presets.vh} {438133d29ad502b20af997def6e15e78a2144396ee6ac0f2d13aa26f66247822} {transmitter/config/generated/led_tables.vh} {5fe70fc24c5f5dd32781443641061218c1f28a3fec5a79cbfbf14013515ec94e} {transmitter/config/generated/mapper_frequency.vh} {16289ed61b2382144a7e2fa97f3fc0b1f2b8ae15ab1afe889c2e52e1eca0ee4f} {transmitter/config/generated/mapper_reset.vh} {41439257d4516afc159ff2a427fdf11a6222a9e28176cd36e66b3d44b3911122} {transmitter/config/generated/mode_select_tables.vh} {bbe9c87fb9ba9119c80744456ee0068b035e0d2083c7467b9e35c08ab1653113} {transmitter/config/generated/reply_custom_band.vh} {56077b128e6e14ed8c7ef6a84f6964f40e73ed133691b990747073bcacde3d7e} {transmitter/config/generated/reply_decimal.vh} {44d69f8e62f74d34b4111f966e72e6e14a2371bdb791b07cb74f56c664eeea3a} {transmitter/config/generated/reply_presets.vh} {ddf890428e05f7cab207a6e9de2816b0587c2b3cc7628b9d290b14f7282dd3a7} {transmitter/config/hil_angle_phase_rom.mem} {251fef5bac2a672ffa8e936766537a093e23901c3152945069e961ce66591591} {transmitter/config/hil_mode_catalog.json} {59f0c3eec4785564978f070366839a669919ff61a2d6be23a48692e38fccd455} {transmitter/config/uart_baud_config.vh} {ab3b61faaf9f9a71bfb8ebcc27b002d04b9188b3c8e70aee2507b84d88402148} {transmitter/constraints/apply_uart_j11.tcl} {76c62df438c71082485dfdab0a33d497066cd4bd924f3087d48c23e67c795970} {transmitter/constraints/ax7103_an9767_no_uart.xdc} {4b10230669d120e4b6c1d77beaf5bb35e82ce7f8426cdb85890d2f25c6d4a6aa} {transmitter/constraints/uart_j11.xdc} {8133ce38a3ad63fc06fa34e7021bbf5b1b0ebc7a69ddcb48e769a4b918eab4c9} {transmitter/ip/dac_pll/dac_pll.xci} {a2759a5469f53c3431a8ebab24d5897658d07c19cc9f914c7601676ff560f90d} {transmitter/rom/sine_lut_14bit.mem} {3cc4fd7eed2090406c108fe8562826dad9aad9102041b8744718454757c0ab42} {transmitter/rtl/board/hil20_key_inputs.v} {527f2bc109cf90975c2f25732be7177579d5d5aa7981b6c25e7d045019db8c78} {transmitter/rtl/board/hil20_led_status.v} {9d1fc69fe5675c485e683ae7ec48bd61e7fd29b0a055857880641f78580af033} {transmitter/rtl/board/hil20_reset_release.v} {7736f36a77e8db2e13d0bd428e8e22ee6c6ee5a2e6db177c08440526bb4ac175} {transmitter/rtl/common/key_debounce.v} {0b7881073745ac457994931de1d53cba33e92e2c6c3e7af85287871294116e0f} {transmitter/rtl/control/hil20_control.sv} {d84f8b4aee651c4247e956a8c1740051d93bdb0190cdc65e0cedf7629b54fc88} {transmitter/rtl/control/hil_angle_mapper.sv} {9d7f1b60be411c1a856afe71ff2826616c52eab1144a5acbf25fb6a4ea022a5b} {transmitter/rtl/control/mode_select.v} {25aa3ad01094ef1a4c536742317c053808dd8263076a3619b548771549e35c1f} {transmitter/rtl/datapath/coherent_nco.v} {5a249b9cab44ecaf2218d5fb61a1452d709156360e6518201187dcd052414b6b} {transmitter/rtl/dispatch/hil20_uart_control.sv} {b3017ac01ceef8b33357a60a964e02da5df48e944dcb02fc4ffc827ec5eb9d83} {transmitter/rtl/dispatch/hil_reply_fifo.sv} {ad01a446901623c1e4f353a06c2b8e26703558c8b0792fb54cade436598d47c0} {transmitter/rtl/dispatch/hil_reply_scheduler.sv} {439c3be139ec71c69d7c339a6c33508fc32684da3eac7e03778f7ec8bee82411} {transmitter/rtl/protocol/hil_ascii_parser.sv} {3e0f3c8b7b3dfaf9ca61dc5460ecd7750d6a57cde22ec5249bbc2df647cbed02} {transmitter/rtl/protocol/hil_command_decode.sv} {6917fd12003316518fe13209c57359b07f5bde750c0ea69ceff1ccb348ef8abb} {transmitter/rtl/protocol/hil_reply_format.sv} {b6806ec0f9d72277bf348f728322a53d43566ab23c3b7bcef009dbb32f7da82c} {transmitter/rtl/protocol/hil_uart_reply.sv} {9455bfda128a5b3eed53b394b360dbc1444c694f31785093e093cd5db7727fa1} {transmitter/rtl/top/ax7103_an9767_uart_j11_top.v} {91a28b3bb0976b1cb24db5dc2006a1274247f5292dbafae143543bb85c40dcb7} {transmitter/rtl/uart/hil_uart_link.sv} {33e8170f2155e385172b66b9d8050a6fdc92c0d4ad5cb862597c4c1dee5258ad} {transmitter/rtl/uart/hil_uart_rx.sv} {cc50f416a426d46ad48356f1f48db3e248ce239c29c8289f16ea382862fec0a8} {transmitter/rtl/uart/hil_uart_tx.sv} {06cdc4f9ad2a7a30f93242cdaef00245c8ecfd9d6bd1c502c920d3ac3d79a287} {transmitter/scripts/generate_angle_rom.py} {17458c3ce92bf1148dae6a8f889474951db94cd0a655054d9421fe86bfd9b3b0} {transmitter/scripts/generate_mode_catalog.py} {2e97373997e8ac0acfdd53b29515b4f59fb4971a2f5483ae7ce8e5ac536663f4} {transmitter/sim/current/tb_hil20_baud.sv} {e784dd50b8513f90e32b557060213d6d20f3a526b5dc78e82b2ac01092272e28} {transmitter/sim/current/tb_reply_fifo.sv} {a055fcb0c5c707ec3af53fe29352cb07ccbde842b5ac73230ca3e0570656e0c0} {transmitter/sim/uart_angle/angle_golden_vectors.txt} {61d52ab6d5e4df9789cb58874c7604677e3207484f68132efa3a6872ef401e4d} {transmitter/sim/uart_angle/tb_angle_decoder.sv} {9ef5b8877d864252e6b47ad363cee0415f2624993172054e8c7536dc52b675fa} {transmitter/sim/uart_angle/tb_angle_mapper.sv} {1697a21c9862371407b1786aa22de1e32995eebbc7438ee8b013945f3ef4fcff} {transmitter/sim/uart_angle/tb_hil20_any_angle.sv} {006166fa46b3b611e0465f06ff1e1425097dd7677998ad5e7d8589f4b19eceef}
+INPUT_PREFLIGHT_ACCEPTED count=202
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2023.1/data/ip'.
+INFO: [Device 21-403] Loading part xc7a100tfgg484-2
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'dac_pll'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'dac_pll'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'dac_pll'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'dac_pll'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'dac_pll'...
+WARNING: [Runs 36-537] File C:/Users/admin/Documents/Codex/doa_separate_ready/transmitter/constraints/apply_uart_j11.tcl is not part of fileset utils_1, but has specified as a Tcl hook script for run(s) synth_1. This file will not be handled as part of the project for archive and other project based functionality.
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 20:50:00 2026...
+
+****** Vivado v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Sourcing tcl script 'C:/Users/admin/AppData/Roaming/Xilinx/Vivado/2023.1/Vivado_init.tcl'
+[vmcp] server listening on 127.0.0.1:7654
+vivado-mcp-server: plugin loaded. Commands: ::vmcp::server::start / ::vmcp::server::stop / ::vmcp::server::reload
+INFO: [Common 17-1460] Use of init.tcl in C:/Users/admin/AppData/Roaming/Xilinx/Vivado/init.tcl is deprecated. Please use Vivado_init.tcl 
+Sourcing tcl script 'C:/Users/admin/AppData/Roaming/Xilinx/Vivado/init.tcl'
+Verible��Vivado �˵��Ѽ��أ���� Tools > Custom Commands��
+source auto_create_project/run.tcl
+# if {[catch {
+# # \u4ece\u663e\u5f0f\u6e90\u96c6\u521b\u5efa\u5f53\u524d\u6536\u53d1\u7aef\u5de5\u7a0b\uff1b\u4e0d\u7efc\u5408\u3001\u4e0d\u5b9e\u73b0\u3001\u4e0d\u751f\u6210\u955c\u50cf\u6216\u64cd\u4f5c\u677f\u5361\u3002
+# proc doa_read_utf8 {path} {
+#     set f [open $path r]
+#     fconfigure $f -encoding utf-8 -translation auto
+#     set text [read $f]
+#     close $f
+#     return $text
+# }
+# proc doa_write_utf8 {path text} {
+#     set f [open $path w]
+#     fconfigure $f -encoding utf-8 -translation lf
+#     puts $f $text
+#     close $f
+# }
+# proc doa_input_check {root logdir} {
+#     # \u54c8\u5e0c\u5728\u72ec\u7acbPowerShell\u8fdb\u7a0b\u5b8c\u6210\uff0cVivado\u5185\u90e8\u4e0d\u53cd\u590d\u542f\u52a8\u5916\u90e8\u6821\u9a8c\u7a0b\u5e8f\u3002
+#     set stamp [file join $logdir INPUTS_VERIFIED.txt]
+#     if {![file isfile $stamp]} {error "PREFLIGHT_NOT_COMPLETED"}
+#     set proof [doa_read_utf8 $stamp]
+#     if {[string first "CATALOG=$::doa_catalog_id\n" $proof]!=0} {error "PREFLIGHT_CATALOG_MISMATCH"}
+#     set count [expr {[llength $::doa_input_hashes]/2}]
+#     if {[string first "COUNT=$count\n" $proof]<0} {error "PREFLIGHT_COUNT_MISMATCH"}
+#     foreach {relative expected} $::doa_input_hashes {
+#         if {![file isfile [file join $root $relative]]} {error "SOURCE_MISSING: $relative"}
+#     }
+#     puts "INPUT_PREFLIGHT_ACCEPTED count=$count"
+# }
+# proc doa_assert_unstarted {} {
+#     foreach run [get_runs] {
+#         set status [get_property STATUS $run]
+#         if {$status ne "Not started"} {error "CREATE_ONLY_RUN_STATE: $run = $status"}
+#     }
+# }
+# proc doa_create_side {root side logdir} {
+#     set spec [dict get $::doa_specs $side]
+#     set out [file join $root $side vivado]
+#     set project [file join $out [format %s.xpr $side]]
+#     set marker [file join $out CREATE_ONLY_VERIFIED.txt]
+#     if {[file exists $project]} {
+#         # \u5df2\u6709\u5de5\u7a0b\u4fdd\u7559\uff0c\u4e0d\u5173\u95ed\u7528\u6237GUI\u3001\u4e0d\u8986\u76d6\u6216\u81ea\u52a8\u5220\u9664\u3002
+#         if {![file isfile $marker] || [string first "CATALOG=$::doa_catalog_id\n" [doa_read_utf8 $marker]]!=0} {
+#             error "EXISTING_PROJECT_IDENTITY_UNPROVEN: $project"
+#         }
+#         puts "PROJECT_PRESERVED side=$side path=$project"
+#         return [list $side PRESERVED $project]
+#     }
+#     if {[file exists $out]} {error "PARTIAL_OUTPUT_EXISTS: $out"}
+#     file mkdir $out
+#     create_project $side $out -part [dict get $spec part]
+#     set_property target_language Verilog [current_project]
+#     config_ip_cache -disable_cache
+#     set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY XPM_FIFO} [current_project]
+#     set_property top [dict get $spec top] [get_filesets sources_1]
+#     foreach row [dict get $spec sources] {
+#         lassign $row relative role disabled
+#         if {[file extension $relative] eq ".bd"} {continue}
+#         set path [file normalize [file join $root $relative]]
+#         if {$role eq "constrs_1"} {
+#             add_files -fileset constrs_1 -norecurse [list $path]
+#             if {$disabled} {set_property IS_ENABLED false [get_files [list $path]]}
+#             if {[file tail $path] eq "cdc_handwritten_sync_guard.tcl"} {
+#                 set_property FILE_TYPE TCL [get_files [list $path]]
+#                 set_property USED_IN_SYNTHESIS false [get_files [list $path]]
+#                 set_property USED_IN_IMPLEMENTATION true [get_files [list $path]]
+#                 set_property PROCESSING_ORDER LATE [get_files [list $path]]
+#                 set_property STEPS.OPT_DESIGN.TCL.PRE $path [get_runs impl_1]
+#             }
+#         } else {add_files -norecurse [list $path]}
+#     }
+#     set includes {}
+#     foreach relative [dict get $spec include_dirs] {
+#         lappend includes [file normalize [file join $root $relative]]
+#     }
+#     if {[llength $includes]} {
+#         set_property include_dirs $includes [get_filesets sources_1]
+#         set_property include_dirs $includes [get_filesets sim_1]
+#     }
+#     foreach relative [dict get $spec sim_sources] {
+#         add_files -fileset sim_1 -norecurse [list [file join $root $relative]]
+#     }
+#     set_property top [dict get $spec sim_top] [get_filesets sim_1]
+#     if {$side eq "transmitter"} {
+#         set original [file join $root transmitter ip dac_pll dac_pll.xci]
+#         set text [doa_read_utf8 $original]
+#         # \u53ea\u6539\u8f93\u51fa\u526f\u672c\u7684\u751f\u6210\u76ee\u5f55\uff0c\u5176\u4f59PLL\u53c2\u6570\u9010\u5b57\u4fdd\u6301\u3002
+#         set pattern {"gen_directory"\s*:\s*"[^"]*"}
+#         if {[regexp -all $pattern $text]!=1} {error "PLL_GENERATION_DIRECTORY_AMBIGUOUS"}
+#         regsub $pattern $text {"gen_directory": "../../ip_generated"} staged_text
+#         set stage [file join $out ip dac_pll dac_pll.xci]
+#         file mkdir [file dirname $stage]
+#         doa_write_utf8 $stage $staged_text
+#         import_ip [list $stage]
+#         generate_target all [get_ips dac_pll]
+#         set_property STEPS.SYNTH_DESIGN.TCL.POST \
+#             [file normalize [file join $root transmitter constraints apply_uart_j11.tcl]] [get_runs synth_1]
+#     } else {
+#         set bd [file join $out receiver.srcs sources_1 bd design_1 design_1.bd]
+#         file mkdir [file dirname $bd]
+#         file copy [file join $root receiver bd design_1.bd] $bd
+#         set_property ip_repo_paths [list [file normalize [file join $root receiver ip_repo]]] [current_project]
+#         update_ip_catalog
+#         update_compile_order -fileset sources_1
+#         add_files -norecurse [list $bd]
+#         open_bd_design $bd
+#         validate_bd_design
+#         generate_target all [get_files [list $bd]]
+#         foreach required {psu_init.c psu_init.h} {
+#             set matches [glob -nocomplain [file join [file dirname $bd] ip design_1_zynq_ultra_ps_e_0_0 $required]]
+#             if {[llength $matches]!=1 || [file size [lindex $matches 0]]==0} {error "PS_INIT_OUTPUT_MISSING: $required"}
+#         }
+#         set wrappers [make_wrapper -files [get_files [list $bd]] -top]
+#         add_files -norecurse [list $wrappers]
+#         set_property top [dict get $spec top] [get_filesets sources_1]
+#     }
+#     update_compile_order -fileset sources_1
+#     update_compile_order -fileset sim_1
+#     report_ip_status -file [file join $logdir [format %s_ip_status.rpt $side]]
+#     if {[get_property PART [current_project]] ne [dict get $spec part]} {error "CREATED_PART_MISMATCH"}
+#     if {[get_property TOP [get_filesets sources_1]] ne [dict get $spec top]} {error "CREATED_TOP_MISMATCH"}
+#     doa_assert_unstarted
+#     set status "CATALOG=$::doa_catalog_id\nSIDE=$side\nPART=[dict get $spec part]\nTOP=[dict get $spec top]\nSYNTHESIS=Not started\nIMPLEMENTATION=Not started\nPROJECT=$project"
+#     doa_write_utf8 $marker $status
+#     doa_write_utf8 [file join $logdir [format %s_created.txt $side]] $status
+#     close_project
+#     if {![file isfile $project]} {error "XPR_NOT_WRITTEN: $project"}
+#     return [list $side CREATED $project]
+# }
+# proc doa_main {} {
+#     if {[llength $::argv]!=2} {error "USAGE: run.tcl side log_directory"}
+#     if {![string match "2023.1*" [version -short]]} {error "VIVADO_2023_1_REQUIRED"}
+#     set root [file normalize [file join [file dirname [info script]] ..]]
+#     set side [lindex $::argv 0]
+#     if {$side ni {transmitter receiver}} {error "SIDE_INVALID"}
+#     set logdir [file normalize [lindex $::argv 1]]
+#     if {![file isdirectory $logdir]} {error "LOG_DIRECTORY_NOT_PREPARED"}
+#     uplevel #0 [list source [file join [file dirname [info script]] sources.tcl]]
+#     doa_input_check $root $logdir
+#     set result [doa_create_side $root $side $logdir]
+#     doa_write_utf8 [file join $logdir [format %s_result.txt $side]] "CREATE_PROJECT_SIDE_OK\n$result"
+# 
+# }
+# doa_main
+# 
+# 
+# } error_message error_options]} {
+#  puts stderr $error_message
+#  puts stderr [dict get $error_options -errorinfo]
+#  exit 1
+# }
+## dict create
+## ::tcl::dict::set doa_specs transmitter part xc7a100tfgg484-2
+## ::tcl::dict::set doa_specs transmitter top ax7103_an9767_uart_j11_top
+## list [list {transmitter/rtl/datapath/coherent_nco.v} {sources_1} 0] [list {transmitter/rtl/board/hil20_key_inputs.v} {sources_1} 0] [list {transmitter/config/generated/led_tables.vh} {sources_1} 0] [list {transmitter/rtl/board/hil20_led_status.v} {sources_1} 0] [list {transmitter/rtl/board/hil20_reset_release.v} {sources_1} 0] [list {transmitter/rtl/common/key_debounce.v} {sources_1} 0] [list {transmitter/config/generated/mode_select_tables.vh} {sources_1} 0] [list {transmitter/rtl/control/mode_select.v} {sources_1} 0] [list {transmitter/rtl/control/hil20_control.sv} {sources_1} 0] [list {transmitter/rtl/dispatch/hil20_uart_control.sv} {sources_1} 0] [list {transmitter/config/generated/mapper_reset.vh} {sources_1} 0] [list {transmitter/config/generated/mapper_frequency.vh} {sources_1} 0] [list {transmitter/rtl/control/hil_angle_mapper.sv} {sources_1} 0] [list {transmitter/rtl/protocol/hil_ascii_parser.sv} {sources_1} 0] [list {transmitter/config/generated/decoder_presets.vh} {sources_1} 0] [list {transmitter/config/generated/decoder_aliases.vh} {sources_1} 0] [list {transmitter/config/generated/decoder_prefix.vh} {sources_1} 0] [list {transmitter/rtl/protocol/hil_command_decode.sv} {sources_1} 0] [list {transmitter/rtl/dispatch/hil_reply_fifo.sv} {sources_1} 0] [list {transmitter/config/generated/reply_decimal.vh} {sources_1} 0] [list {transmitter/config/generated/reply_presets.vh} {sources_1} 0] [list {transmitter/config/generated/reply_custom_band.vh} {sources_1} 0] [list {transmitter/rtl/protocol/hil_reply_format.sv} {sources_1} 0] [list {transmitter/rtl/dispatch/hil_reply_scheduler.sv} {sources_1} 0] [list {transmitter/rtl/uart/hil_uart_link.sv} {sources_1} 0] [list {transmitter/rtl/protocol/hil_uart_reply.sv} {sources_1} 0] [list {transmitter/rtl/uart/hil_uart_rx.sv} {sources_1} 0] [list {transmitter/rtl/uart/hil_uart_tx.sv} {sources_1} 0] [list {transmitter/config/uart_baud_config.vh} {sources_1} 0] [list {transmitter/rtl/top/ax7103_an9767_uart_j11_top.v} {sources_1} 0] [list {transmitter/rom/sine_lut_14bit.mem} {sources_1} 0] [list {transmitter/config/hil_angle_phase_rom.mem} {sources_1} 0] [list {transmitter/constraints/ax7103_an9767_no_uart.xdc} {constrs_1} 0] [list {transmitter/constraints/uart_j11.xdc} {constrs_1} 0]
+## ::tcl::dict::set doa_specs transmitter sources {{transmitter/rtl/datapath/coherent_nco.v sources_1 0} {transmitter/rtl/board/hil20_key_inputs.v sources_1 0} {transmitter/config/generated/led_tables.vh sources_1 0} {transmitter/rtl/board/hil20_led_status.v sources_1 0} {transmitter/rtl/board/hil20_reset_release.v sources_1 0} {transmitter/rtl/common/key_debounce.v sources_1 0} {transmitter/config/generated/mode_select_tables.vh sources_1 0} {transmitter/rtl/control/mode_select.v sources_1 0} {transmitter/rtl/control/hil20_control.sv sources_1 0} {transmitter/rtl/dispatch/hil20_uart_control.sv sources_1 0} {transmitter/config/generated/mapper_reset.vh sources_1 0} {transmitter/config/generated/mapper_frequency.vh sources_1 0} {transmitter/rtl/control/hil_angle_mapper.sv sources_1 0} {transmitter/rtl/protocol/hil_ascii_parser.sv sources_1 0} {transmitter/config/generated/decoder_presets.vh sources_1 0} {transmitter/config/generated/decoder_aliases.vh sources_1 0} {transmitter/config/generated/decoder_prefix.vh sources_1 0} {transmitter/rtl/protocol/hil_command_decode.sv sources_1 0} {transmitter/rtl/dispatch/hil_reply_fifo.sv sources_1 0} {transmitter/config/generated/reply_decimal.vh sources_1 0} {transmitter/config/generated/reply_presets.vh sources_1 0} {transmitter/config/generated/reply_custom_band.vh sources_1 0} {transmitter/rtl/protocol/hil_reply_format.sv sources_1 0} {transmitter/rtl/dispatch/hil_reply_scheduler.sv sources_1 0} {transmitter/rtl/uart/hil_uart_link.sv sources_1 0} {transmitter/rtl/protocol/hil_uart_reply.sv sources_1 0} {transmitter/rtl/uart/hil_uart_rx.sv sources_1 0} {transmitter/rtl/uart/hil_uart_tx.sv sources_1 0} {transmitter/config/uart_baud_config.vh sources_1 0} {transmitter/rtl/top/ax7103_an9767_uart_j11_top.v sources_1 0} {transmitter/rom/sine_lut_14bit.mem sources_1 0} {transmitter/config/hil_angle_phase_rom.mem sources_1 0} {transmitter/constraints/ax7103_an9767_no_uart.xdc constrs_1 0} {transmitter/constraints/uart_j11.xdc constrs_1 0}}
+## list {transmitter/config}
+## ::tcl::dict::set doa_specs transmitter include_dirs transmitter/config
+## list {transmitter/sim/uart_angle/tb_angle_decoder.sv} {transmitter/sim/uart_angle/tb_angle_mapper.sv} {transmitter/sim/uart_angle/tb_hil20_any_angle.sv} {transmitter/sim/current/tb_hil20_baud.sv} {transmitter/sim/current/tb_reply_fifo.sv}
+## ::tcl::dict::set doa_specs transmitter sim_sources {transmitter/sim/uart_angle/tb_angle_decoder.sv transmitter/sim/uart_angle/tb_angle_mapper.sv transmitter/sim/uart_angle/tb_hil20_any_angle.sv transmitter/sim/current/tb_hil20_baud.sv transmitter/sim/current/tb_reply_fifo.sv}
+## ::tcl::dict::set doa_specs transmitter sim_top tb_hil20_baud
+## ::tcl::dict::set doa_specs receiver part xczu2cg-sfvc784-1-i
+## ::tcl::dict::set doa_specs receiver top top
+## list [list {receiver/rtl/spectrum_fft_capture.v} {sources_1} 0] [list {receiver/rtl/spectrum_fft_prepare.v} {sources_1} 0] [list {receiver/rtl/spectrum_fft_result_writer.v} {sources_1} 0] [list {receiver/rtl/spectrum_fft_ctrl.v} {sources_1} 0] [list {receiver/rtl/pl_mode_controller.v} {sources_1} 0] [list {receiver/rtl/fft_result_bank_bridge.v} {sources_1} 0] [list {receiver/rtl/fft_result_bank_owner.v} {sources_1} 0] [list {receiver/rtl/sample_timebase.v} {sources_1} 0] [list {receiver/rtl/fft_result_bank_system.v} {sources_1} 0] [list {receiver/rtl/candidate_gpio_bridge.v} {sources_1} 0] [list {receiver/rtl/candidate_window_consumer.v} {sources_1} 0] [list {receiver/rtl/fft_candidate_chain.v} {sources_1} 0] [list {receiver/rtl/fft_strongest_valid_detector.v} {sources_1} 0] [list {receiver/rtl/sample_ring_buffer.v} {sources_1} 0] [list {receiver/rtl/sample_window_copy.v} {sources_1} 0] [list {receiver/rtl/single_candidate_manager.v} {sources_1} 0] [list {receiver/rtl/fine_command_mailbox.sv} {sources_1} 0] [list {receiver/rtl/fine_complex_correlator.sv} {sources_1} 0] [list {receiver/rtl/fine_cross_phase.sv} {sources_1} 0] [list {receiver/rtl/fine_doa_arcsin.sv} {sources_1} 0] [list {receiver/rtl/fine_doa_argument.sv} {sources_1} 0] [list {receiver/rtl/fine_doa_config.sv} {sources_1} 0] [list {receiver/rtl/fine_doa_engine.sv} {sources_1} 0] [list {receiver/rtl/fine_log2_score.sv} {sources_1} 0] [list {receiver/rtl/fine_log_parabola.sv} {sources_1} 0] [list {receiver/rtl/fine_log_score.sv} {sources_1} 0] [list {receiver/rtl/fine_phase_calibration.sv} {sources_1} 0] [list {receiver/rtl/fine_production_bridge.sv} {sources_1} 0] [list {receiver/rtl/fine_result_abi.sv} {sources_1} 0] [list {receiver/rtl/fine_result_slot.sv} {sources_1} 0] [list {receiver/rtl/fine_result_transport.sv} {sources_1} 0] [list {receiver/rtl/fine_shared_nco.sv} {sources_1} 0] [list {receiver/rtl/fine_three_bin_estimator.sv} {sources_1} 0] [list {receiver/rtl/fine_three_bin_interpolator.sv} {sources_1} 0] [list {receiver/rtl/fine_unsigned_divider.sv} {sources_1} 0] [list {receiver/rtl/fine_production_system.v} {sources_1} 0] [list {receiver/rtl/r2_iterative_sqrt.sv} {sources_1} 0] [list {receiver/rtl/fine_doa_sqrt.v} {sources_1} 0] [list {receiver/bd/design_1.bd} {sources_1} 0] [list {receiver/rtl/top.v} {sources_1} 0] [list {receiver/rom/fine_hann_1024.mem} {sources_1} 0] [list {receiver/rom/fine_hann_4096.mem} {sources_1} 0] [list {receiver/rom/fine_nco_16384.mem} {sources_1} 0] [list {receiver/rom/fine_ln_8193.mem} {sources_1} 0] [list {receiver/rom/fine_atan_48.mem} {sources_1} 0] [list {receiver/rom/hann_1024.mem} {sources_1} 0] [list {receiver/rom/fine_log2_8193.mem} {sources_1} 0] [list {receiver/constraints/shared_pins.xdc} {constrs_1} 0] [list {receiver/constraints/cdc_handwritten_sync.xdc} {constrs_1} 1] [list {receiver/constraints/cdc_handwritten_sync_guard.tcl} {constrs_1} 0]
+## ::tcl::dict::set doa_specs receiver sources {{receiver/rtl/spectrum_fft_capture.v sources_1 0} {receiver/rtl/spectrum_fft_prepare.v sources_1 0} {receiver/rtl/spectrum_fft_result_writer.v sources_1 0} {receiver/rtl/spectrum_fft_ctrl.v sources_1 0} {receiver/rtl/pl_mode_controller.v sources_1 0} {receiver/rtl/fft_result_bank_bridge.v sources_1 0} {receiver/rtl/fft_result_bank_owner.v sources_1 0} {receiver/rtl/sample_timebase.v sources_1 0} {receiver/rtl/fft_result_bank_system.v sources_1 0} {receiver/rtl/candidate_gpio_bridge.v sources_1 0} {receiver/rtl/candidate_window_consumer.v sources_1 0} {receiver/rtl/fft_candidate_chain.v sources_1 0} {receiver/rtl/fft_strongest_valid_detector.v sources_1 0} {receiver/rtl/sample_ring_buffer.v sources_1 0} {receiver/rtl/sample_window_copy.v sources_1 0} {receiver/rtl/single_candidate_manager.v sources_1 0} {receiver/rtl/fine_command_mailbox.sv sources_1 0} {receiver/rtl/fine_complex_correlator.sv sources_1 0} {receiver/rtl/fine_cross_phase.sv sources_1 0} {receiver/rtl/fine_doa_arcsin.sv sources_1 0} {receiver/rtl/fine_doa_argument.sv sources_1 0} {receiver/rtl/fine_doa_config.sv sources_1 0} {receiver/rtl/fine_doa_engine.sv sources_1 0} {receiver/rtl/fine_log2_score.sv sources_1 0} {receiver/rtl/fine_log_parabola.sv sources_1 0} {receiver/rtl/fine_log_score.sv sources_1 0} {receiver/rtl/fine_phase_calibration.sv sources_1 0} {receiver/rtl/fine_production_bridge.sv sources_1 0} {receiver/rtl/fine_result_abi.sv sources_1 0} {receiver/rtl/fine_result_slot.sv sources_1 0} {receiver/rtl/fine_result_transport.sv sources_1 0} {receiver/rtl/fine_shared_nco.sv sources_1 0} {receiver/rtl/fine_three_bin_estimator.sv sources_1 0} {receiver/rtl/fine_three_bin_interpolator.sv sources_1 0} {receiver/rtl/fine_unsigned_divider.sv sources_1 0} {receiver/rtl/fine_production_system.v sources_1 0} {receiver/rtl/r2_iterative_sqrt.sv sources_1 0} {receiver/rtl/fine_doa_sqrt.v sources_1 0} {receiver/bd/design_1.bd sources_1 0} {receiver/rtl/top.v sources_1 0} {receiver/rom/fine_hann_1024.mem sources_1 0} {receiver/rom/fine_hann_4096.mem sources_1 0} {receiver/rom/fine_nco_16384.mem sources_1 0} {receiver/rom/fine_ln_8193.mem sources_1 0} {receiver/rom/fine_atan_48.mem sources_1 0} {receiver/rom/hann_1024.mem sources_1 0} {receiver/rom/fine_log2_8193.mem sources_1 0} {receiver/constraints/shared_pins.xdc constrs_1 0} {receiver/constraints/cdc_handwritten_sync.xdc constrs_1 1} {receiver/constraints/cdc_handwritten_sync_guard.tcl constrs_1 0}}
+## list 
+## ::tcl::dict::set doa_specs receiver include_dirs {}
+## list {receiver/sim/tb_sample_timebase.sv} {receiver/sim/tb_fine_result_slot.sv} {receiver/sim/tb_fine_phase_calibration.sv}
+## ::tcl::dict::set doa_specs receiver sim_sources {receiver/sim/tb_sample_timebase.sv receiver/sim/tb_fine_result_slot.sv receiver/sim/tb_fine_phase_calibration.sv}
+## ::tcl::dict::set doa_specs receiver sim_top tb_sample_timebase
+## list {PROJECTS.json} {6a04ff50a07f682e5dad26b92e2fe075aca27afb4b30af42067c609c10e92e2c} {SIMULATION_TESTS.json} {50327876348b35e6a3bcbd5a68f2ed16bf1b525dfd5a58b138cfff6e4534c6c4} {SOURCE_MANIFEST.json} {4956f60b0548a6187d8c60dbb73cfc37cda13a1704b2b9c9d14c7da02d11e49d} {receiver/bd/design_1.bd} {ff06909ec0f80b2688fa4862779243ea0004c205c23e4beaab391540862d5e6c} {receiver/config/calibration_profiles.json} {d7bef884c59ed4443dc7179fe31d83f15a55891418da472bb1d344fb3d414ea2} {receiver/config/geometry_profile.json} {24919919d55511979a796eea8797d958e7a93bd84a6aec94a8ad98217cd1dbb4} {receiver/constraints/cdc_handwritten_sync.xdc} {e109295b8fa379d321a32a91a4df764abf06c914dce89dd367d7fdce130f0bbd} {receiver/constraints/cdc_handwritten_sync_guard.tcl} {323c2035ac16d676bbd8dca5abd19741b06b926f1b7bafd7b539d743872fbd22} {receiver/constraints/shared_pins.xdc} {671ab05b846403cacb74e63b4d7ecd5bb9f3e87abbe8c9915b8794207f72872d} {receiver/ip_repo/ad9238_sample_1.1/bd/bd.tcl} {1c84726f85b384b436e268025ceca83ffa845ba278ff1acf1650a58ebd373fc6} {receiver/ip_repo/ad9238_sample_1.1/component.xml} {1042c65544acdbc14aeb76e84ac98bba0619d247a4df7ac074b1e1c1ffda41d9} {receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0.v} {42f6a4e3bef386d9313945d5a5736f444e5bd25d9101f348e2b5cd8e273cf265} {receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0_S00_AXI.v} {310edcf66cc40328a70572892d7bd1d7c0cfb23dc84fd57290c41d44555bd83a} {receiver/ip_repo/ad9238_sample_1.1/src/ad.xdc} {08c746c5fc930d5d3a8eddabc76f4b8c37b3c337673cb3f1c7d391148d3dade4} {receiver/ip_repo/ad9238_sample_1.1/src/ad9238_sample.v} {0e7f32ffd45084f51fe54511250ff732f970ca9979cbf17c77854bf2f9c119b2} {receiver/ip_repo/ad9238_sample_1.1/xgui/ad9238_sample_v1_0.tcl} {d3bdad2581bf5be90effcaa8ec53fc77d58c47531b269aa830f46158abdc4866} {receiver/rom/fine_atan_48.mem} {9ff92f38fd78d0c225306584ff96b3cc1d4962f3db83e423680aee8c55993f47} {receiver/rom/fine_hann_1024.mem} {e33bf11e4eaa7aaee53deeeea18e2f6e36639b47df3ce2aa6b445780b511c8c6} {receiver/rom/fine_hann_4096.mem} {69b8c74c8d7ad05ff28fc25633f3cd2870db7cb98e149c867293b965a321b5db} {receiver/rom/fine_ln_8193.mem} {e5a6c94c960d62c257264ad6cc516762aefdd92946cfd62c83a5b0e8044084cf} {receiver/rom/fine_log2_8193.mem} {ead275ef38fd85f9de5a53f4f6083d45caccb4caa13900fd3ba0a08ea53c61b2} {receiver/rom/fine_nco_16384.mem} {554f4ad21785f9a2119eb7102429b9a92e0016204b5cea65d858f1b0f1d4a8b5} {receiver/rom/hann_1024.mem} {d1a95626bcfeaa4626b328c8cdc96ed42f54b7ad16bca3ea678c3ecd573c298e} {receiver/rtl/candidate_gpio_bridge.v} {7118d5eda04ee702aebe936e9ed35e38747cc492e024a4a7a1c8534081f49c5e} {receiver/rtl/candidate_window_consumer.v} {96750468980acdb30fd48d15d98d2a0e6b20dbbcc5fd43d9cca21350eb44d947} {receiver/rtl/fft_candidate_chain.v} {4156bfaad98d6b217d58482d888940f63f49aa75318a5c9554911f7a15adf68c} {receiver/rtl/fft_result_bank_bridge.v} {cb45e02d8036ec989dac017adbec91abc8cdbdfc4799eb25beea94ee65f657e1} {receiver/rtl/fft_result_bank_owner.v} {3c30de0329b270d4c8f22c041b9e6c1abc58ea166dcc236a3dc3d8cee5fcb28d} {receiver/rtl/fft_result_bank_system.v} {2afbf2fee21796a35b388449f5653d51f87b7c51250666754289e8c5995944e6} {receiver/rtl/fft_strongest_valid_detector.v} {03f7c94d164c6846c5d69ef91b947fc35437face87b719d0505649e701648f86} {receiver/rtl/fine_command_mailbox.sv} {717435c3f3109e6708b4372570532d51ac06e1c8243d92330692092b9de5cb5d} {receiver/rtl/fine_complex_correlator.sv} {c1814e37f18b948b82a38a15503a2ef4589c44089e3a482d45255fa8a744991f} {receiver/rtl/fine_cross_phase.sv} {f6ddfc821a9388974f09ef46350dff7a1d7fba16eb329cbbee18342b88354d85} {receiver/rtl/fine_doa_arcsin.sv} {2ca91c5a4573d6eef804e350a1f766e72a5de74fbedf5333205ae463298336c1} {receiver/rtl/fine_doa_argument.sv} {97265968a5eddddbe196798a5e6da0d63c84c44787b93d3c769bdf13b278fbae} {receiver/rtl/fine_doa_config.sv} {e6021b89d2943cab6907399de6ae58e2348267f616b0a1a49a984ccbfe64132d} {receiver/rtl/fine_doa_engine.sv} {8d6483399fc15991f20aaf68bf00c51c71673467f3ac018480b6d41d7b4585bc} {receiver/rtl/fine_doa_sqrt.v} {bbeebff9645ec1d4d7ea14e20620fcee9f7ca3f5663791423eb7672b330291d6} {receiver/rtl/fine_log2_score.sv} {92bf3bbde1368dbcf95f43eba50dde2a2a2045bebf2991bac50ff54858754a41} {receiver/rtl/fine_log_parabola.sv} {33eb76dc465094fb12ba5cca3115b2bc53dc8c339bf386fa64d28763ba9efcc3} {receiver/rtl/fine_log_score.sv} {aa1fea7840c7dd574dda31b4eb831d8d9254b2ebc90f87a4118525e404702d6f} {receiver/rtl/fine_phase_calibration.sv} {ff3fe342db6394de9ff4a2df3c7740b6a4b85afd7e1d05dad3f250760cbf0576} {receiver/rtl/fine_production_bridge.sv} {fd322e4cdbdc6d305507b963a53aa52e2c99ae015a50322f90837f7c05b96ef0} {receiver/rtl/fine_production_system.v} {c3c47290cd961f2d4fb9ccdaaa4886482c25962a6206115ef0d549ee7a2bc638} {receiver/rtl/fine_result_abi.sv} {d8067141df170451cee9a082eae401baf89eb49abdb5202e3f11ccccd1d9505d} {receiver/rtl/fine_result_slot.sv} {5f6f064614d9fec28137395a976b4143572dd97a5a5b3734e0393d7d92a28707} {receiver/rtl/fine_result_transport.sv} {cd4744995133b970e073e6c7dc2dda0893ee4da31d9982800795a7dae87585ba} {receiver/rtl/fine_shared_nco.sv} {ee9aad593b4e14c4c1d35cd152d1fa2c0f02ea2c5726150feb1300bf1990ad7a} {receiver/rtl/fine_three_bin_estimator.sv} {8d81e8656e59b07a3839d48a220e79bf2adef8c33da0096e60ab8231c911870a} {receiver/rtl/fine_three_bin_interpolator.sv} {58f796a289a5192b7513a4e9ad1060264aeca64684e504d4cb2abafb38d431a5} {receiver/rtl/fine_unsigned_divider.sv} {aaeaf59d3ace23a304f6db836a256f5b088086f8da4e41c77167a3c36a9429ef} {receiver/rtl/pl_mode_controller.v} {d3bb51bc1a06b6bc72acde3349ff63f2c14ba08aeac768c0288579cde085987d} {receiver/rtl/r2_iterative_sqrt.sv} {66f9910bba8eb0daa513a88ada722ae9d5a158ac563cb856ddfa764517d8fcc5} {receiver/rtl/sample_ring_buffer.v} {d896d24d0803f925b798d861c03d6b39f08642525f110551f1c7783629576016} {receiver/rtl/sample_timebase.v} {35ae1a0e7a54db782c1f30554992e48d0df0b72653a5e330b96cbd9ed7b872b1} {receiver/rtl/sample_window_copy.v} {3c4e5d0dfa7e073399868682f605349b33bc2d65f7c75751d325f4f9fabe14d4} {receiver/rtl/single_candidate_manager.v} {d331f407823913969079459a7a846fd8a78e09c52e06e3b78abd4b71da4a2c11} {receiver/rtl/spectrum_fft_capture.v} {76fc439e0368502bd7eaf913900fbfbacc79563ad5d29916bd24d93a9a5c2869} {receiver/rtl/spectrum_fft_ctrl.v} {de4ba8f9fc5bd9df0773ba047bae09d109bf53d7742cf39800661452ac6b41c4} {receiver/rtl/spectrum_fft_prepare.v} {14313f3f17366e8e086b3fcb38a4946b5ba92a5c202d9b09ba1ff3720908e7aa} {receiver/rtl/spectrum_fft_result_writer.v} {a85f5deb071201a667e76abac3396550064ce93ae412ad0829e0eb5c65cfbd9e} {receiver/rtl/top.v} {dae5f2a8348997af65ed90a7c81d1141735b5e015373c32846d09f5d45f7a1ef} {receiver/sim/tb_fine_phase_calibration.sv} {f9f30af9cbc4a41abc731a8bb01f6fe3d6b436e41232d2f70a5ad5b756bb0b6d} {receiver/sim/tb_fine_result_slot.sv} {1337e5cde26e5d6a52529cc515d1f7f5b398c644e6a09eb7c34767f866930d91} {receiver/sim/tb_sample_timebase.sv} {b1f8c5c8da074c293de73598e864d1216ddc1b307eb203eb976dae3cac064ba4} {receiver/software/drivers/avbuf_v2_5/xavbuf.c} {fe864e0796cbb405c4c89e004d4a744d63f6b886f800aa65a27dc018066f683b} {receiver/software/drivers/avbuf_v2_5/xavbuf.h} {f5e053f6a5db72aaa84aea204367ddf8d05b6d259ef0f5a10a87a09826a9a4c7} {receiver/software/drivers/avbuf_v2_5/xavbuf_clk.c} {61a3721019fb7426538e797463ae8fb4f9a4c9ea2b0aa78b43f667ce1776fdf4} {receiver/software/drivers/avbuf_v2_5/xavbuf_clk.h} {f6fa34444ba69825b3530e44d42522c77399254e7260778bcfeb2af416e01297} {receiver/software/drivers/avbuf_v2_5/xavbuf_hw.h} {a8ebb763c41409766bff6b71cb938f1781e7639dbfb1343ff607c2e825f0a74d} {receiver/software/drivers/avbuf_v2_5/xavbuf_videoformats.c} {9785df65c6f8f8cbd7bad3ddf158d753c5a59448efa78d530a84cbb6be14d212} {receiver/software/drivers/axidma_v9_16/xaxidma.c} {db1a355cd38e5f2fe56a8fe499454e07964dd2b969c1f79edd3ffbb60cee947b} {receiver/software/drivers/axidma_v9_16/xaxidma.h} {bec38f328d90c98d9e6a2116acaf504e5e4560c17aa0e9f645de4a28d428a139} {receiver/software/drivers/axidma_v9_16/xaxidma_bd.c} {03a0148e986f7eebdf060849a2f8442466a5e3db919965a3b02220a14e8faa97} {receiver/software/drivers/axidma_v9_16/xaxidma_bd.h} {63dab96e7e87f26b65cc501c59d30f32ba818fcaeaf749587ca6b62f90095a09} {receiver/software/drivers/axidma_v9_16/xaxidma_bdring.c} {8a8f6fceb06a9c4670acfb075f5e19d88e8e6ac63a10b6b3dae4c17bf85aa21b} {receiver/software/drivers/axidma_v9_16/xaxidma_bdring.h} {ada872b3793cd5d83798aa603b31a6df654328e818141831b0235df072af6313} {receiver/software/drivers/axidma_v9_16/xaxidma_g.c} {596db9e1dbd9220cd3d4af26b8e97341bb4de2651fea47b5fb4d758a1ba852fa} {receiver/software/drivers/axidma_v9_16/xaxidma_hw.h} {fb8995ffa8eb7584180629b95f8b613fff3be1d5b4ffd0c1e06898ee575ffd0d} {receiver/software/drivers/axidma_v9_16/xaxidma_porting_guide.h} {fa4495ffd0c77a25db80ab17f062accb7b9ee7371fa7f5f6366761c2c1a70e3d} {receiver/software/drivers/axidma_v9_16/xaxidma_selftest.c} {95540b2d16e4e58061d567ad6c2daa54e72d2ec4b4c90ad5a0bb3d049f5c2f42} {receiver/software/drivers/axidma_v9_16/xaxidma_sinit.c} {807ad81c3e9e7453ce679ec5218e8bb66a5b954a6718aabc7351583f876688fc} {receiver/software/drivers/dpdma_v1_4/xdpdma.c} {000f60c4c6e4ff9b5797f3934794875b7e17f7e767606e3b819754858bcaf6cf} {receiver/software/drivers/dpdma_v1_4/xdpdma.h} {55e24e3b9b52d2de65f185278ab7a7af9b5f0efad4f44b5c31cd6ec3542b5f80} {receiver/software/drivers/dpdma_v1_4/xdpdma_g.c} {92c4fb3102f7fa8c7a338b922e68e6bf3fc68e2b9a55fd044b53e4ab425ede06} {receiver/software/drivers/dpdma_v1_4/xdpdma_hw.h} {b0416f3732a04b39f8356f930ba383f08b4394658aa62e6ce7199b1714d4ef46} {receiver/software/drivers/dpdma_v1_4/xdpdma_intr.c} {9d4b8bd492c41ebdaf9ebf2e974187bde3d3e464fff979f3c918bdfaf4dc9020} {receiver/software/drivers/dpdma_v1_4/xdpdma_sinit.c} {0551dbd232c77c7152e7a6c861a658600f046910fb2d5f90493185fa3b44b65d} {receiver/software/drivers/dppsu_v1_6/xdppsu.c} {2b37ea31cf1d8c7118004df2fbfcb1ffc7e471307dead31d0bb7c1565bb0d75e} {receiver/software/drivers/dppsu_v1_6/xdppsu.h} {8b86e3334156450214645ede9439b2837d71400532e761f01058da892f2add38} {receiver/software/drivers/dppsu_v1_6/xdppsu_edid.c} {2293957fe85f8c6d351848fbb142fcd5469ac552a1a43de7321d081bd61244aa} {receiver/software/drivers/dppsu_v1_6/xdppsu_g.c} {04dc1b1c059611e3b84691924f27ef045b78e7fcb7fb5d98536cb502b27380db} {receiver/software/drivers/dppsu_v1_6/xdppsu_hw.h} {82ac366562c5031517897f76713d7f3203df286995e5f6b6273a6b4c3b120104} {receiver/software/drivers/dppsu_v1_6/xdppsu_intr.c} {e9fdb7686cf2d64f2bf0bb7f0f3cf9208f59e1a3b7ef9632bbd50c68a5017ee7} {receiver/software/drivers/dppsu_v1_6/xdppsu_selftest.c} {f76ef7705f97749b8ce23cae1cab6f683e77d5b1dc3a478d7a13890684563d22} {receiver/software/drivers/dppsu_v1_6/xdppsu_serdes.c} {c4b8d7772febbc32ef5a1b333d10491b471735d6bcdc52ccfdef5d3256d24e07} {receiver/software/drivers/dppsu_v1_6/xdppsu_serdes.h} {4e58eb90203f16a2473ede6431deacad73a5591ca8ce79cbe5e5a0f44e1ae679} {receiver/software/drivers/dppsu_v1_6/xdppsu_sinit.c} {d9bfc604ab275af1e2af887af16517f6c6c0d5934da25a3250c238536ef34e1f} {receiver/software/drivers/dppsu_v1_6/xdppsu_spm.c} {e71a57171e9b85eb15067c46d8beb39180b8e708a0f90c8904925a3b174306c7} {receiver/software/src/adc_g2_metrics.h} {15fdd6c212d09a23ae1e48b14aaed1d0c7de3e1aa4f19c0a14d56ab3ceb08dbd} {receiver/software/src/auto_profile.c} {b4f2cb98f508e7e78e111abd9fa9e92959f6c11667e35b2db8b3983a6be499bf} {receiver/software/src/auto_profile.h} {751257da8f51db5b8ee8ceb48e946e488c7ed357c2a46be9248a1f762a7ca5a1} {receiver/software/src/debug_input.c} {fb4f10d14da61760a155888722c02a56ce4355f6e5efc9efe095ef918b498031} {receiver/software/src/debug_input.h} {d6493b4cdfb89c807f61ba25373ac316840cda9ebb7600193774f8a5a7bb82b0} {receiver/software/src/debug_main.c} {efb0286653bf08b9a91ea20cebe87e5a446e52c29635a75a9cf8a5f173628bbd} {receiver/software/src/debug_mmio.c} {ef6dd56accf6045735023f390861be1de0350a0486e847f0701dda7adb6bc1ae} {receiver/software/src/debug_mmio.h} {8a75f9868dc38da59e8359c3623d59b173cbb9a1f3f700c525225b18470de8ad} {receiver/software/src/debug_pages.c} {c2614e25e41d2376502440cf53f70edb6fe5927db4fed23f52668afd22657db0} {receiver/software/src/debug_ui.c} {29a41b57f2e7fe6d71261cef4bc5bbfa3d0bc2706e636450dbc71a9862c9c085} {receiver/software/src/debug_ui.h} {31a3d883aba4310e176f9a83a6d8fdc84edbefa9cf6d8a034d1423095cb444a3} {receiver/software/src/display_ctrl.c} {814f6d3ef6e93d3f920deb228e6c9daeac59adf29bd416cc12d470ecfd0fd158} {receiver/software/src/display_ctrl.h} {a772617faad439b12472b898374e152796f4f4f860eb868025660bb879012dad} {receiver/software/src/display_draw_safe.h} {66ec8a62346f359f99049e23a3f44475fad964e08fdad9a0130815ccf18ebc2b} {receiver/software/src/doa_result_publish.c} {b89891b5bcfa581e3e3c038a53dd853a8d446bc16c9916ec13f24da98d08dc22} {receiver/software/src/doa_result_publish.h} {9e7c46a893f1d97606e2b5f395b2c80168c07e6c55996cc8ef856fa16aa86d76} {receiver/software/src/doa_ui_ema.c} {548e4296cadd6ef1683d3f328cffb2da7a7245e86ee399e332dc810da28c03d2} {receiver/software/src/doa_ui_ema.h} {e8650093df69d3bf06425db5d68e78098814e636e1db059089304313e86c1eea} {receiver/software/src/dp_training_step.c} {f903b84a71498300dfc2983a08df9be01dbb780bda5c4fe4206bd2b4319ffcdc} {receiver/software/src/dp_training_step.h} {24efbfacddc7c9b8cc243391733ead90f3964e079ddd55046745aaeb03c744c6} {receiver/software/src/engineering_session.c} {252294cf21fd082a87ce49889b5e94cbaeee7d188177be0508173776867a7ce4} {receiver/software/src/engineering_session.h} {e5ec6411465d79a59ff16fe0e71689b4c6b99466a6ef23e588ab61644d63784d} {receiver/software/src/epoch_journal.c} {ef7187eea19429cac5970af41556da8eb7a9a2731fbc4414c960333718f2aa95} {receiver/software/src/epoch_journal.h} {f167d9d303881a6a09f07d6086ea8707393eb3dfb1f9bf483d46826a26a36ca7} {receiver/software/src/fine_production_decode.c} {93682b99d040c81e16a25e29c0ea79f8118eaef90d5715a1d2e4885bb3dbc053} {receiver/software/src/fine_production_ps.c} {99f4c7edf3ff431af277f064d3d7c6310946e67bb61524f5728a32b7722acef1} {receiver/software/src/fine_production_ps.h} {9803057d73a35a39890f4e6efddf43f926cd540cf1346bb51efa827c295cfd1e} {receiver/software/src/font12x12.c} {25e38e657eafb9ff0636130c920b48a379510699b751d74c410df6d9391e548a} {receiver/software/src/font12x12.h} {373d7fb12cc08885d2da2341bcbbf925cc33518c9d51d802924634ed2b980673} {receiver/software/src/font5x7.h} {109498390ab7016a359bab041c31776aca3173003244e4583ea5736912acff4b} {receiver/software/src/guard_io.h} {4e6c8b4f389da614af3d4ba028e0c0648cc0d9421d0ff68dc1692376dd7311b9} {receiver/software/src/hardware/board_config.h} {824ab4167a6e13bee0c1b69b8b57a2d7515fd41473858234af540313babf6fe1} {receiver/software/src/hardware/epoch_partition.h} {37c87186aaddfceded32c407688cab6f3adc5ac036b845c3b573df70f80a1ee2} {receiver/software/src/hardware/epoch_qspi_backend.h} {05c6ba3cceb21c8eb4a78e58e2f3e0c9c31087b01fc1a67359906aa04b77c8da} {receiver/software/src/hardware/epoch_qspi_probe.h} {c7bbeb83f838330ec355690407ecf253f1f28891d7ae5b42be4c8c366880e35b} {receiver/software/src/hardware/epoch_qspi_xilinx.h} {cbb15640b2818c42347da9a8d8c6235af5b0d4f029d226f2b5190a91c35e251e} {receiver/software/src/hardware/hw_bridge.h} {254a8b6eff91ed1de3d2ae915b5be58f00885e72afcd73ecd17a0020f3bdf77a} {receiver/software/src/hardware/result_identity.h} {757e4058ad18bed829b34ab2daad60be19dcabf74f5aca2fb1737b3245e16d43} {receiver/software/src/hardware/sample_clock.h} {0500bc36c6f6d6af261054bb1b790fdfe906e1be1f721413dfcc7162d424722a} {receiver/software/src/hil_profile_generated.h} {7434608d16d3a2e891e1c7a7833e13c095eefed2e09b4bdc4d5df689a5ea1fa8} {receiver/software/src/hil_profiles.c} {82aa0dfb22536ea3c556ff3ab8b868a66e21f89207cc1f4bde24d924fd3f07a0} {receiver/software/src/hil_profiles.h} {c529e47650a7e8aee117539aec6250879d2c672d9925e51870dea999506757db} {receiver/software/src/lcd_doa.c} {5198d06c113090fb83720763d7c65b4d6479b728286f6c4c8c47df1888fbeca9} {receiver/software/src/lcd_doa.h} {8d49484b6690135cdeda1804029ade12258bf07f6717485595bb40194cd226ad} {receiver/software/src/lpd_slcr.h} {9b8c8a226aba5a4addd7e3d4f999116f7e15f88a114603c05bfe45bbdcb7fa96} {receiver/software/src/lscript.ld} {64891264d4680055f7179a72563027a36cbbdd3ef0e76b0668dfd5f0ad8c2269} {receiver/software/src/receiver_build_identity.c} {efac29c6bdb2c61f8fb1e6a17f55325680f107cb40402ff316b8e44d827ea26a} {receiver/software/src/service_profile.c} {19dc4d864950408c4714e7b696f29ac89c3db216b5e60bd16059a8a3ed751236} {receiver/software/src/service_profile.h} {b95cc18b957edfd378f982521382266878fd0dc6dc1f865d3ee45b4d0195fc25} {receiver/software/src/spectrum.h} {2ce087afb8bed158c47d8a22dac6ea1f857f8d9fb2ee8f49a8329bc9073b1148} {receiver/software/src/spectrum_display_filter.c} {f2e3d3a1992e1bd9ec4271aa39372036af1b38995e4729078640e8ade5ca322d} {receiver/software/src/spectrum_display_filter.h} {7e4b814c0c66939fffeba3e929a10de8b1bce6f950d304aa3f9a5bae1bafcd4e} {receiver/software/src/spectrum_pl.c} {2ad2c967391c24eeb6872f1ed66d20e30d818b9002a6107a488c65541e8ccb83} {receiver/software/src/spectrum_pl.h} {8b086040f4e2073ae01bc8aec2a474d35a94bfa1945ac7a96dc993dfe972214f} {receiver/software/src/ui1920.h} {82081091ee41f719c2b95241b75ac5b00d97f76464b7bea22860381b5377a4e9} {receiver/software/src/ui_alpha_atlas.h} {87315c5ce242639f37dec2a380bc35bddc3cb094df876582b3925a35ab2c31f3} {receiver/software/src/ui_alpha_font.h} {204c3e7931d0e974252d18f3dc596cb7e6e28823508a2c7663214085b0e1aeb3} {receiver/software/src/ui_zh.h} {64d5ce9eae1725deebc58831e6a93ae5911fe9f491e759cc0705797b5109542b} {transmitter/config/generated/decoder_aliases.vh} {f803000e3221dfeba7216bb03a5f431fe829a5f0d8c7d01fb81bdd68053c47c0} {transmitter/config/generated/decoder_prefix.vh} {b6e14bfccc338e3e86986e6ab85e3f10d77a89825c370a4019db0c9cff545efe} {transmitter/config/generated/decoder_presets.vh} {438133d29ad502b20af997def6e15e78a2144396ee6ac0f2d13aa26f66247822} {transmitter/config/generated/led_tables.vh} {5fe70fc24c5f5dd32781443641061218c1f28a3fec5a79cbfbf14013515ec94e} {transmitter/config/generated/mapper_frequency.vh} {16289ed61b2382144a7e2fa97f3fc0b1f2b8ae15ab1afe889c2e52e1eca0ee4f} {transmitter/config/generated/mapper_reset.vh} {41439257d4516afc159ff2a427fdf11a6222a9e28176cd36e66b3d44b3911122} {transmitter/config/generated/mode_select_tables.vh} {bbe9c87fb9ba9119c80744456ee0068b035e0d2083c7467b9e35c08ab1653113} {transmitter/config/generated/reply_custom_band.vh} {56077b128e6e14ed8c7ef6a84f6964f40e73ed133691b990747073bcacde3d7e} {transmitter/config/generated/reply_decimal.vh} {44d69f8e62f74d34b4111f966e72e6e14a2371bdb791b07cb74f56c664eeea3a} {transmitter/config/generated/reply_presets.vh} {ddf890428e05f7cab207a6e9de2816b0587c2b3cc7628b9d290b14f7282dd3a7} {transmitter/config/hil_angle_phase_rom.mem} {251fef5bac2a672ffa8e936766537a093e23901c3152945069e961ce66591591} {transmitter/config/hil_mode_catalog.json} {59f0c3eec4785564978f070366839a669919ff61a2d6be23a48692e38fccd455} {transmitter/config/uart_baud_config.vh} {ab3b61faaf9f9a71bfb8ebcc27b002d04b9188b3c8e70aee2507b84d88402148} {transmitter/constraints/apply_uart_j11.tcl} {76c62df438c71082485dfdab0a33d497066cd4bd924f3087d48c23e67c795970} {transmitter/constraints/ax7103_an9767_no_uart.xdc} {4b10230669d120e4b6c1d77beaf5bb35e82ce7f8426cdb85890d2f25c6d4a6aa} {transmitter/constraints/uart_j11.xdc} {8133ce38a3ad63fc06fa34e7021bbf5b1b0ebc7a69ddcb48e769a4b918eab4c9} {transmitter/ip/dac_pll/dac_pll.xci} {a2759a5469f53c3431a8ebab24d5897658d07c19cc9f914c7601676ff560f90d} {transmitter/rom/sine_lut_14bit.mem} {3cc4fd7eed2090406c108fe8562826dad9aad9102041b8744718454757c0ab42} {transmitter/rtl/board/hil20_key_inputs.v} {527f2bc109cf90975c2f25732be7177579d5d5aa7981b6c25e7d045019db8c78} {transmitter/rtl/board/hil20_led_status.v} {9d1fc69fe5675c485e683ae7ec48bd61e7fd29b0a055857880641f78580af033} {transmitter/rtl/board/hil20_reset_release.v} {7736f36a77e8db2e13d0bd428e8e22ee6c6ee5a2e6db177c08440526bb4ac175} {transmitter/rtl/common/key_debounce.v} {0b7881073745ac457994931de1d53cba33e92e2c6c3e7af85287871294116e0f} {transmitter/rtl/control/hil20_control.sv} {d84f8b4aee651c4247e956a8c1740051d93bdb0190cdc65e0cedf7629b54fc88} {transmitter/rtl/control/hil_angle_mapper.sv} {9d7f1b60be411c1a856afe71ff2826616c52eab1144a5acbf25fb6a4ea022a5b} {transmitter/rtl/control/mode_select.v} {25aa3ad01094ef1a4c536742317c053808dd8263076a3619b548771549e35c1f} {transmitter/rtl/datapath/coherent_nco.v} {5a249b9cab44ecaf2218d5fb61a1452d709156360e6518201187dcd052414b6b} {transmitter/rtl/dispatch/hil20_uart_control.sv} {b3017ac01ceef8b33357a60a964e02da5df48e944dcb02fc4ffc827ec5eb9d83} {transmitter/rtl/dispatch/hil_reply_fifo.sv} {ad01a446901623c1e4f353a06c2b8e26703558c8b0792fb54cade436598d47c0} {transmitter/rtl/dispatch/hil_reply_scheduler.sv} {439c3be139ec71c69d7c339a6c33508fc32684da3eac7e03778f7ec8bee82411} {transmitter/rtl/protocol/hil_ascii_parser.sv} {3e0f3c8b7b3dfaf9ca61dc5460ecd7750d6a57cde22ec5249bbc2df647cbed02} {transmitter/rtl/protocol/hil_command_decode.sv} {6917fd12003316518fe13209c57359b07f5bde750c0ea69ceff1ccb348ef8abb} {transmitter/rtl/protocol/hil_reply_format.sv} {b6806ec0f9d72277bf348f728322a53d43566ab23c3b7bcef009dbb32f7da82c} {transmitter/rtl/protocol/hil_uart_reply.sv} {9455bfda128a5b3eed53b394b360dbc1444c694f31785093e093cd5db7727fa1} {transmitter/rtl/top/ax7103_an9767_uart_j11_top.v} {91a28b3bb0976b1cb24db5dc2006a1274247f5292dbafae143543bb85c40dcb7} {transmitter/rtl/uart/hil_uart_link.sv} {33e8170f2155e385172b66b9d8050a6fdc92c0d4ad5cb862597c4c1dee5258ad} {transmitter/rtl/uart/hil_uart_rx.sv} {cc50f416a426d46ad48356f1f48db3e248ce239c29c8289f16ea382862fec0a8} {transmitter/rtl/uart/hil_uart_tx.sv} {06cdc4f9ad2a7a30f93242cdaef00245c8ecfd9d6bd1c502c920d3ac3d79a287} {transmitter/scripts/generate_angle_rom.py} {17458c3ce92bf1148dae6a8f889474951db94cd0a655054d9421fe86bfd9b3b0} {transmitter/scripts/generate_mode_catalog.py} {2e97373997e8ac0acfdd53b29515b4f59fb4971a2f5483ae7ce8e5ac536663f4} {transmitter/sim/current/tb_hil20_baud.sv} {e784dd50b8513f90e32b557060213d6d20f3a526b5dc78e82b2ac01092272e28} {transmitter/sim/current/tb_reply_fifo.sv} {a055fcb0c5c707ec3af53fe29352cb07ccbde842b5ac73230ca3e0570656e0c0} {transmitter/sim/uart_angle/angle_golden_vectors.txt} {61d52ab6d5e4df9789cb58874c7604677e3207484f68132efa3a6872ef401e4d} {transmitter/sim/uart_angle/tb_angle_decoder.sv} {9ef5b8877d864252e6b47ad363cee0415f2624993172054e8c7536dc52b675fa} {transmitter/sim/uart_angle/tb_angle_mapper.sv} {1697a21c9862371407b1786aa22de1e32995eebbc7438ee8b013945f3ef4fcff} {transmitter/sim/uart_angle/tb_hil20_any_angle.sv} {006166fa46b3b611e0465f06ff1e1425097dd7677998ad5e7d8589f4b19eceef}
+INPUT_PREFLIGHT_ACCEPTED count=202
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1393.848 ; gain = 163.797
+WARNING: [Runs 36-537] File C:/Users/admin/Documents/Codex/doa_separate_ready/receiver/constraints/cdc_handwritten_sync_guard.tcl is not part of fileset utils_1, but has specified as a Tcl hook script for run(s) impl_1. This file will not be handled as part of the project for archive and other project based functionality.
+CRITICAL WARNING: [Vivado 12-3645] Please note that adding or importing multiple files, one at a time, can be performance intensive.  Both add_files and import_files commands accept multiple files as input, and passing a collection of multiple files to a single add_files or import_files commands can offer significant performance improvement.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2023.1/data/ip'.
+Reading block design file <C:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/design_1.bd>...
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_clk_adc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_rst_clk_adc_0 
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_142M
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_rst_ps7_0_142M_0 
+Adding component instance block -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_axi_dma_0_0 
+Adding component instance block -- xilinx.com:ip:axi_dma:7.1 - axi_dma_1
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_axi_dma_1_0 
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - axi_interconnect_0
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_axi_interconnect_0_0 
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_xbar_2 
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_us_0 
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_us_1 
+Adding component instance block -- xilinx.com:ip:axis_register_slice:1.1 - axis_register_slice_0
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_axis_register_slice_0_0 
+Adding component instance block -- xilinx.com:ip:axis_register_slice:1.1 - axis_register_slice_1
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_axis_register_slice_1_0 
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_ps7_0_axi_periph_0 
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_xbar_3 
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_pc_0 
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_pc_1 
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_pc_2 
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_pc_3 
+Adding component instance block -- xilinx.com:ip:axi_clock_converter:2.1 - auto_cc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_cc_0 
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_pc_4 
+Adding component instance block -- xilinx.com:ip:axi_clock_converter:2.1 - auto_cc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_cc_1 
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_pc_5 
+Adding component instance block -- xilinx.com:ip:axi_clock_converter:2.1 - auto_cc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_cc_2 
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_pc_6 
+Adding component instance block -- xilinx.com:ip:axi_clock_converter:2.1 - auto_cc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_cc_3 
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_pc_7 
+Adding component instance block -- xilinx.com:ip:axi_clock_converter:2.1 - auto_cc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_cc_4 
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_pc_8 
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_us_2 
+Adding component instance block -- xilinx.com:ip:axi_clock_converter:2.1 - auto_cc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_cc_5 
+Adding component instance block -- xilinx.com:ip:axi_clock_converter:2.1 - auto_cc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_cc_6 
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_auto_pc_9 
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_xlconcat_0_0 
+Adding component instance block -- xilinx.com:ip:zynq_ultra_ps_e:3.5 - zynq_ultra_ps_e_0
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_zynq_ultra_ps_e_0_0 
+INFO: [PSU-0] Address Range of DDR (0x7ff00000 to 0x7fffffff) is reserved by PMU for internal purpose.
+INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_lcd_100M
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_rst_lcd_100M_3 
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_mode
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_axi_gpio_mode_0 
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - VCC
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_VCC_0 
+Adding component instance block -- xilinx.com:ip:xfft:9.1 - fft_0
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_fft_0_0 
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:4.1 - fft_result_bram_ctrl
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_fft_result_bram_ctrl_0 
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-2] design_1_fft_result_bram_ctrl_0: In IP Integrator, please note that memory depth value gets calculated based on the Data Width of the IP and Address range selected in the Address Editor.Incase a validation error occured on the range of this parameter, please check if the selected Data width and the Address Range are valid. For valid Data width and memory depth values, please refer to the AXI BRAM Controller Product Guide.
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-1] design_1_fft_result_bram_ctrl_0: In IP Integrator, The Maximum address range supported is 2G. Selecting the address range more than 2G in the address editor may resets the value of Memory depth to default value (1024). please refer to the AXI BRAM Controller Product Guide.
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-2] design_1_fft_result_bram_ctrl_0: In IP Integrator, please note that memory depth value gets calculated based on the Data Width of the IP and Address range selected in the Address Editor.Incase a validation error occured on the range of this parameter, please check if the selected Data width and the Address Range are valid. For valid Data width and memory depth values, please refer to the AXI BRAM Controller Product Guide.
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-1] design_1_fft_result_bram_ctrl_0: In IP Integrator, The Maximum address range supported is 2G. Selecting the address range more than 2G in the address editor may resets the value of Memory depth to default value (1024). please refer to the AXI BRAM Controller Product Guide.
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - fft_result_bram
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_fft_result_bram_0 
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_fft
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_axi_gpio_fft_0 
+Adding component instance block -- xilinx.com:module_ref:pl_mode_controller:1.0 - mode_ctrl
+INFO: [IP_Flow 19-5107] Inferred bus interface 'resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'resetn'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-11770] Clock interface 'clk' has no FREQ_HZ parameter.
+INFO: [BD 41-1728] Could not find a module with name: design_1_mode_ctrl_9 
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_candidate_cmd
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_axi_gpio_candidate_cmd_0 
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_candidate_status
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_axi_gpio_candidate_status_0 
+Adding component instance block -- xilinx.com:module_ref:fft_result_bank_system:1.0 - fft_result_bank_system_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'adc_resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'axi_resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'adc_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'axi_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'adc_resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'axi_resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'adc_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'adc_resetn'.
+INFO: [IP_Flow 19-4728] Bus Interface 'axi_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'axi_resetn'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'adc_clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-11770] Clock interface 'adc_clk' has no FREQ_HZ parameter.
+WARNING: [IP_Flow 19-5661] Bus Interface 'axi_clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-11770] Clock interface 'axi_clk' has no FREQ_HZ parameter.
+INFO: [BD 41-1728] Could not find a module with name: design_1_fft_result_bank_system_0_0 
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - base_fine_disabled_1b
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_base_fine_disabled_1b_0 
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - base_fine_disabled_12b
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_base_fine_disabled_12b_0 
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - base_fine_disabled_32b
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_base_fine_disabled_32b_0 
+Adding component instance block -- xilinx.com:ip:cordic:6.0 - fine_doa_translate
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_fine_doa_translate_0 
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_fine_cmd
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_axi_gpio_fine_cmd_0 
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_fine_status
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_axi_gpio_fine_status_0 
+Adding component instance block -- xilinx.com:module_ref:fine_doa_sqrt:1.0 - fine_doa_sqrt
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aclk' of definition 'xilinx.com:signal:clock:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aclk' of definition 'xilinx.com:signal:clock:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aresetn' of definition 'xilinx.com:signal:reset:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aresetn' of definition 'xilinx.com:signal:reset:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXIS_CARTESIAN' of definition 'xilinx.com:interface:axis:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXIS_CARTESIAN' of definition 'xilinx.com:interface:axis:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'M_AXIS_DOUT' of definition 'xilinx.com:interface:axis:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'M_AXIS_DOUT' of definition 'xilinx.com:interface:axis:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-4728] Bus Interface 'aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'S_AXIS_CARTESIAN'.
+INFO: [IP_Flow 19-4728] Bus Interface 'aclk': Added interface parameter 'ASSOCIATED_RESET' with value 'aresetn'.
+INFO: [IP_Flow 19-4728] Bus Interface 'aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-11770] Clock interface 'aclk' has no FREQ_HZ parameter.
+INFO: [BD 41-1728] Could not find a module with name: design_1_fine_doa_sqrt_1 
+Adding component instance block -- xilinx.com:module_ref:spectrum_fft_ctrl:1.0 - fft_ctrl_0
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'fft_watchdog_active' has a dependency on the module local parameter or undefined parameter 'ST_CONFIG'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'fft_watchdog_active' has a dependency on the module local parameter or undefined parameter 'ST_FEED'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'fft_watchdog_active' has a dependency on the module local parameter or undefined parameter 'ST_WAIT'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'fft_progress' has a dependency on the module local parameter or undefined parameter 'ST_CONFIG'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'fft_progress' has a dependency on the module local parameter or undefined parameter 'ST_FEED'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'fft_progress' has a dependency on the module local parameter or undefined parameter 'ST_WAIT'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'capture_begin' has a dependency on the module local parameter or undefined parameter 'ST_IDLE'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'capture_begin' has a dependency on the module local parameter or undefined parameter 'ST_WAIT'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'adc_clk' of definition 'xilinx.com:signal:clock:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'adc_clk' of definition 'xilinx.com:signal:clock:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'fft_m_data' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'fft_s_config' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'fft_s_data' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'adc_resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'axi_resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'axi_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'adc_resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'axi_resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'adc_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'adc_resetn'.
+INFO: [IP_Flow 19-4728] Bus Interface 'axi_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'axi_resetn'.
+INFO: [IP_Flow 19-4728] Bus Interface 'adc_clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'fft_s_config'.
+INFO: [IP_Flow 19-4728] Bus Interface 'adc_clk': Added interface parameter 'FREQ_HZ' with value '62499374'.
+INFO: [IP_Flow 19-7067] Note that bus interface 'adc_clk' has a fixed FREQ_HZ of '62499374'. This value will be respected whenever this IP is instantiated in IP Integrator.
+WARNING: [IP_Flow 19-5661] Bus Interface 'axi_clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-11770] Clock interface 'axi_clk' has no FREQ_HZ parameter.
+INFO: [BD 41-1728] Could not find a module with name: design_1_fft_ctrl_0_0 
+Adding component instance block -- xilinx.com:module_ref:fine_production_system:1.0 - fine_production_system_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'adc_resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'axi_resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'cordic_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'adc_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'axi_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'adc_resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'axi_resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'cordic_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'adc_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'adc_resetn'.
+INFO: [IP_Flow 19-4728] Bus Interface 'axi_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'axi_resetn'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'adc_clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-11770] Clock interface 'adc_clk' has no FREQ_HZ parameter.
+WARNING: [IP_Flow 19-5661] Bus Interface 'axi_clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-11770] Clock interface 'axi_clk' has no FREQ_HZ parameter.
+INFO: [BD 41-1728] Could not find a module with name: design_1_fine_production_system_0_0 
+Adding component instance block -- alinx.com:user:ad9238_sample:1.1 - ad9238_sample_0
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_ad9238_sample_0_0 
+Adding component instance block -- alinx.com:user:ad9238_sample:1.1 - ad9238_sample_1
+INFO: [BD 41-434] Could not find an IP with XCI file by name: design_1_ad9238_sample_1_0 
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Successfully read diagram <design_1> from block design file <C:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/design_1.bd>
+INFO: [BD 41-433] 
+Design successfully migrated to use XCI files...
+open_bd_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:51 . Memory (MB): peak = 1858.254 ; gain = 413.582
+WARNING: [BD 41-2670] Found an incomplete address path from address space '/zynq_ultra_ps_e_0/Data' to master interface '/ps7_0_axi_periph/M09_AXI'. Please either complete or remove this path to resolve.
+WARNING: [BD 41-2670] Found an incomplete address path from address space '/zynq_ultra_ps_e_0/Data' to master interface '/ps7_0_axi_periph/M10_AXI'. Please either complete or remove this path to resolve.
+WARNING: [BD 41-2670] Found an incomplete address path from address space '/zynq_ultra_ps_e_0/Data' to master interface '/ps7_0_axi_periph/M08_AXI'. Please either complete or remove this path to resolve.
+WARNING: [BD 41-2670] Found an incomplete address path from address space '/zynq_ultra_ps_e_0/Data' to master interface '/ps7_0_axi_periph/M11_AXI'. Please either complete or remove this path to resolve.
+WARNING: [BD 41-1629] Slave segment </zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM> is excluded from all addressing paths.
+WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -addressables -of_objects /ps7_0_axi_periph/xbar/M08_AXI'
+WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -addressables -of_objects /ps7_0_axi_periph/xbar/M09_AXI'
+WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -addressables -of_objects /ps7_0_axi_periph/xbar/M10_AXI'
+WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -addressables -of_objects /ps7_0_axi_periph/xbar/M11_AXI'
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(64) on '/axi_dma_0' with propagated value(32). Command ignored
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(64) on '/axi_dma_1' with propagated value(32). Command ignored
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -of_object /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM'
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_1/Data_S2MM.
+INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter WRITE_WIDTH_B(64) on '/fft_result_bram' with propagated value(32). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter READ_WIDTH_B(64) on '/fft_result_bram' with propagated value(32). Command ignored
+CRITICAL WARNING: [BD 41-1347] Reset pin /fine_doa_translate/aresetn (associated clock /fine_doa_translate/aclk) is connected to asynchronous reset source /fine_production_system_0/cordic_aresetn.
+This may prevent design from meeting timing. Instead it should be connected to reset source /rst_clk_adc/peripheral_aresetn.
+CRITICAL WARNING: [BD 41-1347] Reset pin /fine_doa_sqrt/aresetn (associated clock /fine_doa_sqrt/aclk) is connected to asynchronous reset source /fine_production_system_0/cordic_aresetn.
+This may prevent design from meeting timing. Instead it should be connected to reset source /rst_clk_adc/peripheral_aresetn.
+WARNING: [BD 41-2180] Resetting the memory initialization file of </fft_result_bram> to default.
+INFO: [xilinx.com:ip:cordic:6.0-7] /fine_doa_translate Setting Input Width to 40. S_AXIS_CARTESIAN_TDATA real input width: 40. S_AXIS_CARTESIAN_TDATA imag input width: 40.
+INFO: [xilinx.com:ip:cordic:6.0-913] /fine_doa_translate Input_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:xfft:9.1-913] /fft_0 data_format has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:xfft:9.1-913] /fft_0 input_width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HP0_FPD(1) and /axi_interconnect_0/xbar/M00_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HP0_FPD(1) and /axi_interconnect_0/xbar/M00_AXI(0)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps7_0_axi_periph/m00_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/xbar/M00_AXI(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps7_0_axi_periph/m00_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/xbar/M00_AXI(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps7_0_axi_periph/m01_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/xbar/M01_AXI(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps7_0_axi_periph/m01_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/xbar/M01_AXI(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps7_0_axi_periph/m02_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/xbar/M02_AXI(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps7_0_axi_periph/m02_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/xbar/M02_AXI(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps7_0_axi_periph/m03_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/xbar/M03_AXI(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps7_0_axi_periph/m03_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/xbar/M03_AXI(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps7_0_axi_periph/m13_couplers/auto_us/S_AXI(0) and /ps7_0_axi_periph/xbar/M13_AXI(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps7_0_axi_periph/m13_couplers/auto_us/S_AXI(0) and /ps7_0_axi_periph/xbar/M13_AXI(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps7_0_axi_periph/m04_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/m04_couplers/auto_cc/M_AXI(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps7_0_axi_periph/m04_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/m04_couplers/auto_cc/M_AXI(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps7_0_axi_periph/m05_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/m05_couplers/auto_cc/M_AXI(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps7_0_axi_periph/m05_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/m05_couplers/auto_cc/M_AXI(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps7_0_axi_periph/m06_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/m06_couplers/auto_cc/M_AXI(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps7_0_axi_periph/m06_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/m06_couplers/auto_cc/M_AXI(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps7_0_axi_periph/m07_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/m07_couplers/auto_cc/M_AXI(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps7_0_axi_periph/m07_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/m07_couplers/auto_cc/M_AXI(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps7_0_axi_periph/m12_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/m12_couplers/auto_cc/M_AXI(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps7_0_axi_periph/m12_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/m12_couplers/auto_cc/M_AXI(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps7_0_axi_periph/m14_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/m14_couplers/auto_cc/M_AXI(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps7_0_axi_periph/m14_couplers/auto_pc/S_AXI(0) and /ps7_0_axi_periph/m14_couplers/auto_cc/M_AXI(16)
+validate_bd_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 1874.891 ; gain = 16.637
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+Wrote  : <C:\Users\admin\Documents\Codex\doa_separate_ready\receiver\vivado\receiver.srcs\sources_1\bd\design_1\design_1.bd> 
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_interconnect_0/xbar/m_axi_bid'(1) to pin: '/axi_interconnect_0/m00_couplers/S_AXI_bid'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_interconnect_0/xbar/m_axi_rid'(1) to pin: '/axi_interconnect_0/m00_couplers/S_AXI_rid'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/zynq_ultra_ps_e_0/saxigp2_awid'(6) to pin: '/axi_interconnect_0/M00_AXI_awid'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/zynq_ultra_ps_e_0/saxigp2_arid'(6) to pin: '/axi_interconnect_0/M00_AXI_arid'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/fft_result_bram/addra'(32) to pin: '/fft_result_bram_ctrl/bram_addr_a'(14) - Only lower order bits will be connected.
+Verilog Output written to : C:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_interconnect_0/xbar/m_axi_bid'(1) to pin: '/axi_interconnect_0/m00_couplers/S_AXI_bid'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_interconnect_0/xbar/m_axi_rid'(1) to pin: '/axi_interconnect_0/m00_couplers/S_AXI_rid'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/zynq_ultra_ps_e_0/saxigp2_awid'(6) to pin: '/axi_interconnect_0/M00_AXI_awid'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/zynq_ultra_ps_e_0/saxigp2_arid'(6) to pin: '/axi_interconnect_0/M00_AXI_arid'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/fft_result_bram/addra'(32) to pin: '/fft_result_bram_ctrl/bram_addr_a'(14) - Only lower order bits will be connected.
+Verilog Output written to : C:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/sim/design_1.v
+Verilog Output written to : C:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_clk_adc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_142M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_register_slice_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_register_slice_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [xilinx.com:ip:zynq_ultra_ps_e:3.5-0] design_1_zynq_ultra_ps_e_0_0: 
+Changes in your design (including the PCW configuration settings) are not automatically exported from Vivado to Xilinx's SDK, Petalinux or Yocto.
+This is by design to avoid disrupting existing embedded development efforts. To have any changes of your design taking effect in the embedded software flow please export your
+design by going through Vivado's main menu, click on File, then Export finally select Export Hardware, please ensure you click on the Include BitStream option.
+The auto-generated HDF file is all you need to import in Xilinx's SDK, Petalinux or Yocto for your changes to be reflected in the Embedded Software Flow.
+For more information, please consult PG201, section: Exporting PCW Settings to Embedded Software Flows
+INFO: [PSU-0] Address Range of DDR (0x3ff00000 to 0x3fffffff) is reserved by PMU for internal purpose.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI_HPM0_LPD'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI_HP0_FPD'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zynq_ultra_ps_e_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_lcd_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_mode .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block VCC .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block fft_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block fft_result_bram_ctrl .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block fft_result_bram .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_fft .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mode_ctrl .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_candidate_cmd .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_candidate_status .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block fft_result_bank_system_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block base_fine_disabled_1b .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block base_fine_disabled_12b .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block base_fine_disabled_32b .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block fine_doa_translate .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_fine_cmd .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_fine_status .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block fine_doa_sqrt .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block fft_ctrl_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block fine_production_system_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ad9238_sample_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ad9238_sample_1 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s01_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m00_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m01_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_2/design_1_auto_pc_2_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m02_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_3/design_1_auto_pc_3_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m03_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_cc_0/design_1_auto_cc_0_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m04_couplers/auto_cc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_4/design_1_auto_pc_4_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m04_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_cc_1/design_1_auto_cc_1_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m05_couplers/auto_cc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_5/design_1_auto_pc_5_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m05_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_cc_2/design_1_auto_cc_2_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m06_couplers/auto_cc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_6/design_1_auto_pc_6_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m06_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_cc_3/design_1_auto_cc_3_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m07_couplers/auto_cc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_7/design_1_auto_pc_7_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m07_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_cc_4/design_1_auto_cc_4_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m12_couplers/auto_cc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_8/design_1_auto_pc_8_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m12_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_us_2/design_1_auto_us_2_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m13_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_cc_5/design_1_auto_cc_5_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m13_couplers/auto_cc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_cc_6/design_1_auto_cc_6_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m14_couplers/auto_cc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_9/design_1_auto_pc_9_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m14_couplers/auto_pc .
+Exporting to file C:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File C:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+generate_target: Time (s): cpu = 00:00:43 ; elapsed = 00:00:58 . Memory (MB): peak = 2208.281 ; gain = 333.391
+update_compile_order: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2208.281 ; gain = 0.000
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 20:52:45 2026...
+
+工程已准备好，用Vivado打开以下文件：
+发送端：C:\Users\admin\Documents\Codex\doa_separate_ready\transmitter\vivado\transmitter.xpr
+接收端：C:\Users\admin\Documents\Codex\doa_separate_ready\receiver\vivado\receiver.xpr
+本次没有运行综合、布局布线或生成镜像。

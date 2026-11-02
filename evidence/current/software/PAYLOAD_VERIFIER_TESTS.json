@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "original_sha256_unchanged": "9b2864d43878c8793143e33b07bbdcf0b3cd7ceb6b9145dfd896fcaa715b15e1",
+  "synthetic_corruptions_only": true,
+  "tests": [
+    {
+      "test": "header",
+      "tamper_rejected": true,
+      "reason": "BOOT头"
+    },
+    {
+      "test": "pl_payload",
+      "tamper_rejected": true,
+      "reason": "PL逐字节载荷"
+    },
+    {
+      "test": "app_payload",
+      "tamper_rejected": true,
+      "reason": "应用ELF载荷"
+    }
+  ]
+}

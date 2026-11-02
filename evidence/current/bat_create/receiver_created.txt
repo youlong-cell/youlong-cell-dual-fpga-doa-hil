@@ -1,0 +1,7 @@
+CATALOG=6a04ff50a07f682e5dad26b92e2fe075aca27afb4b30af42067c609c10e92e2c
+SIDE=receiver
+PART=xczu2cg-sfvc784-1-i
+TOP=top
+SYNTHESIS=Not started
+IMPLEMENTATION=Not started
+PROJECT=C:/Users/admin/Documents/Codex/doa_separate_ready/receiver/vivado/receiver.xpr

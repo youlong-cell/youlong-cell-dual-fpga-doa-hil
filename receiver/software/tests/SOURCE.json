@@ -1,0 +1,38 @@
+[
+  {
+    "source": "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\vivado_text\\engineering\\runtime_opt_20261019\\tests\\test_alpha_font.c",
+    "sha256": "8efa4c644815d7722ad8aa6e629e028904234457f0101c6ef432bd2cd5310567",
+    "copied_to": "receiver/software/tests/test_alpha_font.c",
+    "fixture_update_only": false
+  },
+  {
+    "source": "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\vivado_text\\engineering\\runtime_opt_20261019\\tests\\test_debug_ui.c",
+    "sha256": "bab5468cf8e748a636307879fd02adf1f732f46f0561c46fc5acd28850da2652",
+    "copied_to": "receiver/software/tests/test_debug_ui.c",
+    "fixture_update_only": true
+  },
+  {
+    "source": "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\vivado_text\\engineering\\runtime_opt_20261019\\tests\\test_doa_ui_ema.c",
+    "sha256": "4ad720bb3b8d6c46f44fff3525cb76d633e6cf67503e57be5dc90240b57dd57b",
+    "copied_to": "receiver/software/tests/test_doa_ui_ema.c",
+    "fixture_update_only": false
+  },
+  {
+    "source": "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\vivado_text\\engineering\\runtime_opt_20261019\\tests\\test_spectrum_filter.c",
+    "sha256": "487602b74b8916792cf2647a5be0f5c414c4cd79d0ebfd3d2ef9b422e3dd0f58",
+    "copied_to": "receiver/software/tests/test_spectrum_filter.c",
+    "fixture_update_only": false
+  },
+  {
+    "source": "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\vivado_text\\engineering\\runtime_opt_20261019\\tests\\ui_angles_fixture.h",
+    "sha256": "5d15f9be3b9bfeca32d51dec9549f9a22a37a89f2397c10e47cf4c3e98fd40b8",
+    "copied_to": "receiver/software/tests/ui_angles_fixture.h",
+    "fixture_update_only": false
+  },
+  {
+    "source": "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\vivado_text\\engineering\\runtime_opt_20261019\\tests\\profile_clock_stub.c",
+    "sha256": "02987db131d3091b100569592284d34e3864d426ca583f7489a264231c431f7d",
+    "copied_to": "receiver/software/tests/profile_clock_stub.c",
+    "fixture_update_only": false
+  }
+]

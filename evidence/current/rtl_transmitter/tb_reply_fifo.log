@@ -1,0 +1,22 @@
+
+****** xsim v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+FIFO_COVERAGE depth=2 both=651 wraps=954 empty=1309 full=1276
+FIFO_LANE_PASS depth=2 checks=5104 simultaneous=651 wraps=954 empty=1309 full=1276
+FIFO_COVERAGE depth=4 both=986 wraps=573 empty=693 full=573
+FIFO_LANE_PASS depth=4 checks=5184 simultaneous=986 wraps=573 empty=693 full=573
+FIFO_COVERAGE depth=8 both=1185 wraps=321 empty=264 full=106
+FIFO_LANE_PASS depth=8 checks=5344 simultaneous=1185 wraps=321 empty=264 full=106
+REFACTOR_FIFO_ALL_PASS failures=0
+$finish called at time : 42752 ns : File "E:/ALL_project/fpgatext/AXU_SOC/PL_PS/opensource_prepare_20261031/repository/transmitter/sim/current/tb_reply_fifo.sv" Line 58
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 17:26:25 2026...

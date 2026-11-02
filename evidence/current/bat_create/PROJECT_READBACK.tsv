@@ -1,0 +1,9 @@
+transmitter	RUN	synth_1	Not started
+transmitter	RUN	impl_1	Not started
+transmitter	PASS	xc7a100tfgg484-2	ax7103_an9767_uart_j11_top
+PROJECT_READBACK_OK
+
+receiver	RUN	synth_1	Not started
+receiver	RUN	impl_1	Not started
+receiver	PASS	xczu2cg-sfvc784-1-i	top
+PROJECT_READBACK_OK

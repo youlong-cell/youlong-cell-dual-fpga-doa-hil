@@ -1,0 +1,16 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sun Nov  1 17:16:28 2026
+| Host         : LAPTOP-2SG9AAOA running 64-bit major release  (build 9200)
+| Command      : report_cdc -details -file E:/ALL_project/fpgatext/AXU_SOC/PL_PS/opensource_prepare_20261031/repository/build/tx_build2/reports/cdc.rpt
+| Design       : ax7103_an9767_uart_j11_top
+| Device       : 7a100t-fgg484
+| Speed File   : -2  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CDC Report
+
+All paths are Safely Timed.
+

@@ -1,0 +1,146 @@
+
+****** Vivado v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Sourcing tcl script 'C:/Users/admin/AppData/Roaming/Xilinx/Vivado/2023.1/Vivado_init.tcl'
+[vmcp] server listening on 127.0.0.1:7654
+vivado-mcp-server: plugin loaded. Commands: ::vmcp::server::start / ::vmcp::server::stop / ::vmcp::server::reload
+INFO: [Common 17-1460] Use of init.tcl in C:/Users/admin/AppData/Roaming/Xilinx/Vivado/init.tcl is deprecated. Please use Vivado_init.tcl 
+Sourcing tcl script 'C:/Users/admin/AppData/Roaming/Xilinx/Vivado/init.tcl'
+Verible：Vivado 菜单已加载，请打开 Tools > Custom Commands。
+source readback_transmitter.tcl
+# if {[catch {
+# set root "C:/Users/admin/Documents/Codex/doa_separate_ready"
+# source -notrace "C:/Users/admin/Documents/Codex/doa_separate_ready/auto_create_project/sources.tcl"
+# set f [open "E:/ALL_project/fpgatext/AXU_SOC/PL_PS/opensource_prepare_20261031/maintenance/bat_entry_20261101/transmitter_readback.tsv" w]
+# fconfigure $f -encoding utf-8
+# 
+# foreach side {transmitter} {
+#  set xpr [file join $root $side vivado [format %s.xpr $side]]
+#  open_project $xpr
+#  set spec [dict get $doa_specs $side]
+#  if {[get_property PART [current_project]] ne [dict get $spec part]} {error "PART_MISMATCH"}
+#  if {[get_property TOP [get_filesets sources_1]] ne [dict get $spec top]} {error "TOP_MISMATCH"}
+#  foreach run [get_runs] {
+#   set s [get_property STATUS $run]
+#   if {$s ne "Not started"} {error "RUN_WAS_STARTED $run $s"}
+#   puts $f "$side\tRUN\t$run\t$s"
+#  }
+#  foreach row [dict get $spec sources] {
+#   lassign $row relative role disabled
+#   if {[file extension $relative] eq ".bd"} {
+#    set path [file join $root $side vivado receiver.srcs sources_1 bd design_1 design_1.bd]
+#   } else {set path [file normalize [file join $root $relative]]}
+#   set obj [get_files -quiet [list $path]]
+#   if {[llength $obj]!=1} {error "SOURCE_NOT_IN_XPR $path"}
+#   if {$role eq "constrs_1" && $disabled && [get_property IS_ENABLED $obj]} {error "DISABLED_CONSTRAINT_ENABLED"}
+#  }
+#  foreach relative [dict get $spec sim_sources] {
+#   if {[llength [get_files -quiet -of_objects [get_filesets sim_1] [list [file join $root $relative]]]]!=1} {error "TESTBENCH_MISSING $relative"}
+#  }
+#  foreach ip [get_ips -quiet] {
+#   if {[get_property IS_LOCKED $ip]} {error "IP_LOCKED $ip"}
+#  }
+#  if {$side eq "transmitter"} {
+#   set hook [get_property STEPS.SYNTH_DESIGN.TCL.POST [get_runs synth_1]]
+#   if {[file normalize $hook] ne [file normalize [file join $root transmitter constraints apply_uart_j11.tcl]]} {error "TX_HOOK_MISMATCH"}
+#  } else {
+#   set guard [get_files [list [file join $root receiver constraints cdc_handwritten_sync_guard.tcl]]]
+#   if {[get_property USED_IN_SYNTHESIS $guard]} {error "GUARD_SYNTHESIS_ENABLED"}
+#   if {![get_property USED_IN_IMPLEMENTATION $guard]} {error "GUARD_IMPLEMENTATION_DISABLED"}
+#   if {[get_property PROCESSING_ORDER $guard] ne "LATE"} {error "GUARD_ORDER"}
+#   set hook [get_property STEPS.OPT_DESIGN.TCL.PRE [get_runs impl_1]]
+#   if {[file normalize $hook] ne [file normalize [file join $root receiver constraints cdc_handwritten_sync_guard.tcl]]} {error "RX_HOOK_MISMATCH"}
+#  }
+#  puts $f "$side\tPASS\t[get_property PART [current_project]]\t[get_property TOP [get_filesets sources_1]]"
+#  
+# }
+# puts $f "PROJECT_READBACK_OK"
+# close $f
+# 
+# } e o]} {puts stderr $e;puts stderr [dict get $o -errorinfo];exit 1}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2023.1/data/ip'.
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 20:53:40 2026...
+
+
+****** Vivado v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Sourcing tcl script 'C:/Users/admin/AppData/Roaming/Xilinx/Vivado/2023.1/Vivado_init.tcl'
+[vmcp] server listening on 127.0.0.1:7654
+vivado-mcp-server: plugin loaded. Commands: ::vmcp::server::start / ::vmcp::server::stop / ::vmcp::server::reload
+INFO: [Common 17-1460] Use of init.tcl in C:/Users/admin/AppData/Roaming/Xilinx/Vivado/init.tcl is deprecated. Please use Vivado_init.tcl 
+Sourcing tcl script 'C:/Users/admin/AppData/Roaming/Xilinx/Vivado/init.tcl'
+Verible：Vivado 菜单已加载，请打开 Tools > Custom Commands。
+source readback_receiver.tcl
+# if {[catch {
+# set root "C:/Users/admin/Documents/Codex/doa_separate_ready"
+# source -notrace "C:/Users/admin/Documents/Codex/doa_separate_ready/auto_create_project/sources.tcl"
+# set f [open "E:/ALL_project/fpgatext/AXU_SOC/PL_PS/opensource_prepare_20261031/maintenance/bat_entry_20261101/receiver_readback.tsv" w]
+# fconfigure $f -encoding utf-8
+# 
+# foreach side {receiver} {
+#  set xpr [file join $root $side vivado [format %s.xpr $side]]
+#  open_project $xpr
+#  set spec [dict get $doa_specs $side]
+#  if {[get_property PART [current_project]] ne [dict get $spec part]} {error "PART_MISMATCH"}
+#  if {[get_property TOP [get_filesets sources_1]] ne [dict get $spec top]} {error "TOP_MISMATCH"}
+#  foreach run [get_runs] {
+#   set s [get_property STATUS $run]
+#   if {$s ne "Not started"} {error "RUN_WAS_STARTED $run $s"}
+#   puts $f "$side\tRUN\t$run\t$s"
+#  }
+#  foreach row [dict get $spec sources] {
+#   lassign $row relative role disabled
+#   if {[file extension $relative] eq ".bd"} {
+#    set path [file join $root $side vivado receiver.srcs sources_1 bd design_1 design_1.bd]
+#   } else {set path [file normalize [file join $root $relative]]}
+#   set obj [get_files -quiet [list $path]]
+#   if {[llength $obj]!=1} {error "SOURCE_NOT_IN_XPR $path"}
+#   if {$role eq "constrs_1" && $disabled && [get_property IS_ENABLED $obj]} {error "DISABLED_CONSTRAINT_ENABLED"}
+#  }
+#  foreach relative [dict get $spec sim_sources] {
+#   if {[llength [get_files -quiet -of_objects [get_filesets sim_1] [list [file join $root $relative]]]]!=1} {error "TESTBENCH_MISSING $relative"}
+#  }
+#  foreach ip [get_ips -quiet] {
+#   if {[get_property IS_LOCKED $ip]} {error "IP_LOCKED $ip"}
+#  }
+#  if {$side eq "transmitter"} {
+#   set hook [get_property STEPS.SYNTH_DESIGN.TCL.POST [get_runs synth_1]]
+#   if {[file normalize $hook] ne [file normalize [file join $root transmitter constraints apply_uart_j11.tcl]]} {error "TX_HOOK_MISMATCH"}
+#  } else {
+#   set guard [get_files [list [file join $root receiver constraints cdc_handwritten_sync_guard.tcl]]]
+#   if {[get_property USED_IN_SYNTHESIS $guard]} {error "GUARD_SYNTHESIS_ENABLED"}
+#   if {![get_property USED_IN_IMPLEMENTATION $guard]} {error "GUARD_IMPLEMENTATION_DISABLED"}
+#   if {[get_property PROCESSING_ORDER $guard] ne "LATE"} {error "GUARD_ORDER"}
+#   set hook [get_property STEPS.OPT_DESIGN.TCL.PRE [get_runs impl_1]]
+#   if {[file normalize $hook] ne [file normalize [file join $root receiver constraints cdc_handwritten_sync_guard.tcl]]} {error "RX_HOOK_MISMATCH"}
+#  }
+#  puts $f "$side\tPASS\t[get_property PART [current_project]]\t[get_property TOP [get_filesets sources_1]]"
+#  
+# }
+# puts $f "PROJECT_READBACK_OK"
+# close $f
+# 
+# } e o]} {puts stderr $e;puts stderr [dict get $o -errorinfo];exit 1}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/admin/Documents/Codex/doa_separate_ready/receiver/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2023.1/data/ip'.
+open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1464.152 ; gain = 233.418
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 20:54:00 2026...

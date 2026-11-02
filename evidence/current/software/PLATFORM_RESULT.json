@@ -1,0 +1,23 @@
+{
+  "command": [
+    "cmd.exe",
+    "/d",
+    "/s",
+    "/c",
+    "call E:\\Xilinx\\Vitis\\2023.1\\bin\\xsct.bat R:\\build\\platform1\\loader.tcl"
+  ],
+  "exit_code": 0,
+  "xsa": "R:\\build\\rx_build2\\release\\receiver_no_bit.xsa",
+  "xsa_sha256": "0f64b697002646d0d81ba18616582d6204067bd863c6b20bb3c153722e4858e4",
+  "board_tested": false,
+  "status": "PLATFORM_BSP_BUILD_VERIFIED",
+  "bsp": "R:\\build\\platform1\\workspace\\doa_ps\\psu_cortexa53_0\\standalone_domain\\bsp\\psu_cortexa53_0",
+  "fsbl": "R:\\build\\platform1\\workspace\\doa_ps\\zynqmp_fsbl\\fsbl_a53.elf",
+  "pmufw": "R:\\build\\platform1\\workspace\\doa_ps\\zynqmp_pmufw\\pmufw.elf",
+  "files": {
+    "R:\\build\\platform1\\workspace\\doa_ps\\psu_cortexa53_0\\standalone_domain\\bsp\\psu_cortexa53_0\\include\\xparameters.h": "05209c56cc91e1436af60732e535f9af8853f80d9a9148aaf11a44cc763f405a",
+    "R:\\build\\platform1\\workspace\\doa_ps\\psu_cortexa53_0\\standalone_domain\\bsp\\psu_cortexa53_0\\lib\\libxil.a": "772a2ceba0d5a9de77ac8c8dcef229b37e3c3c20ffce6dbbda8e5115c8b68255",
+    "R:\\build\\platform1\\workspace\\doa_ps\\zynqmp_fsbl\\fsbl_a53.elf": "b716a5521c946d98f113fe49e5ac4ed35c865e20a7bfa12bf16b528f2081f5e4",
+    "R:\\build\\platform1\\workspace\\doa_ps\\zynqmp_pmufw\\pmufw.elf": "0fc9d1f30277d9cb413a92ff9e36762346441f1ad93c8eb2d1886e651f81f734"
+  }
+}

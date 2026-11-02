@@ -1,0 +1,141 @@
+{
+  "status": "BOOT_BUILD_AND_PAYLOAD_VERIFIED",
+  "BOOT": "R:\\build\\boot1\\BOOT.bin",
+  "sha256": "9b2864d43878c8793143e33b07bbdcf0b3cd7ceb6b9145dfd896fcaa715b15e1",
+  "bytes": 6538696,
+  "input_files": {
+    "R:\\build\\platform1\\PLATFORM_RESULT.json": "9d206bed5f2c123eac0e64d3e6f4c5c3a249a1e016983cf1788086e7a0fb12f2",
+    "R:\\build\\app1\\ELF_RESULT.json": "ff9b499524045d50744a0c7240c044961496fa4a150baae4d0828fcc2ef02828",
+    "R:\\build\\rx_build2\\release\\receiver.bit": "629854b27779deea6d9cd8cc021e582bb8f1a7207b97a06754bcbd52e198f49c",
+    "R:\\build\\rx_build2\\release\\receiver_no_bit.xsa": "0f64b697002646d0d81ba18616582d6204067bd863c6b20bb3c153722e4858e4"
+  },
+  "output_files": {
+    "fsbl.elf": "b716a5521c946d98f113fe49e5ac4ed35c865e20a7bfa12bf16b528f2081f5e4",
+    "pmufw.elf": "0fc9d1f30277d9cb413a92ff9e36762346441f1ad93c8eb2d1886e651f81f734",
+    "DOA_RF_ENGINEERING.elf": "0d91ee0c9e1c27349810ea28ba792a97aa1b422e5be7e2318b857995ff3ad489",
+    "receiver.bit": "629854b27779deea6d9cd8cc021e582bb8f1a7207b97a06754bcbd52e198f49c",
+    "BOOT.bin": "9b2864d43878c8793143e33b07bbdcf0b3cd7ceb6b9145dfd896fcaa715b15e1",
+    "boot.bif": "5f317bbbc4745d40d7e1ed5a726f511aa6676958fe6ed718771a3bb1df077e0e"
+  },
+  "payload_verification": {
+    "ELFs": {
+      "fsbl": {
+        "path": "R:\\build\\boot1\\fsbl.elf",
+        "machine": 183,
+        "entry": 4294705152,
+        "LOAD": [
+          {
+            "offset": 512,
+            "paddr": 4294705152,
+            "file_bytes": 107128,
+            "memory_bytes": 130936,
+            "end": 4294836088,
+            "flags": 7
+          },
+          {
+            "offset": 0,
+            "paddr": 4294876672,
+            "file_bytes": 0,
+            "memory_bytes": 136,
+            "end": 4294876808,
+            "flags": 6
+          },
+          {
+            "offset": 0,
+            "paddr": 4294901824,
+            "file_bytes": 0,
+            "memory_bytes": 64512,
+            "end": 4294966336,
+            "flags": 6
+          }
+        ]
+      },
+      "pmufw": {
+        "path": "R:\\build\\boot1\\pmufw.elf",
+        "machine": 189,
+        "entry": 4292678024,
+        "LOAD": [
+          {
+            "offset": 160,
+            "paddr": 4292608000,
+            "file_bytes": 93356,
+            "memory_bytes": 109024,
+            "end": 4292717024,
+            "flags": 7
+          },
+          {
+            "offset": 93516,
+            "paddr": 4292717024,
+            "file_bytes": 2332,
+            "memory_bytes": 6432,
+            "end": 4292723456,
+            "flags": 6
+          },
+          {
+            "offset": 95848,
+            "paddr": 4292736736,
+            "file_bytes": 1024,
+            "memory_bytes": 1024,
+            "end": 4292737760,
+            "flags": 6
+          }
+        ]
+      },
+      "app": {
+        "path": "R:\\build\\boot1\\DOA_RF_ENGINEERING.elf",
+        "machine": 183,
+        "entry": 16777216,
+        "LOAD": [
+          {
+            "offset": 65536,
+            "paddr": 16777216,
+            "file_bytes": 1245256,
+            "memory_bytes": 29289344,
+            "end": 46066560,
+            "flags": 7
+          }
+        ]
+      }
+    },
+    "partitions": [
+      {
+        "name": "fsbl",
+        "entry": 4294705152,
+        "load": 4294705152,
+        "attributes": 279,
+        "offset": 10240,
+        "bytes": 236888
+      },
+      {
+        "name": "PL",
+        "entry": 0,
+        "load": 4294967295,
+        "attributes": 38,
+        "offset": 247168,
+        "bytes": 5046248
+      },
+      {
+        "name": "app.0",
+        "entry": 16777216,
+        "load": 16777216,
+        "attributes": 279,
+        "offset": 5293440,
+        "bytes": 1245256
+      }
+    ],
+    "bit_header": {
+      "a": "top;COMPRESS=TRUE;UserID=0XFFFFFFFF;Version=2023.1",
+      "b": "xczu2cg-sfvc784-1-i",
+      "c": "2026/11/01",
+      "d": "18:05:58"
+    },
+    "complete_PL_payload_verified": true,
+    "all_ELF_payloads_byte_identical": true,
+    "reserved_PL_scratch": [
+      1048576,
+      6159604
+    ]
+  },
+  "board_tested": false,
+  "deployment_performed": false
+}

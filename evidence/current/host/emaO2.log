@@ -1,0 +1,5 @@
+JITTER_HOST raw_pp_deg=0.300000002 smooth_pp_deg=0.004196403 tau_ms=400 dt_ms=10; SYNTHETIC NOT BOARD
+STEP_HOST from=30 to=-60 confirmed_at_ms=20; NOT BOARD LATENCY
+STEP_HOST from=-30 to=60 confirmed_at_ms=20; NOT BOARD LATENCY
+FILTER_HOST avg_fixture_plus_update_us=0.132338 n=200000; NOT A53 TIMING
+DOA_UI_EMA_PASS checks=8382 accepted=200000 raw-code immutable/jitter/steps/time/dedup/context/invalid/stale/no-signal; HOST ONLY

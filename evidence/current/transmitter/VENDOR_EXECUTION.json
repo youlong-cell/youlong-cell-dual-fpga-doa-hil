@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\WINDOWS\\system32\\cmd.exe",
+    "/d",
+    "/s",
+    "/c",
+    "call E:\\Xilinx\\Vivado\\2023.1\\bin\\vivado.bat -mode batch -nojournal -log E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\tx_build2\\vivado.log -source E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\tx_build2\\loader.tcl"
+  ],
+  "script": "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\tx_build2\\loader.tcl",
+  "exit_code": 0,
+  "elapsed_seconds": 208.1447286605835,
+  "child_profile_overrides": {
+    "APPDATA": "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\tx_build2\\profile\\roaming",
+    "LOCALAPPDATA": "E:\\ALL_project\\fpgatext\\AXU_SOC\\PL_PS\\opensource_prepare_20261031\\repository\\build\\tx_build2\\profile\\local"
+  },
+  "hardware_operated": false
+}

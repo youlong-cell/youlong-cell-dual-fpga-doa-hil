@@ -1,0 +1,29 @@
+{
+  "prepared_at": "2026-11-01",
+  "scope": "LATEST_RF_HIL_ONLY",
+  "transmitter": {
+    "board": "AX7103 + AN9767",
+    "part": "xc7a100tfgg484-2",
+    "top": "ax7103_an9767_uart_j11_top",
+    "features": "四频/20模式/任意角度UART",
+    "implementation_source": "当前并行UART时序修复源码"
+  },
+  "receiver": {
+    "board": "AXU2CGA + AN9238",
+    "part": "xczu2cg-sfvc784-1-i",
+    "top": "top",
+    "active_version": "opt_b_bias_20261023",
+    "profiles": [
+      15,
+      16,
+      17,
+      18
+    ],
+    "measured": false,
+    "ps": "当前基础源码及bias_20261023覆盖"
+  },
+  "original_hardware_sources_changed": false,
+  "acoustic_included": false,
+  "rebuild_status": "OFFLINE_BUILD_CHAIN_VERIFIED_NOT_BOARD_TESTED",
+  "opensource_font_variant": "NotoSansSC_OFL_20261101"
+}
