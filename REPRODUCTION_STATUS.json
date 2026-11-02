@@ -1,12 +1,8 @@
 {
   "date": "2026-11-02",
-  "status": "PUBLIC_PARTIAL_SOURCE_NOT_REPRODUCIBLE",
-  "withheld_files": [
-    "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0.v",
-    "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0_S00_AXI.v",
-    "receiver/software/src/lscript.ld"
-  ],
-  "public_subset_build": "NOT_RUN",
+  "status": "SOURCE_SET_RESTORED_NOT_RETESTED_THIS_UPLOAD",
+  "withheld_files": [],
+  "public_subset_build": "NOT_RUN_THIS_UPLOAD",
   "full_private_candidate_record": {
     "date": "2026-11-01",
     "scope": "LATEST_RF_HIL_ONLY",
@@ -172,5 +168,11 @@
       "preserved_bd_reset_critical_warnings": 2,
       "new_xpr_physical_cdc_sta": "NOT_RUN"
     }
-  }
+  },
+  "restored_files": [
+    "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0.v",
+    "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0_S00_AXI.v",
+    "receiver/software/src/lscript.ld"
+  ],
+  "third_party_redistribution_evidence": "UNCONFIRMED"
 }

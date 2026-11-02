@@ -1,24 +1,17 @@
 # 双FPGA相干信号实时测向与HIL验证系统
 
-## 本次公开版本的复现限制
-本公开副本按项目负责人2026-11-02的明确决定，暂不分发下列三份来源尚未确认的文件：
-
-- `receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0.v`
-- `receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0_S00_AXI.v`
-- `receiver/software/src/lscript.ld`
-
-因此当前公开版是**不完整源码发布，不具备完整接收端一键复现条件**。
-以下原有构建记录来自包含三份文件的完整本地候选，并不证明本公开删减副本已经构建通过。
-接收端工程创建可能因缺少采集IP包装而停止，PS链接缺少链接脚本；不要通过删除检查或使用未知文件绕过。
-发送端源码和原有一键创建说明保留。后续待来源确认，或独立获批完成可公开替代与重新验证后，再补齐接收端。
-仓库不包含声音测向工程、历史工程、BIT、ELF或BOOT；原创部分采用MIT，第三方及字体保留原条款。
+## 本次公开版本状态
+2026-11-02，按项目负责人的明确指令，已原样补齐两份AN9238采集IP包装和PS链接脚本；原有版权声明保留。
+当前发送端、接收端设计文件已与完整本地候选逐字节核对。此前因缺少三份文件造成的源码缺失已消除。
+三份文件的公开许可依据仍未完全核实，不以本项目根MIT覆盖其第三方权利；详见LICENSE_SCOPE.md。
+本次仅补齐文件和校验，没有重新运行工程创建、综合、布局布线、软件构建或板级测试。完整本地候选此前的离线构建证据见下节及evidence/current。
 
 **只包含当前启用版本，收发端分开，不含历史工程或声音扩展。原创部分MIT，第三方保留原条款。**
 
 ## 完整本地候选的历史验证范围
 完整本地候选曾独立实跑：8项RTL测试、8项O0/O2宿主测试、收发端综合与布局布线、BIT、匹配XSA、新Platform/BSP/FSBL/PMUFW、A53 ELF和BOOT打包。最终ELF四频Profile与完整BOOT载荷已核验，未改原RTL/BD/XDC、测向算法或校准参数。
 
-**以上是完整本地候选的离线构建记录，不是本公开删减版的构建或板测结论。** 当前公开源码已发布到GitHub；本次未下载FPGA、未操作SD/QSPI。具体身份、指标与未核实边界见[REPRODUCTION_STATUS.json](REPRODUCTION_STATUS.json)和[evidence/current](evidence/current)。
+**以上是完整本地候选的离线构建记录，不代表本次补传进行了新的构建或板测。** 当前公开源码已发布到GitHub；本次未下载FPGA、未操作SD/QSPI。具体身份、指标与未核实边界见[REPRODUCTION_STATUS.json](REPRODUCTION_STATUS.json)和[evidence/current](evidence/current)。
 
 ## 快速开始：双击一个BAT
 1. 安装 **Vivado 2023.1**，包含 Artix-7 和 Zynq UltraScale+ 对应器件支持。

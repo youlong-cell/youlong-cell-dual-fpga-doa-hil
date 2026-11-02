@@ -1,15 +1,18 @@
 {
   "date": "2026-11-02",
   "repository": "https://github.com/youlong-cell/youlong-cell-dual-fpga-doa-hil",
-  "publication": "PUBLISHED_TO_GITHUB",
+  "publication": "SOURCE_RESTORED_BY_EXPLICIT_USER_INSTRUCTION",
   "scope": "LATEST_RF_HIL_ONLY",
-  "withheld_files": [
+  "withheld_files": [],
+  "withheld_reason": null,
+  "full_reproduction": "SOURCE_SET_RESTORED_PRIOR_FULL_CANDIDATE_RECORD_AVAILABLE_NOT_RETESTED",
+  "source_zip_sha256": "05081d8d2c3500c132d5afc305ea126291500ba25822e47c0596ad1e34f5aef5",
+  "firmware_and_board_operations": "NOT_PERFORMED",
+  "restored_files": [
     "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0.v",
     "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0_S00_AXI.v",
     "receiver/software/src/lscript.ld"
   ],
-  "withheld_reason": "用户明确要求来源未确认前不公开",
-  "full_reproduction": "BLOCKED_MISSING_WITHHELD_FILES",
-  "source_zip_sha256": "05081d8d2c3500c132d5afc305ea126291500ba25822e47c0596ad1e34f5aef5",
-  "firmware_and_board_operations": "NOT_PERFORMED"
+  "third_party_redistribution_evidence": "UNCONFIRMED",
+  "restore_build": "NOT_RUN"
 }

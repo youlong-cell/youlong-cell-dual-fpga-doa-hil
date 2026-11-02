@@ -674,6 +674,20 @@
       "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
     },
     {
+      "path": "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0.v",
+      "sha256": "42f6a4e3bef386d9313945d5a5736f444e5bd25d9101f348e2b5cd8e273cf265",
+      "bytes": 3251,
+      "role": "CUSTOM_IP_DEPENDENCY",
+      "license_classification": "TEMPLATE_DERIVATION_REVIEW"
+    },
+    {
+      "path": "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0_S00_AXI.v",
+      "sha256": "310edcf66cc40328a70572892d7bd1d7c0cfb23dc84fd57290c41d44555bd83a",
+      "bytes": 17642,
+      "role": "CUSTOM_IP_DEPENDENCY",
+      "license_classification": "TEMPLATE_DERIVATION_REVIEW"
+    },
+    {
       "path": "receiver/ip_repo/ad9238_sample_1.1/src/ad.xdc",
       "sha256": "08c746c5fc930d5d3a8eddabc76f4b8c37b3c337673cb3f1c7d391148d3dade4",
       "bytes": 513,
@@ -994,6 +1008,13 @@
       "bytes": 268504,
       "role": "PS_HEADER_OR_LINKER_SCRIPT",
       "license_classification": "THIRD_PARTY_MIT_HEADER"
+    },
+    {
+      "path": "receiver/software/src/lscript.ld",
+      "sha256": "64891264d4680055f7179a72563027a36cbbdd3ef0e76b0668dfd5f0ad8c2269",
+      "bytes": 6935,
+      "role": "PS_HEADER_OR_LINKER_SCRIPT",
+      "license_classification": "THIRD_PARTY_REVIEW_REQUIRED"
     },
     {
       "path": "receiver/software/src/service_profile.h",
@@ -1332,10 +1353,11 @@
       "license_classification": "PROJECT_SOURCE_OWNERSHIP_PENDING"
     }
   ],
-  "withheld_files": [
+  "withheld_files": [],
+  "public_reproduction": "SOURCE_SET_RESTORED_NOT_RETESTED",
+  "restored_files": [
     "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0.v",
     "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0_S00_AXI.v",
     "receiver/software/src/lscript.ld"
-  ],
-  "public_reproduction": "BLOCKED"
+  ]
 }

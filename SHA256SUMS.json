@@ -1,5 +1,5 @@
 {
-  "scope": "本次公开删减副本；不含自身、摘要及Git元数据",
+  "scope": "当前公开源码、必要资料及既有证据；不含Git元数据、自身及摘要",
   "files": {
     ".gitattributes": {
       "sha256": "2a088ca321a05c73c8beab86626f3a9dac2fa52e3939c9e7bda549df3e697ed2",
@@ -26,36 +26,36 @@
       "bytes": 1112
     },
     "LICENSE_SCOPE.md": {
-      "sha256": "fbb84f3c0201ec4dc44bdd2d2f6ab2acd2bd152fa2e344436d5bde6df1c5d621",
-      "bytes": 1520
+      "sha256": "f77155dbba1cd001ae50e0ef027c93c28249ec0182fa39e6245ea1e4f92166b2",
+      "bytes": 1219
     },
     "NOTICE.md": {
-      "sha256": "7f380ca66c1897aecbaba4e5bee1f2e22a0f7f32d955d31a06de5ae3b9c5e555",
-      "bytes": 1181
+      "sha256": "ccbf59b8f13ae0d8b3820d6ee15a2216062e1499237bf85a344295e55ca69cdf",
+      "bytes": 1115
     },
     "PROJECTS.json": {
       "sha256": "6a04ff50a07f682e5dad26b92e2fe075aca27afb4b30af42067c609c10e92e2c",
       "bytes": 19326
     },
     "PUBLIC_RELEASE_STATUS.json": {
-      "sha256": "106470b003804877162b102052d1dd4c5195d6c8bbe9344e694666b515090514",
-      "bytes": 675
+      "sha256": "1495b3bc60e2b187bfa3bedc27cb4ef73c33ca577a361fb4eeaeb8e60df98801",
+      "bytes": 810
     },
     "README.md": {
-      "sha256": "6189d6f28b0fa1cfd1621b9c53cfa5674ac5d117773dc4f14ccd05b32d0a4b78",
-      "bytes": 9670
+      "sha256": "81fa85a2bd32828f494d18bb81a8f484eeef6e43b49b72aff1d2aa5e9c1e7dee",
+      "bytes": 9315
     },
     "REPRODUCTION_STATUS.json": {
-      "sha256": "7d10a01a4b1c70eb0552d665d36b9885ce3dde2e7b64c58a38e690d088be4e1c",
-      "bytes": 5488
+      "sha256": "660b6bf4399bf9f68d66da79de04914a16987dbcaa65631724b1bfe3d5e9b211",
+      "bytes": 5588
     },
     "SIMULATION_TESTS.json": {
       "sha256": "50327876348b35e6a3bcbd5a68f2ed16bf1b525dfd5a58b138cfff6e4534c6c4",
       "bytes": 8747
     },
     "SOURCE_MANIFEST.json": {
-      "sha256": "24ad80be52ed87dca2b223607151c1dd6dc8571a18686056add726d2ebda7830",
-      "bytes": 54805
+      "sha256": "b44d9a9c6485bffb9fde941f662b9482ced895a0f593d1644ca49fa8f998815f",
+      "bytes": 55747
     },
     "auto_create_project/create_project.tcl": {
       "sha256": "c1193afc2b2bb8e3647043c64708c41b1fb30052d94d1ce0da03a87a1be94ae5",
@@ -86,8 +86,8 @@
       "bytes": 1121
     },
     "docs/BUILD.md": {
-      "sha256": "bec4e99e8718420350aff144cd4269bf9b79818aa5120684449ccef0a066648a",
-      "bytes": 6693
+      "sha256": "c9471eff26e174405c8d91468f0a51069448c931d0ac0f9c950ef425d6aca0cf",
+      "bytes": 6627
     },
     "docs/HARDWARE_AND_UART.md": {
       "sha256": "096881feba65ca5d7ad312a652d2d4c1869653df921263fa778dfe1e4acd1719",
@@ -98,8 +98,8 @@
       "bytes": 1267
     },
     "docs/OPEN_SOURCE_READINESS.md": {
-      "sha256": "4da0bf8a92301854fe3ab3f795a576a421d7368a5bf113dac7b49ee414b25db6",
-      "bytes": 1181
+      "sha256": "dd4e206f7596a432e0f51c3ede0cedfb1a399ddf6522a49a1d7283b4b0921d82",
+      "bytes": 622
     },
     "docs/REPRODUCTION_NOTES.md": {
       "sha256": "f2ff41c2a19adedc53c0cf17a8200cdc34c46b1f8dcc68b555b88c5f4bff93de",
@@ -400,6 +400,14 @@
     "receiver/ip_repo/ad9238_sample_1.1/component.xml": {
       "sha256": "1042c65544acdbc14aeb76e84ac98bba0619d247a4df7ac074b1e1c1ffda41d9",
       "bytes": 50529
+    },
+    "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0.v": {
+      "sha256": "42f6a4e3bef386d9313945d5a5736f444e5bd25d9101f348e2b5cd8e273cf265",
+      "bytes": 3251
+    },
+    "receiver/ip_repo/ad9238_sample_1.1/hdl/ad9238_sample_v1_0_S00_AXI.v": {
+      "sha256": "310edcf66cc40328a70572892d7bd1d7c0cfb23dc84fd57290c41d44555bd83a",
+      "bytes": 17642
     },
     "receiver/ip_repo/ad9238_sample_1.1/src/ad.xdc": {
       "sha256": "08c746c5fc930d5d3a8eddabc76f4b8c37b3c337673cb3f1c7d391148d3dade4",
@@ -928,6 +936,10 @@
     "receiver/software/src/lpd_slcr.h": {
       "sha256": "9b8c8a226aba5a4addd7e3d4f999116f7e15f88a114603c05bfe45bbdcb7fa96",
       "bytes": 268504
+    },
+    "receiver/software/src/lscript.ld": {
+      "sha256": "64891264d4680055f7179a72563027a36cbbdd3ef0e76b0668dfd5f0ad8c2269",
+      "bytes": 6935
     },
     "receiver/software/src/receiver_build_identity.c": {
       "sha256": "efac29c6bdb2c61f8fb1e6a17f55325680f107cb40402ff316b8e44d827ea26a",
